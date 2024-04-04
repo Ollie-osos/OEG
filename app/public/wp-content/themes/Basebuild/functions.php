@@ -22,7 +22,7 @@ require_once( 'library/foundation.php' );
 
 /** Custom Post Types */
 require_once( 'library/custom-post-types.php' );
-
+ 
 /** Format comments */
 require_once( 'library/class-foundationpress-comments.php' );
 
