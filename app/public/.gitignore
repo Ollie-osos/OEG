@@ -18,7 +18,8 @@
 /xmlrpc.php
 
 #Resources
-/Resources
+
+/wp-content/themes/Baebuild/src/node_modules
 
 # Configuration
 wp-config.php
