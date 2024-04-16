@@ -19,9 +19,9 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title' 	=> 'Courses archive',
-        'menu_title'	=> 'Courses archive',
-        'menu_slug'	    => 'theme-course',
+        'page_title' 	=> "Courses What's on",
+        'menu_title'	=> "Courses What's on",
+        'menu_slug'	    => 'theme-events',
         'parent_slug'	=> 'archive',
         'position'		=> false,
         'redirect'		=> false,
@@ -43,31 +43,62 @@ if( function_exists('acf_add_options_page') ) {
 add_action( 'init', 'create_post_type' );
 
 function create_post_type() {
-	register_post_type( 'courses',
+	register_post_type( 'sep_projects',
 		array(
 			'labels' => array(
-				'name' => __( 'Courses' ),
-				'singular_name' => __( 'Course' )
+				'name' => __( 'SEP Projects' ),
+				'singular_name' => __( 'SEP Project' )
+				// this also includes SEF projects
 			),
 			'public' => true,
 			'show_in_nav_menus' => true,
 			'has_archive' => true,
 			'taxonomies' => array('category', 'post_tag'),
 			// 'supports' => array('title', 'thumbnail', 'author'),
-			'menu_icon' => 'dashicons-welcome-learn-more'
+			// 'menu_icon' => 'dashicons-welcome-learn-more'
 		)
 	);
-	register_post_type( 'podcasts',
+	register_post_type( 'open_eye_hub',
 		array(
 			'labels' => array(
-				'name' => __( 'Podcasts' ),
-				'singular_name' => __( 'Podcast' )
+				'name' => __( 'Open Eye Hub' ),
+				'singular_name' => __( 'Open Eye Hub' )
+				// this also includes SEF projects
 			),
 			'public' => true,
 			'show_in_nav_menus' => true,
 			'has_archive' => true,
 			'taxonomies' => array('category', 'post_tag'),
 			// 'supports' => array('title', 'thumbnail', 'author'),
+			// 'menu_icon' => 'dashicons-welcome-learn-more'
+		)
+	);
+	register_post_type( 'shop',
+		array(
+			'labels' => array(
+				'name' => __( 'Shop' ),
+				'singular_name' => __( 'Shop' )
+				// this also includes SEF projects
+			),
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'has_archive' => true,
+			'taxonomies' => array('category', 'post_tag'),
+			// 'supports' => array('title', 'thumbnail', 'author'),
+			// 'menu_icon' => 'dashicons-welcome-learn-more'
+		)
+	);
+	register_post_type( 'events',
+		array(
+			'labels' => array(
+				'name' => __( 'Events' ),
+				'singular_name' => __( 'Event' )
+			),
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'has_archive' => true,
+			'taxonomies' => array('category', 'post_tag'),
+			'supports' => array('title', 'thumbnail', 'editor'),
 			'menu_icon' => 'dashicons-playlist-audio'
 		)
 	);
