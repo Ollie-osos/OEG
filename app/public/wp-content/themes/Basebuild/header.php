@@ -37,6 +37,7 @@
       </div>
       <div class="header-nav" id="header-menu">
         <?php foundationpress_main_nav(); ?>
+        <?php get_search_form(); ?>
       </div>
     </div>
   </header>

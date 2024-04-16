@@ -52,13 +52,16 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', array(), '1.11.3', false );
 
 		// Enqueue scripts for animations
-		wp_enqueue_script( 'swiffy', get_stylesheet_directory_uri() . '/dist/js/swiffy.js', array(), '1.0', true );
+		wp_enqueue_script( 'swiffy', get_stylesheet_directory_uri() . '/dist/js/swiffy-slider.min.js', array(), '1.0', true );
 
 		// Enqueue scripts for animations
 		wp_enqueue_script( 'sal', get_stylesheet_directory_uri() . '/dist/js/sal.js', array(), '1.0', true );
 
 		// Enqueue scripts
 		wp_enqueue_script( 'core', get_stylesheet_directory_uri() . '/dist/js/scripts.js', array(), '1.0', true );
+
+		// // Events scripts
+		// wp_enqueue_script( 'events', get_stylesheet_directory_uri() . '/dist/js/events.js', array(), '1.0', true );
 		
 		// Add the comment-reply library on pages where it is necessary
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
