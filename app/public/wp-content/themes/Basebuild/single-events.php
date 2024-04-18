@@ -1,12 +1,5 @@
 <?php
 
-/**
- * The template for displaying all single posts and attachments
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
- */
-
 get_header(); 
 $start_date = get_field('start_date');
 $end_date = get_field('end_date');
@@ -20,6 +13,8 @@ $gallery = get_field('gallery');
 
 $labels = array_column($event_type, 'label');
 $implodeLabels = implode(', ', $labels);
+
+print_r($access);
 
 if( $access ): 
    // Loop through each item using a foreach loop
@@ -59,7 +54,7 @@ if( $access ):
                 break;
         
             default:
-                $access_icons .= '';
+                // $access_icons .= '';
                 break;
         }
     }
@@ -82,6 +77,7 @@ endif;
                     <div class="ev_address">
                         <h5>Address:</h5>
                         <p><?php echo $address; ?></p>
+                        <?php print_r($access); ?>
                     </div>
                     <div class="ev_additional_date">
                         <h5>Date:</h5>
@@ -103,10 +99,10 @@ endif;
                     <div class="ev_access">
                         <h5>Share</h5>
                         <div class="social-share">
-                            <img onclick="shareOnWhatsApp()" src="<?php get_template_directory_uri();?>/dist/img/share-whatsapp.svg" alt="share icons"/>
-                            <img onclick="shareOnFacebook()" src="<?php get_template_directory_uri();?>/dist/img/share-facebook.svg" alt="share icons"/>
-                            <img onclick="shareOnTwitter()" src="<?php get_template_directory_uri();?>/dist/img/share-twitter.svg" alt="share icons"/>
-                            <img onclick="shareByEmail()" src="<?php get_template_directory_uri();?>/dist/img/share-email.svg" alt="share icons"/>
+                            <img onclick="shareOnWhatsApp()" src="<?php echo get_template_directory_uri();?>/dist/img/share-whatsapp.svg" alt="share icons"/>
+                            <img onclick="shareOnFacebook()" src="<?php echo get_template_directory_uri();?>/dist/img/share-facebook.svg" alt="share icons"/>
+                            <img onclick="shareOnTwitter()" src="<?php echo get_template_directory_uri();?>/dist/img/share-twitter.svg" alt="share icons"/>
+                            <img onclick="shareByEmail()" src="<?php echo get_template_directory_uri();?>/dist/img/share-email.svg" alt="share icons"/>
                         </div>
                         
                     </div>
@@ -124,11 +120,8 @@ endif;
         </div>
     </section>
     
-
-    <?php // include related articles
-    include_once(get_template_directory() . '/template-parts/related-events.php');
-    include_once(get_template_directory() . '/template-parts/additional-links.php');
-    ?>
+    <?php get_template_part( 'template-parts/related-events'); ?>
+    <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pv_' )); ?>
 </div>
 
 <script>
