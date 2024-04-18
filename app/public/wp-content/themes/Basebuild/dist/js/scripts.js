@@ -71,13 +71,13 @@ $(window).load(function(){
 
 // events scripts
 
-jQuery(document).on( 'click', '#button', function() {
-    var button = jQuery(this);
-    var url = button.attr('href');
+jQuery(document).ready(function($) {
+    $('#button').click(function() {
     
-    jQuery.ajax({
+        $.ajax({
+            url : ajax_object.ajaxurl,
         type : 'post',
-        url : url,
+        
         data : {
             action : 'user_clicked'
         },
@@ -91,4 +91,10 @@ jQuery(document).on( 'click', '#button', function() {
     });
      
     return false;
-})
+    })
+});
+
+
+
+
+
