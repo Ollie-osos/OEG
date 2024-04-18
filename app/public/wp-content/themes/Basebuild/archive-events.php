@@ -56,28 +56,5 @@ $(document).ready(function(){
 
 <?php get_footer();
 
-// event_type 
-// in-gallery : In Gallery
-// beyond-gallery : Beyond The Gallery
-// exhibition : Exhibition
-// event : Event
-// vr : VR
-// online : Online
-
-
-// access
-// wheelchair : Wheelchair 
-// toilets : toilets
-// accessible-toilet : accessible-toilet
-// gender-neutral : gender-neutral
-// quiet-hours : quiet-hours
-// hearing-loop : hearing-loop
-// baby-changing : baby-changing
-// refreshments : refreshments
-// parking : parking
-// disabled-parking : disabled-parking
-
-
-
 // https://www.advancedcustomfields.com/resources/date-time-picker/
 // https://wpwebinfotech.com/blog/how-to-use-ajax-in-wordpress/

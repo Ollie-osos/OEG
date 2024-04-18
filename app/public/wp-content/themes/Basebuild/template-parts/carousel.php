@@ -1,13 +1,21 @@
-<section class="related-events">
+<?php 
+
+if ($args['type']) {
+	$type = $args['type'];
+} 
+$carousel = get_field($type.'carousel');
+
+?>
+
+<section class="carousel">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12"><h2><?php echo get_field('related_events_title'); ?></h2></div>
 
-            <?php if (have_rows('related_events')) : ?>
+            <?php if (have_rows($type.'carousel')) : ?>
                 
                 <?php // loop through the rows of data
-                while (have_rows('related_events')) : the_row();
-                    $post = get_sub_field('related_event');
+                while (have_rows($type.'carousel')) : the_row();
+                    $post = get_sub_field('post_carousel');
                     if ($post) :
                         setup_postdata($post); 
                         $labels = array_column(get_field('event_type'), 'label');

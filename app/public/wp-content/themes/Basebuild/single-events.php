@@ -1,8 +1,8 @@
 <?php
 
 get_header(); 
-$start_date = get_field('start_date');
-$end_date = get_field('end_date');
+$end_date = DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y');
+$start_date = DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y');
 $event_type = get_field('event_type');
 $access = get_field('access');
 $address = get_field('address');
@@ -14,7 +14,6 @@ $gallery = get_field('gallery');
 $labels = array_column($event_type, 'label');
 $implodeLabels = implode(', ', $labels);
 
-print_r($access);
 
 if( $access ): 
    // Loop through each item using a foreach loop
@@ -66,8 +65,8 @@ endif;
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-4 col-lg-5 page-sidebar">
-                    <div class="mobile-hero u-none-md">
-                        <img src="<?php get_the_post_thumbnail_url();?>" alt="Hero image">
+                    <div class="mobile-hero">
+                        <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Hero image">
                     </div>
                     <div class="ev_title"> <h1><?php the_title(); ?></h1></div>
                     <div class="ev_date"><?php echo $start_date .' - '. $end_date; ?></div>
@@ -77,7 +76,6 @@ endif;
                     <div class="ev_address">
                         <h5>Address:</h5>
                         <p><?php echo $address; ?></p>
-                        <?php print_r($access); ?>
                     </div>
                     <div class="ev_additional_date">
                         <h5>Date:</h5>
@@ -109,8 +107,8 @@ endif;
 
                 </div>
                 <div class="col-sm-12 col-md-8 col-lg-7 page-content">
-                    <div class="desktop-hero u-none-sm">
-                        <img src="<?php get_the_post_thumbnail_url();?>" alt="Hero image">
+                    <div class="desktop-hero">
+                        <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Hero image">
                     </div>
                     <div class="ev_content">
                         <?php the_content(); ?>
