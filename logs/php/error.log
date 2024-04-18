@@ -837,3 +837,58 @@ Stack trace:
 [18-Apr-2024 15:33:29 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
 [18-Apr-2024 15:36:35 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
 [18-Apr-2024 15:36:35 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:06:55 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:06:55 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:07:16 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:07:16 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:07:47 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:07:47 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:08:04 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:08:04 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:22:46 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:22:46 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:23:06 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:23:06 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:23:26 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:23:26 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:23:57 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:23:57 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:24:16 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:24:16 UTC] PHP Warning:  Attempt to read property "ID" on null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[18-Apr-2024 16:24:59 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 27
+[18-Apr-2024 16:24:59 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 27
+[18-Apr-2024 16:24:59 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 27
+[18-Apr-2024 16:24:59 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 27
+[18-Apr-2024 16:25:36 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 24
+[18-Apr-2024 16:25:36 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 24
+[18-Apr-2024 16:25:36 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 24
+[18-Apr-2024 16:25:36 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 24
+[18-Apr-2024 16:26:04 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 24
+[18-Apr-2024 16:26:04 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 24
+[18-Apr-2024 16:26:04 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 24
+[18-Apr-2024 16:26:04 UTC] PHP Warning:  Array to string conversion in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 24
+[18-Apr-2024 16:27:32 UTC] PHP Warning:  Undefined variable $event_type in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 13
+[18-Apr-2024 16:27:32 UTC] PHP Fatal error:  Uncaught TypeError: array_column(): Argument #1 ($array) must be of type array, null given in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php:13
+Stack trace:
+#0 /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php(13): array_column(NULL, 'label')
+#1 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/template.php(812): require('/Users/michaels...')
+#2 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/template.php(745): load_template('/Users/michaels...', false, Array)
+#3 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#4 /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/single-events.php(122): get_template_part('template-parts/...')
+#5 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/template-loader.php(106): include('/Users/michaels...')
+#6 /Users/michaelsmith/Local Sites/oeg/app/public/wp-blog-header.php(19): require_once('/Users/michaels...')
+#7 /Users/michaelsmith/Local Sites/oeg/app/public/index.php(17): require('/Users/michaels...')
+#8 {main}
+  thrown in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 13
+[18-Apr-2024 16:32:10 UTC] PHP Warning:  Undefined variable $dateYmd in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 15
+[18-Apr-2024 16:32:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function format() on bool in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php:15
+Stack trace:
+#0 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/template.php(812): require()
+#1 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/template.php(745): load_template('/Users/michaels...', false, Array)
+#2 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#3 /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/single-events.php(122): get_template_part('template-parts/...')
+#4 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/template-loader.php(106): include('/Users/michaels...')
+#5 /Users/michaelsmith/Local Sites/oeg/app/public/wp-blog-header.php(19): require_once('/Users/michaels...')
+#6 /Users/michaelsmith/Local Sites/oeg/app/public/index.php(17): require('/Users/michaels...')
+#7 {main}
+  thrown in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/related-events.php on line 15
