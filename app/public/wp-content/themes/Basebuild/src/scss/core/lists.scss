@@ -78,24 +78,24 @@ ul {
 
     /* Style menu items */
     .menu-item a {
-        color: map-get($grays, '700');
+        color: black;
         display: block;
         padding: 0.5em 0.75em;
-        border-radius: 3px;
-        font-size: var(--font-size-s);
+        font-size: 37px;
         cursor: pointer;
         transition: all var(--animation-duration);
+        text-align: right;
     }
 
     .menu-item:hover > a {
-        background-color: rgba(208, 208, 208, 0.3);
-        color: var(--cirrus-primary);
+        background-color: transparent;
+        color: $blue;
         transition: all var(--animation-duration);
     }
 
     .menu-item.selected > a {
-        color: #fff;
-        background-color: var(--cirrus-primary);
+        color: $blue;
+        background-color: transparent;
     }
 
     .menu-item .menu-addon {
@@ -216,186 +216,14 @@ ul {
     }
 }
 
-/* TREE */
-/* Tree Navigation Menu */
-.tree {
-    margin: 0;
 
-    .tree-item {
-
-        /* The title of the tree menu */
-        .tree-item-header {
-            display: block;
-            padding: 0.25rem 0.5rem;
-            cursor: pointer;
-            font-weight: 700; /* Keep styling consistent with menu-items */
+.social-container{
+    a {
+        color: black;
+        padding-left: 10px;
+        font-size: 40px;
+        &:hover{
+            color: $blue;
         }
-        
-        /* The dropdown glyph of the tree menu */
-        .tree-item-header .icon {
-            transition: all var(--animation-duration);
-        }
-        
-        /* Expand the tree-item-body (has menu-items) */
-        input:checked ~ .tree-item-body {
-            max-height: 100vh;
-        }
-        
-        /* Rotate the dropdown glyph */
-        input:checked ~ .tree-item-header .icon {
-            -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-        }
-        
-        /* Container for the menu-items of the tree menu */
-        .tree-item-body {
-            max-height: 0; /* Hidden at first */
-            margin-left: 1.5rem;
-            overflow: hidden;
-            transition: all var(--animation-duration);
-        }
-    }
-}
-
-/* The body that will encompass the tree-nav and tree-nav-content */
-.tree-nav-body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100vh;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-
-    /* A fixed menu on the side with a tree component */
-    .tree-nav {
-        -webkit-box-flex: 0;
-        -ms-flex-positive: 0;
-        flex-grow: 0;
-        -ms-flex-negative: 1;
-        flex-shrink: 1;
-        padding: 2rem 1rem 2rem 2rem;
-        min-width: 15rem;
-        height: 100vh;
-        overflow: auto;
-    }
-    
-    /* The container for the tree component to prevent it from overflowing */
-    .tree-nav-container {
-        overflow-y: auto;
-        top: 4rem;
-        bottom: 1rem;
-    }
-
-    /* Darkened area that will close the navbar when clicked for mobile only */
-    & + .tree-nav-close {
-        display: none; /* Not needed in desktop */
-    }
-
-    /* Push document body further right to account for sidebar space */
-    & + .tree-nav-content {
-        max-width: 100%;
-        padding: 2rem;
-        -ms-flex: 1 0 auto;
-        -webkit-box-flex: 1;
-        flex: 1 0 auto;
-        overflow: auto;
-        margin: 0;
-    }
-
-    /* The body where all other HTML components are entered if a tree-nav is used */
-    .tree-nav-content {
-        width: 100%;
-        overflow: auto;
-        margin: 0;
-        padding: 2rem;
-    }
-}
-
-@include screen-below('sm') {
-    /* Hide the menu to the side by default */
-    .tree-nav {
-        height: 100%;
-        left: 0;
-        overflow-y: auto;
-        padding: 3rem 1.5rem;
-        position: fixed;
-        top: 0;
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%);
-        transition: transform var(--animation-duration) ease, -webkit-transform var(--animation-duration) ease;
-        z-index: 400;
-
-        /* Open the menu from the side */
-        /* Use a link and add the id of this element as the url */
-        &:target {
-            -webkit-transform: translateX(0);
-            transform: translateX(0);
-            transition: transform var(--animation-duration) ease, -webkit-transform var(--animation-duration) ease;
-            transition: -webkit-transform var(--animation-duration) ease;
-            transition: transform var(--animation-duration) ease;
-
-            /* Show the darkened area when the tree nav menu is clicked */
-            & + .tree-nav-close {
-                display: block;
-                background-color: rgba(0, 0, 0, 0.15);
-                height: 100%;
-                left: 0;
-                position: fixed;
-                right: 0;
-                top: 0;
-                width: 100%;
-                z-index: 300;
-            }
-        }
-
-        /* Create the area to click to close the menu */
-        .tree-nav-close {
-            background-color: rgba(0, 0, 0, 0.15);
-            display: none;
-            height: 100%;
-            left: 0;
-            position: fixed;
-            right: 0;
-            top: 0;
-            width: 100%;
-            z-index: 300;
-        }
-
-        /* Reset max-width in mobile */
-        & + .tree-nav-body {
-            max-width: inherit;
-        }
-    }
-
-    /* Header bar for mobile websites with the tree-nav */
-    .tree-nav-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(248, 249, 250, 0.8);
-        height: 3.5rem;
-        padding: 0.75rem 0.5rem;
-        text-align: center;
-        z-index: 300;
-    }
-
-    /* For dropdown menu used in header (different from header dropdown) */
-    .nav-item.has-sub .list-dropdown {
-        width: 100%;
-        
-        .btn-group {
-            width: 100%;
-
-            .btn-dropdown {
-                flex-grow: 0;
-            }
-        }
-    }
-
-    /* Show the dropdown menu in mobile hamburger menu relative with the header menu */
-    .list-dropdown .btn-dropdown:focus + .menu {
-        position: relative;
-        width: 100%;
     }
 }

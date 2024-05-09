@@ -23,8 +23,6 @@
     width: 100%;
     z-index: 100;
     margin-bottom: 20px;
-    box-shadow: 0 3px 15px rgba(57, 63, 72, 0.1);
-    background-color: var(--cirrus-bg);
     // max-height: 100vh;
     padding: 0 0.75rem;
     transition: all 0.3s;
@@ -59,13 +57,19 @@
     .header-nav {
         /* Flex display 768px and higher */
         overflow: auto;
+        opacity: 0;
+    }
+
+    .header-top{
+        padding-bottom: 30px;
+        flex-direction: column;
     }
 
     .header-brand {
         -webkit-overflow-scrolling: touch;
-        -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -75,6 +79,9 @@
         min-height: 70px;
         overflow-x: auto;
         overflow-y: hidden;
+        width: 100%;
+        border-bottom: thin solid black;
+        padding-bottom: 40px;
     }
 
     /* Static header at the top of the screen */
@@ -88,9 +95,7 @@
     .nav-btn {
         cursor: pointer;
         display: block;
-        // height: 3.5rem;
         position: relative;
-        width: 3.5rem;
     }
 
     #{$button-selectors} {
@@ -103,6 +108,9 @@
     }
     ul{
         list-style: none;
+    }
+    .social-container{
+        text-align: right;
     }
 }
 
@@ -157,6 +165,27 @@
         }
     }
     
+    &.top-links{
+        margin-left: auto;
+        opacity: 1;
+        transition: all 0.3s ease-in;
+        .top-link{
+            margin-left: 5px;
+            a:link, a:visited {
+                font-size: 18px;
+            }
+            a:hover, a:focus {
+                color: white; 
+            }
+        }
+        &.active{
+            opacity: 0;
+        }
+        @include screen-below(md){
+            display: none;
+        }
+        
+    }
 
     /* HEADER DROP DOWN MENU */
     .dropdown-menu {
@@ -184,10 +213,33 @@
 
         & > li > a {
             display: block;
-            padding: 0.5rem 1rem;
+            padding: 0rem !important;
             clear: both;
-            line-height: 1.42857143;
+            line-height: 10px;
             white-space: nowrap;
+            font-size: 26px;
+            margin-right: 55px;
+            color: grey;
+            &::after {
+                display: block;
+                height: 15px;   
+                width: 15px;
+                content: '-';
+                pointer-events: none;
+                right: 31px !important;
+                top: 33%;
+                position: absolute;
+                color: grey;
+                @include screen-above('md'){
+                    right: 6px;
+                }
+            }
+            &:hover{
+                color: $blue;
+                &::after{
+                    color: $blue;
+                }
+            }
         }
 
         & > li {
@@ -197,12 +249,12 @@
 
         & > li:hover {
             transition: all 0.3s;
-            background-color: rgba(216, 216, 216, 0.15);
+            background-color: transparent;
         }
 
         & > li:active {
             transition: all 0.3s;
-            background-color: rgba(216, 216, 216, 0.25);
+            background-color: transparent;
         }
 
         & > li:last-child {
@@ -219,28 +271,34 @@
 
     /* Add room for the dropdown chevron pseudoelement */
     &.has-sub > a {
-        padding-right: 2.5rem !important;
+        padding-right: 35px !important;
         position: relative; /* Needed for hiding glyphs in mobile header */
 
         /* Dropdown menu location adjustment located below for sizes above phones */
         /* Dropdown menu indicator */
         &::after {
-            border: 2px solid $blue; /* Must be first to create the triangle shape */
+            border: 2px solid black; /* Must be first to create the triangle shape */
             border-right: 0; /* Create the triangle effect */
             border-top: 0;
             display: block;
-            height: 0.5em;
-            width: 0.5em;
+            height: 15px;
+            width: 15px;
             content: ' ';
             -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
             pointer-events: none;
             margin-top: -0.435em;
             right: 0;
-            top: 50%;
+            bottom: 0;
             position: absolute;
             @include screen-above('md'){
-                right: 1.125em;
+                right: 6px;
+            }
+        }
+        &:hover{
+            color: $blue;
+            &::after{
+                border-color: $blue;
             }
         }
     }
@@ -275,23 +333,6 @@
     .header {
         display: flex;
         flex-direction: column;
-        .header-nav {
-            -webkit-box-flex: 1;
-            -ms-flex-positive: 1;
-            flex-grow: 1;
-            -ms-flex-negative: 0;
-            -webkit-box-align: stretch;
-            -ms-flex-align: stretch;
-            align-items: stretch; /* Make items fill up all available space regardless of width https://drafts.csswg.org/css-align/ */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            position: relative;
-            text-align: center;
-            width: 100%;
-            top: 0;
-            overflow: visible; /* Only visible for showing dropdown menus, hidden for mobile */
-        }
         .header-top{
             display: flex;
         }
@@ -311,15 +352,15 @@
         }
 
         /* Align items to the right */
-        .nav-right {
-            @include nav-bar-position('end');
+        // .nav-right {
+        //     @include nav-bar-position('end');
 
-            /* Align dropdown menu to the right side of the parent nav-item for header-right */
-            .has-sub .dropdown-menu {
-                left: auto;
-                right: 0;
-            }
-        }
+        //     /* Align dropdown menu to the right side of the parent nav-item for header-right */
+        //     .has-sub .dropdown-menu {
+        //         left: auto;
+        //         right: 0;
+        //     }
+        // }
 
         /* Centering items, best used when nav-brand is not used to prevent offset */
         .nav-center {
@@ -342,9 +383,9 @@
         }
 
         /* Hide hamburger button */
-        .nav-btn {
-            display: none;
-        }
+        // .nav-btn {
+        //     display: none;
+        // }
 
         .nav-item {
             /* Expand link area for desktop views so it is easier to click */
@@ -374,7 +415,7 @@
     }
 }
 
-@include screen-below('sm') {
+// @include screen-below('sm') {
     /* Add scrolling support in header */
     .header {
         flex-direction: column;
@@ -389,7 +430,10 @@
 
             /* Show the dropdown */
             &.active {
-                height: 100vh;
+                height: auto;
+                width: 100%;
+                display: block;
+                opacity: 1;
             }
 
             /* Make the menu items larger in the dropdown menu */
@@ -428,6 +472,12 @@
             &.dropdown-dark {
                 background-color: rgba(0, 0, 0, 0.17);
                 border: 0;
+            }
+        }
+        &.active{
+            color: $blue;
+            &::after{
+                border-color: $blue;
             }
         }
     }
@@ -494,7 +544,7 @@
     .header .nav-item.has-sub.toggle-hover:not(.no-hover):hover > .dropdown-menu {
         @include mobile-dropdown-menu-show();
     }
-}
+// }
 
 .header-bottom{
     height: auto;
@@ -523,6 +573,18 @@
             }
         }
     }
+    .top-link{
+        margin-bottom: 26px;
+        padding: 25px 45px 10px 10px;
+        margin-left: auto;
+        margin-right: 45px;
+        a:link, a:visited {
+            color: black;
+            font-size: 18px;
+            font-weight: 900;
+        }
+        
+    }
 }
 
 
@@ -547,21 +609,22 @@
         padding-top: 20px;
     }
     .nav-item{
-        margin-right: 12px;
+        margin-right: 0;
         width: 100%;
+        padding: 15px 0;
+        padding-right: 0 !important;
+        text-transform: uppercase;
         @include screen-above('sm'){
             width: auto;
         }
         &:hover{
             color: black;
         }
-        @include screen-above('sm'){
-            &:hover {
-                background-color: $aqua;
-                border-color: $aqua;
-                transition: all 0.3s linear;
-                color: white;
-            }
-        }
     }
+}
+
+.right-links{
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
 }

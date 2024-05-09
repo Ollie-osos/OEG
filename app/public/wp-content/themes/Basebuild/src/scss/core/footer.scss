@@ -2,65 +2,64 @@
 
 /* FOOTER */
 .footer {
-    background-color: map-get($grays, '800');
+    background-color: #E0E0E0;
     padding: 6rem 0;
     text-align: center;
     margin-top: 5rem;
     width: 100%;
-
+    @include screen-above(sm){
+        text-align: left;
+    }
     &.footer--fixed {
         bottom: 0;
         position: fixed;
     }
 
     a {
-        color: map-get($grays, '200');
-        font-weight: bolder;
-    }
-
-    a:hover {
-        color: map-get($grays, '400');
-    }
-
-
-    p {
-        color: map-get($grays, '600');
-    }
-
-    ul {
-        margin: 0.5rem 0; /* Remove the left margin seen in global style */
-    }
-
-    .footer__title {
-        text-align: center;
-        letter-spacing: 6px;
-        position: relative;
-        padding-bottom: 10px;
-    }
-
-    .footer__list-title {
-        color: map-get($map: $grays, $key: '400');
-        font-size: 75%;
-        text-transform: uppercase;
-        font-weight: bolder;
-
-        &::after {
-            content: '';
-            display: block;
-            width: 10%;
-            margin: auto;
-            border-bottom: 2px solid;
-            border-color: #343b49;
+        color: black;
+        font-weight: 400;
+        display: block;
+        font-size: 19px;
+    } 
+    h4{
+        margin-bottom: 0;
+        @include screen-below('sm'){
+            margin-bottom: 10px;
+            padding-top: 10px;
         }
     }
-
-    ul a .footer__list-item,
-    .footer__list-item {
-        margin: 0.1rem;
-        color: map-get($grays, '600');
-        transition: all var(--animation-duration);
-        font-size: 75%;
-        text-transform: uppercase;
+    .social-container{
+        a{
+            display: inline;
+            padding-right: 10px;
+            padding-left: 0;
+            font-size: 40px;
+            color: $blue;
+            &:hover{
+                color: black;
+            }
+        }
+    }
+    p{
+        font-size: 19px;
+        line-height: 20px;
+    }
+    img{
+        align-self: center;
+    }
+    .baseline-content{
+        .col-sm-12{
+            flex-direction: column;
+            img{
+                padding: 15px 0;
+            }
+            @include screen-above('sm'){
+                flex-direction: row; 
+                img{
+                    padding: 0;
+                }
+            }
+        }
     }
 }
 
@@ -69,12 +68,17 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: #000;
-    color: #f03d4d;
+    background-color: $blue;
+    color: white;
     bottom: 50px;
     right: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    z-index: 100;
+    @include screen-below(md){
+        bottom: 25px;
+        right: 25px;
+    }
 }
