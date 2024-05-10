@@ -1188,3 +1188,18 @@ Stack trace:
 #7 /Users/michaelsmith/Local Sites/oeg/app/public/index.php(17): require('/Users/michaels...')
 #8 {main}
   thrown in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 21
+[10-May-2024 11:06:15 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/update.php on line 211
+[10-May-2024 11:06:15 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/update.php on line 449
+[10-May-2024 11:06:15 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/update.php on line 730
+[10-May-2024 11:11:16 UTC] PHP Fatal error:  Uncaught TypeError: array_column(): Argument #1 ($array) must be of type array, null given in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php:21
+Stack trace:
+#0 /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php(21): array_column(NULL, 'label')
+#1 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/template.php(812): require('/Users/michaels...')
+#2 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/template.php(745): load_template('/Users/michaels...', false, Array)
+#3 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#4 /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/page-templates/page-home.php(22): get_template_part('template-parts/...', '', Array)
+#5 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/template-loader.php(106): include('/Users/michaels...')
+#6 /Users/michaelsmith/Local Sites/oeg/app/public/wp-blog-header.php(19): require_once('/Users/michaels...')
+#7 /Users/michaelsmith/Local Sites/oeg/app/public/index.php(17): require('/Users/michaels...')
+#8 {main}
+  thrown in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 21
