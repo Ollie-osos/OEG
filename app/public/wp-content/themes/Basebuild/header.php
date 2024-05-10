@@ -63,7 +63,7 @@ $facebook_url = get_field('facebook', 'option');
               <div class="nav-item nav-btn" id="header-btn"><a class="btn btn-blue">MENU</a></div>
             </div>
             <div class="u-flex u-justify-flex-end pt-5">
-              <img src="<?php echo get_template_directory_uri(); ?>/dist/img/accessibility.svg" alt="logo" />
+              <img src="<?php echo get_template_directory_uri(); ?>/dist/img/accessibility.svg" alt="logo" /> &nbsp;
               <img src="<?php echo get_template_directory_uri(); ?>/dist/img/search-icon.svg" alt="logo" />
             </div>
             

@@ -7,13 +7,13 @@ section {
     display: block;
 }
 
-.page{
-    opacity: 0;
-    transition: all 0.3s linear;
-    &.fade{
-        opacity: 1;
-    }
-}
+// .page{
+//     opacity: 0;
+//     transition: all 0.3s linear;
+//     &.fade{
+//         opacity: 1;
+//     }
+// }
 .content {
     max-width: 60em;
     margin: 0 auto 1.5em;
@@ -389,4 +389,9 @@ section {
     .hero-body {
         padding: 0;
     }
+}
+
+.align-baseline{
+    align-self: baseline;
+    margin-bottom: 5px;
 }

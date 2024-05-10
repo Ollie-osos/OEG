@@ -3,18 +3,18 @@
 @import '../core/theme.scss';
 
 @mixin section-space() {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
-    @include screen-above('md') {
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
+    // @include screen-above('md') {
+    //     padding-top: 70px;
+    //     padding-bottom: 70px;
+    // }
 
-    @include screen-above('lg') {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
+    // @include screen-above('lg') {
+    //     padding-top: 40px;
+    //     padding-bottom: 40px;
+    // }
 }
 
 @mixin mobile-center() {
@@ -46,12 +46,11 @@
 
 // offset page by header bar
 .page {
-    // margin-top: 58px;
-    margin-top: 45px;
+    // margin-top: 45px;
 
-    @include screen-above('md') {
-        margin-top: 95px;
-    }
+    // @include screen-above('md') {
+    //     margin-top: 95px;
+    // }
 
     // overflow: hidden;
     &.background-image {
@@ -65,14 +64,14 @@
     }
 }
 
-.bg-aqua-light,
-.section.aqua-light {
-    background-color: $aqua-light;
+.bg-blue,
+.section.blue {
+    background-color: $blue;
 }
 
-.bg-green-light,
-.section.green-light {
-    background-color: $green-light;
+.bg-red,
+.section.red {
+    background-color: $red;
 }
 
 
@@ -95,6 +94,48 @@ section {
         // overflow-x: hidden;
         @include screen-above('md') {
             text-align: left;
+        }
+    }
+
+    &.featured-event{
+        padding-top: 0;
+        padding-bottom: 0;
+        .container{
+            border-bottom: thin solid black;
+            padding-bottom: 40px;
+        }
+    }
+
+    &.tagline{
+        padding-top: 40px;
+        padding-bottom: 0;
+        // .container{
+        //     border-bottom: thin solid black;
+        //     padding-bottom: 40px;
+        // }
+    }
+    &.border-bottom{
+        .container{
+            border-bottom: thin solid black;
+            padding-bottom: 40px;
+        }
+    }
+    &.mailing-list{
+        .container{
+            padding: 20px 40px;
+        }
+    }
+
+    &.additional-links, &.carousel{
+        .background-image{
+            height: 300px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+            transition: all 0.2s linear;
+            &:hover{
+                background-size: 105%;
+            }
         }
     }
 
@@ -140,6 +181,13 @@ section {
         }
     }
 }
+
+
+    .container.border-bottom{
+        border-bottom: thin solid black;
+        padding-bottom: 40px;
+    }
+
 
 .videoWrapper {
     position: relative;
