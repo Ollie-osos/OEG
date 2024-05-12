@@ -56,7 +56,7 @@
     /* The container that contains all the header menu components. Child of header */
     .header-nav {
         /* Flex display 768px and higher */
-        overflow: auto;
+        overflow: unset;
         opacity: 0;
     }
 
@@ -594,7 +594,7 @@
     flex-direction: column;
     margin: auto;
     padding: 0 0 0 15px;
-    overflow-y: scroll;
+    overflow-y: unset;
     height: calc(100vh - 100px);
     overflow-x: hidden;
     @include screen-above('sm'){

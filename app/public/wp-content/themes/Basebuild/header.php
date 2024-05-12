@@ -52,7 +52,7 @@ $facebook_url = get_field('facebook', 'option');
       <div class="header-top">
         <div class="header-brand">
           <div class="nav-item no-hover"><a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo-black.svg" alt="logo" /></a></div>
-          <div class="nav-item blue-text uppercase">Opening today:<br><?php echo $open_today; ?><br><?php echo $entry_fee; ?></div>
+          <div class="nav-item blue-text uppercase"><h4>Opening today:<br><?php echo $open_today; ?><br><?php echo $entry_fee; ?></h4></div>
           <div class="right-links pt-5">
             <div class="u-flex">
               <div class="nav-item top-links">
