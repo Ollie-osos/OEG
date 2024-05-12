@@ -2230,7 +2230,7 @@ label:last-child:not(:first-child):not(.form-group-label) {
         color: white; } }
   .header .header-nav {
     /* Flex display 768px and higher */
-    overflow: auto;
+    overflow: unset;
     opacity: 0; }
   .header .header-top {
     padding-bottom: 30px;
@@ -2645,7 +2645,7 @@ label:last-child:not(:first-child):not(.form-group-label) {
   flex-direction: column;
   margin: auto;
   padding: 0 0 0 15px;
-  overflow-y: scroll;
+  overflow-y: unset;
   height: calc(100vh - 100px);
   overflow-x: hidden; }
   @media screen and (min-width: 768px) {

@@ -1203,3 +1203,10 @@ Stack trace:
 #7 /Users/michaelsmith/Local Sites/oeg/app/public/index.php(17): require('/Users/michaels...')
 #8 {main}
   thrown in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 21
+[11-May-2024 07:56:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function format() on bool in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/single-events.php:4
+Stack trace:
+#0 /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/template-loader.php(106): include()
+#1 /Users/michaelsmith/Local Sites/oeg/app/public/wp-blog-header.php(19): require_once('/Users/michaels...')
+#2 /Users/michaelsmith/Local Sites/oeg/app/public/index.php(17): require('/Users/michaels...')
+#3 {main}
+  thrown in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/single-events.php on line 4
