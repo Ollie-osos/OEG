@@ -1210,3 +1210,4 @@ Stack trace:
 #2 /Users/michaelsmith/Local Sites/oeg/app/public/index.php(17): require('/Users/michaels...')
 #3 {main}
   thrown in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/single-events.php on line 4
+[12-May-2024 19:05:44 UTC] PHP Warning:  Undefined variable $gallery in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/additional-links.php on line 39

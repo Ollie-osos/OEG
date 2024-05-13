@@ -442,6 +442,7 @@ section {
   min-width: 2rem;
   user-select: none;
   margin-bottom: 1rem;
+  font-family: 'Trade Gothic', sans-serif;
   /* Base States */
   /* Loading Button*/
   /* Make the loading circle, if present, white when button is active */
