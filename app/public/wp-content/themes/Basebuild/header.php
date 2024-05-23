@@ -60,11 +60,36 @@ $facebook_url = get_field('facebook', 'option');
                 <div class="top-link"><a class="btn btn-primary" href="/courses">Plan your Visit</a></div>
                 <div class="top-link"><a class="btn btn-primary" href="/podcasts">Donate</a></div>
               </div>
-              <div class="nav-item nav-btn" id="header-btn"><a class="btn btn-blue">MENU</a></div>
+              <div class="nav-item nav-btn" id="header-btn"><a class="btn btn-blue"><div id="close-menu-text" style="display: none;">Close &nbsp;</div>MENU</a></div>
             </div>
-            <div class="u-flex u-justify-flex-end pt-5">
-              <img src="<?php echo get_template_directory_uri(); ?>/dist/img/accessibility.svg" alt="logo" /> &nbsp;
-              <img src="<?php echo get_template_directory_uri(); ?>/dist/img/search-icon.svg" alt="logo" />
+            <div class="u-flex u-justify-flex-end pt-5 u-items-center">
+              <div id="accesibility">
+                <div id="aa-image">
+                  <img class="toggle-aa hover-state" src="<?php echo get_template_directory_uri(); ?>/dist/img/accessibility.svg" alt="logo" style="width:26px;" />&nbsp;&nbsp;
+                </div>
+                <div id="aa-content" style="display:none;">
+                  <div class="u-flex">
+                    <div class="header-text">Text Size: &nbsp;</div>
+                    <span class="hover-state" onclick="increaseFontSize()" style="font-size: 35px; font-weight: bold">+&nbsp;</span>
+                    <span class="hover-state" onclick="decreaseFontSize()" style="font-size: 35px; font-weight: bold; top: -3px; position: relative;">- </span>
+                    <div class="header-text">&nbsp;&nbsp;&nbsp; Contrast: &nbsp;</div>
+                    <span class="hover-state" id="contrast-btn"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/contrast.svg" style="width:26px;"  alt="high contrast" /></span>
+                    <span class="hover-state close toggle-aa">&nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/dist/img/close.svg" style="width:26px;"  alt="close" />&nbsp;&nbsp;</span>
+                  </div>
+                </div>
+              </div>
+              <div id="search-nav">
+                <div id="search-image">
+                  <img class="toggle-search hover-state" src="<?php echo get_template_directory_uri(); ?>/dist/img/search-icon.svg" alt="logo" style="width:26px;" />&nbsp;&nbsp;
+                </div>
+                <div id="search-content" style="display:none;">
+                  <div class="u-flex u-items-center">
+                    <?php echo get_search_form(); ?>
+                    <span class="hover-state close toggle-search">&nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/dist/img/close.svg" style="width:26px;"  alt="close" />&nbsp;&nbsp;</span>
+                  </div>
+                </div>
+              </div>
+              
             </div>
             
           </div>
@@ -81,3 +106,32 @@ $facebook_url = get_field('facebook', 'option');
       </div>
     </div>
   </header>
+
+
+  <script>
+		$(function() {
+			var fontSize = $('p').css('font-size');
+			console.log(parseInt(fontSize));
+		});
+
+		function increaseFontSize() {
+			var currentFontSize = parseInt($('p').css('font-size'));
+			var currentLineHeight = parseInt($('p').css('line-height'));
+			$('p').css('font-size', (currentFontSize + 4) + "px");
+			$('p').css('line-height', (currentLineHeight + 8) + "px");
+			sessionStorage.setItem('fontSize', currentFontSize);
+			sessionStorage.setItem('lineHeight', currentLineHeight);
+
+			var myVariable = sessionStorage.getItem('lineHeight');
+			console.log('Session variable:', myVariable);
+		}
+
+		function decreaseFontSize() {
+			var currentFontSize = parseInt($('p').css('font-size'));
+			var currentLineHeight = parseInt($('p').css('line-height'));
+			$('p').css('font-size', (currentFontSize - 4) + "px");
+			$('p').css('line-height', (currentLineHeight - 4) + "px");
+			sessionStorage.setItem('fontSize', currentFontSize);
+			sessionStorage.setItem('lineHeight', currentLineHeight);
+		}
+	</script>
