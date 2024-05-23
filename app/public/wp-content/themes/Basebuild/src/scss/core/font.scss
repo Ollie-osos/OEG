@@ -105,11 +105,11 @@ p,
 article,
 blockquote {
     font-size: 20px; 
-	line-height: 22px;
+	line-height: normal;
     margin-bottom: 1rem;
     @include screen-above('lg') {
 		font-size: 25px; //results in 16px
-		line-height: 28px;
+		line-height: normal;
 	}
 }
 
@@ -223,6 +223,12 @@ mark,
 
 .uppercase{
     text-transform: uppercase;
+}
+
+.header-text{
+    text-transform: uppercase;
+    font-family: $font-alt;
+    font-size: 24px;
 }
 
 .faded {

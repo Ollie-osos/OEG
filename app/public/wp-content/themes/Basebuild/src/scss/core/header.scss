@@ -58,6 +58,8 @@
         /* Flex display 768px and higher */
         overflow: unset;
         opacity: 0;
+        padding-bottom: 35px;
+        border-bottom: thin solid black;
     }
 
     .header-top{
@@ -111,6 +113,7 @@
     }
     .social-container{
         text-align: right;
+        padding-top: 50px;
     }
 }
 

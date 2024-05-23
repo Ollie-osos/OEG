@@ -8,14 +8,13 @@
 */
 @mixin cirrus-input {
     width: 100%;
-    border: 1px solid map-get($grays, '300');
-    border-radius: 3px;
-    font-family: 'Nunito Sans';
-    font-size: var(--font-size-m);
+    border: 1px solid black;
+    // font-family: 'Nunito Sans';
+    font-size: 18px;
     letter-spacing: 0.02rem;
     transition: all 0.3s;
     outline: none;
-    padding: 0.85rem 1.1rem;
+    padding: 12px 1.1rem;
     z-index: 1;
 
     /* Input Field Sizes */
