@@ -12,6 +12,8 @@ if($type == 'en_'){
     $gallery = 'engagement_gallery';
 }elseif($type == 'ed_'){
     $gallery = 'education_gallery';
+}else{
+    $gallery = false;
 }
 ?>
 
@@ -36,8 +38,9 @@ if($type == 'en_'){
         </div>
             
         <?php 
-        $images = get_field($gallery);
-        if( $images ): ?>
+        
+        if( $gallery ): 
+            $images = get_field($gallery); ?>   
             <div class="row">
                 <?php foreach( $images as $image ): ?>
                     <div class="col-md-6 col-sm-12">
