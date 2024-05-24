@@ -159,10 +159,16 @@ fieldset {
   --font-size-xl: 1.75rem; }
 
 .access_options {
-  display: flex; }
-  .access_options img {
-    align-self: center;
-    height: 30px; }
+  padding-bottom: 10px !important;
+  align-self: center; }
+  .access_options .img {
+    padding-right: 20px;
+    width: 65px; }
+    .access_options .img img {
+      height: 30px; }
+  .access_options .text {
+    width: 100%;
+    font-size: 20px; }
 
 /*
     Group selectors that share common styling.
@@ -279,6 +285,11 @@ section {
     @media screen and (min-width: 1024px) {
       section.hero {
         text-align: left; } }
+  section.title-section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important; }
+    section.title-section h1, section.title-section .h1 {
+      margin-bottom: 0; }
   section.featured-event {
     padding-top: 0;
     padding-bottom: 0; }
@@ -2321,9 +2332,10 @@ label:last-child:not(:first-child):not(.form-group-label) {
     overflow: unset;
     opacity: 0;
     padding-bottom: 35px;
-    border-bottom: thin solid black; }
+    border-bottom: thin solid black;
+    display: none; }
   .header .header-top {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     flex-direction: column; }
   .header .header-brand {
     -webkit-overflow-scrolling: touch;

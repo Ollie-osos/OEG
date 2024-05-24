@@ -1,7 +1,7 @@
 <?php 
 $subtitle = get_field('subtitle');
 ?>
-<section class="section title-section">
+<section class="section title-section border-bottom">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">

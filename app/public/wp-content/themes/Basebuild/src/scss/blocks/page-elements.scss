@@ -3,9 +3,18 @@
 @import '../core/theme.scss';
 
 .access_options{
-    display: flex;
-    img{
-        align-self: center;
-        height: 30px;
+    padding-bottom: 10px !important;
+    align-self: center;
+    .img{
+        // align-self: center;
+        padding-right: 20px;
+        width: 65px;
+        img{
+            height: 30px;
+        }
+    }
+    .text{
+        width: 100%;
+        font-size: 20px;
     }
 }

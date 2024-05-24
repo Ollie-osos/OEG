@@ -60,10 +60,11 @@
         opacity: 0;
         padding-bottom: 35px;
         border-bottom: thin solid black;
+        display: none;
     }
 
     .header-top{
-        padding-bottom: 30px;
+        padding-bottom: 20px;
         flex-direction: column;
     }
 
