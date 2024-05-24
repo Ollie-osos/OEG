@@ -56,9 +56,9 @@ $facebook_url = get_field('facebook', 'option');
           <div class="right-links pt-5">
             <div class="u-flex">
               <div class="nav-item top-links">
-                <div class="top-link"><a class="btn btn-primary" href="/coaching">Whats On</a></div>
-                <div class="top-link"><a class="btn btn-primary" href="/courses">Plan your Visit</a></div>
-                <div class="top-link"><a class="btn btn-primary" href="/podcasts">Donate</a></div>
+                <div class="top-link"><a class="btn btn-primary" href="/events">Whats On</a></div>
+                <div class="top-link"><a class="btn btn-primary" href="/plan-your-visit">Plan your Visit</a></div>
+                <div class="top-link"><a class="btn btn-primary" href="/donate">Donate</a></div>
               </div>
               <div class="nav-item nav-btn" id="header-btn"><a class="btn btn-blue"><div id="close-menu-text" style="display: none;">Close &nbsp;</div>MENU</a></div>
             </div>
