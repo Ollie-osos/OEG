@@ -3,6 +3,12 @@
 * Template Name: Plan Your Visit
 *
 */
+$phone = get_field('phone', 'option');
+$phone_display = get_field('phone_display', 'option');
+$email = get_field('email', 'option');
+$address = get_field('address', 'option');
+$transport_options = get_field('transport_options');
+
 get_header(); ?>
 
 <div class="page">
@@ -11,20 +17,41 @@ get_header(); ?>
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-4 sidebar">
-                <h4>Open Eye Gallery</h4>
-				<p>Open Eye Gallery,<br>19 Mann Island,<br>Liverpool, L3 1BP<br></p>
+                <h3>Open Eye Gallery</h3>
+                <p><?php echo $address; ?><br></p>
 				<p>Open 10 – 5, Tue–Sun</p>
-				<a href="tel:+441512366768">+44 (0)151 236 6768</a>
-				<a href="mailto:info@openeye.org.uk">info@openeye.org.uk</a>
+				<a href="tel:<?php echo $phone; ?>"><?php echo $phone_display; ?></a>
+				<a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
             </div>
             <div class="col-sm-12 col-md-8 content">
-                <img src="<?php echo get_template_directory_uri();?>/dist/img/map.png" alt="map">
-                <p>text text</p>
+                <gmp-map center="53.403831481933594,-2.993616819381714" zoom="14" map-id="DEMO_MAP_ID">
+                    <gmp-advanced-marker position="53.403831481933594,-2.993616819381714" title="My location"></gmp-advanced-marker>
+                </gmp-map>
+                <p><?php the_content (); ?></p>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">Expand to see transport options</div>
+                        <div class="accordion-content"><?php echo $transport_options; ?></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 </div>
+<script>
+$(document).ready(function() {
+    $('.accordion-header').click(function() {
+        // Toggle the current accordion content
+        $(this).next('.accordion-content').slideToggle();
+        // Toggle the active class for the clicked header
+        $(this).toggleClass('active');
+        // Hide the other accordion contents and remove their active class
+        $('.accordion-content').not($(this).next()).slideUp().prev().removeClass('active');
+    });
+});
+</script>
 <?php get_footer();
 
 
+// AIzaSyCDFl4uZVDXhAA0gmn4gDLjVMIrxyRn2lc

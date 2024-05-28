@@ -40,6 +40,7 @@ $facebook_url = get_field('facebook', 'option');
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel='dns-prefetch' href='//polyfill.io' />
   <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDFl4uZVDXhAA0gmn4gDLjVMIrxyRn2lc&callback=console.debug&libraries=maps,marker&v=beta"></script>
   <?php wp_head(); ?>
 </head>
 
