@@ -77,6 +77,10 @@
     justify-content: center;
     cursor: pointer;
     z-index: 100;
+    transition: all 0.3s linear;
+    &:hover{
+        background-color: black;
+    }
     @include screen-below(md){
         bottom: 25px;
         right: 25px;

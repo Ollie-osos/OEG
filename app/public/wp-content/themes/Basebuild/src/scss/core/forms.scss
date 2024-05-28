@@ -372,3 +372,7 @@ label {
 ::-webkit-input-placeholder {
     color: $placeholder-fg; /* Lighter than the default */
 }
+
+input#searchsubmit{
+    margin-bottom: 0 !important;
+}

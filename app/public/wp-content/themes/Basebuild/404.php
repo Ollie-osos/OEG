@@ -9,7 +9,7 @@
 
 get_header(); ?>
 <div class="page">
-  <section class="section bg-light-aqua">
+  <section class="section">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
@@ -22,6 +22,10 @@ get_header(); ?>
             <li>Return to the <a href="/">home page</a></li>
             <li>Click the <a href="javascript:history.back()">Back</a> button</li>
           </ul>
+          <br>
+
+          <h2>Or search here:</h2>
+          <div><?php echo get_search_form(); ?></div>
         </div>
       </div>
   </section>

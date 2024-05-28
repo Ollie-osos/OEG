@@ -3,7 +3,7 @@
 get_header(); ?>
 
 <div class="page">
-    <section class="section">
+    <section class="section events">
         <div class="container">
             <div class="row">
                 <div id="filters">
@@ -27,10 +27,9 @@ get_header(); ?>
 
                     <button id="apply-filters">Apply Filters</button>
                 </div>
-                <div id="posts-list">
-                    <!-- Post data will be displayed here -->
-                </div>
-
+            </div>
+            <div class="row" id="posts-list"> <!-- Post data will be displayed here -->
+                    
             </div>
         </div>
     </section>
