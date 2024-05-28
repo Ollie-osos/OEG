@@ -6,34 +6,97 @@ require_once( '../wp-load.php' );
 $category = $_POST['category'];
 $dateFilter = $_POST['dateFilter'];
 
-$args = array(
-    'post_type' => 'events',
-    'meta_key'      => 'event_type',
-    'meta_value'    => $category,
-    'posts_per_page' => -1, // Get all posts
-    // 'date_query' => array(),
-);
+$date_range = isset($_POST['dateFilter']) ? $_POST['dateFilter'] : '';
 
-// Construct date query based on selected filter
-// switch ($dateFilter) {
-//     case 'today':
-//         $args['date_query'][] = array(
-//             'after' => 'midnight',
-//             'before' => 'tomorrow',
-//             'inclusive' => true,
-//         );
-//         break;
-//     case 'week':
-//         $args['date_query'][] = array(
-//             'after' => '1 week ago',
-//         );
-//         break;
-//     case 'month':
-//         $args['date_query'][] = array(
-//             'after' => '1 month ago',
-//         );
-//         break;
-// }
+// Get today's date
+$today = date('Ymd');
+
+// Calculate the date for the next 7 days
+$next_week_end = date('Ymd', strtotime('+7 days'));
+
+// Calculate the date for the next 30 days
+$next_month_end = date('Ymd', strtotime('+30 days'));
+
+// Arguments for the custom query
+
+$date_query = array();
+if ($date_range == 'today') {
+    $date_query = array(
+        'relation' => 'AND',
+        array(
+            'key' => 'start_date',
+            'value' => $today,
+            'compare' => '<=',
+            'type' => 'DATE',
+        ),
+        array(
+            'key' => 'end_date',
+            'value' => $today,
+            'compare' => '>=',
+            'type' => 'DATE',
+        ),
+    );
+} elseif ($date_range == 'week') {
+    $date_query = array(
+        'relation' => 'AND',
+        array(
+            'key' => 'start_date',
+            'value' => $next_week_end,
+            'compare' => '<=',
+            'type' => 'DATE',
+        ),
+        array(
+            'key' => 'end_date',
+            'value' => $today,
+            'compare' => '>=',
+            'type' => 'DATE',
+        ),
+    );
+} elseif ($date_range == 'month') {
+    $date_query = array(
+        'relation' => 'AND',
+        array(
+            'key' => 'start_date',
+            'value' => $next_month_end,
+            'compare' => '<=',
+            'type' => 'DATE',
+        ),
+        array(
+            'key' => 'end_date',
+            'value' => $today,
+            'compare' => '>=',
+            'type' => 'DATE',
+        ),
+    );
+}
+
+// Arguments for the custom query
+$args = array(
+    'post_type' => 'events', // Change to your post type
+    'meta_query' => array(
+        'relation' => 'AND',
+        $date_query,
+        // Query for ACF select field
+        // array(
+        //     'relation' => 'OR',
+        //     array(
+        //         'key' => 'event_type',
+        //         'value' => 'exhibition', // Change to the value you are looking for
+        //         'compare' => 'LIKE',
+        //     ),
+        //     array(
+        //         'key' => 'event_type',
+        //         'value' => 'event', // Add more values as needed
+        //         'compare' => 'LIKE',
+        //     ),
+        // ),
+        array(
+            'key' => 'event_type',
+            'value' => $category, // Change to the value you are looking for
+            'compare' => 'LIKE',
+        ),
+    ),
+);
 
 // Query WordPress posts
 $posts_query = new WP_Query($args);
@@ -41,18 +104,25 @@ $posts_query = new WP_Query($args);
 // Display post data in HTML format
 if ($posts_query->have_posts()) :
     while ($posts_query->have_posts()) : $posts_query->the_post();
-        // Output post data as needed
+        
+        $labels = array_column(get_field('event_type'), 'label');
+        $implodeLabels = implode(', ', $labels); 
+        $end_date = DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y'); 
+        $start_date = DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y'); 
         ?>
-        <div class="post">
-            <h2><?php the_title(); ?></h2>
-            <div class="post-content">
-                <?php the_content(); ?>
-            </div>
+        <div class="post col-sm-12 col-md-6">
+            <a href="<?php the_permalink(); ?>">
+                <div class="background-image" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')"> </div>
+                <div class="text pt-2"> 
+                    <h3 class="black-text"><?php the_title(); ?></h3>
+                    <?php echo '<h3 class="red-text">'.$start_date.' - '.$end_date.'</h3><h3 class="blue-text">'.$implodeLabels.'</h3>'; ?>
+                </div>
+            </a>
         </div>
         <?php
     endwhile;
     wp_reset_postdata(); // Restore global post data
 else :
-    echo '<p>No posts found.</p>';
+    
 endif;
 ?>
