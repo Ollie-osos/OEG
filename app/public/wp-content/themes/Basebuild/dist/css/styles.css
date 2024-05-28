@@ -583,7 +583,7 @@ section {
   /* STATES */
   /* GLYPHS */
   /* Alternatives to pad-left and pad-right */ }
-  .btn:hover, button:hover, [type="submit"]:hover, [type="reset"]:hover, [type="button"]:hover {
+  .btn:hover, .btn.selected, button:hover, button.selected, [type="submit"]:hover, [type="submit"].selected, [type="reset"]:hover, [type="reset"].selected, [type="button"]:hover, [type="button"].selected {
     transition: all var(--animation-duration);
     background-color: black;
     color: white; }

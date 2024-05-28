@@ -27,7 +27,7 @@
     margin-bottom: 1rem;
     font-family: 'Trade Gothic', sans-serif; 
     /* Base States */
-    &:hover {
+    &:hover, &.selected {
         transition: all var(--animation-duration);
         background-color: black;
         color: white;
