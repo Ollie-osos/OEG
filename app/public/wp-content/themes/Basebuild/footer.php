@@ -7,6 +7,16 @@
  * @since FoundationPress 1.0.0
  */
 
+
+// $current_day = strtolower(date('l')); 
+// $opening_time = get_field($current_day, 'option');
+
+// if ($opening_time) {
+//   $open_today = $opening_time['time'];
+// } else {
+//   $open_today = "Closed";
+// }
+
 // Get vars from options ACF
 $email_form = get_field('email_form', 'option');
 $footer_description = get_field('footer_description', 'option');
@@ -31,10 +41,10 @@ $facebook_url = get_field('facebook', 'option');
 			</div>
 			<div class="col-md-3 col-sm-12">
 				<h4>Gallery Information</h4>
-				<p>Open Eye Gallery,<br>19 Mann Island,<br>Liverpool, L3 1BP<br></p>
+				<p><?php echo $address; ?><br></p>
 				<p>Open 10 – 5, Tue–Sun</p>
-				<a href="tel:+441512366768">+44 (0)151 236 6768</a>
-				<a href="mailto:info@openeye.org.uk">info@openeye.org.uk</a>
+				<a href="tel:<?php echo $phone; ?>"><?php echo $phone_display; ?></a>
+				<a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
 				<br>
 				<a href="/venue-hire">Venue Hire</a>
 				<a href="/jobs">Jobs</a>

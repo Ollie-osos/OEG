@@ -10,7 +10,7 @@
 /* FONT */
 $font: 'Open Sans', sans-serif;
 $font-alt: 'Trade Gothic', sans-serif;
-$line-height: 22px;
+$line-height: normal;
 $line-height-pre: 22px;
 $article-font-size: 1.7rem; //slightly larger text for articles and actual content
 
@@ -44,18 +44,18 @@ h6 {
 
 h1, .h1 {
 	font-size: 45px;
-	line-height: 40px;
+	line-height: $line-height;
 	font-weight: 700;
 	@include screen-above('lg') {
         font-size: 60px;
-		line-height: 65px;
+		line-height: $line-height;
 		margin-bottom: 40px;
     }
 }
 
 h2, .h2 {
 	font-size: 30px;
-	line-height: 35px;
+	line-height: $line-height;
 	font-weight: 700;
 	margin-bottom: 40px;
 	&:first-child{
@@ -64,20 +64,27 @@ h2, .h2 {
 	}
 	@include screen-above('lg') {
         font-size: 37px;
-		line-height: 45px;
+		line-height: $line-height;
 		margin-bottom: 54px;
     }
 }
 
 h3, .h3 {
     font-size: 24px;
-    line-height: 25px;
+    line-height: $line-height;
+    @include screen-above('lg') {
+		font-size: 32px; 
+		line-height: $line-height;
+	}
 }
 
 h4, .h4 {
-	font-size: 19px;
+	font-size: 20px;
 	margin-bottom: 5px;
-	
+	@include screen-above('lg') {
+		font-size: 25px; 
+		line-height: $line-height;
+	}
 }
 
 .font-alt {
@@ -86,14 +93,14 @@ h4, .h4 {
 
 body{
 	font-size: 20px; 
-	line-height: 22px;
+	line-height: $line-height;
 	font-family: $font;
 	color: black;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 	@include screen-above('lg') {
-		font-size: 25px; //results in 16px
-		line-height: 28px;
+		font-size: 25px; 
+		line-height: $line-height;
 	}
 }
 
@@ -105,11 +112,11 @@ p,
 article,
 blockquote {
     font-size: 20px; 
-	line-height: normal;
+	line-height: $line-height;
     margin-bottom: 1rem;
     @include screen-above('lg') {
 		font-size: 25px; //results in 16px
-		line-height: normal;
+		line-height: $line-height;
 	}
 }
 
