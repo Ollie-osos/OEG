@@ -3,10 +3,10 @@
 require_once( '../wp-load.php' );
 
 // Fetch posts based on selected filters
-$category = $_POST['category'];
-$dateFilter = $_POST['dateFilter'];
 
 $date_range = isset($_POST['dateFilter']) ? $_POST['dateFilter'] : '';
+$category1 = isset($_POST['category1']) ? $_POST['category1'] : '';
+$category2 = isset($_POST['category2']) ? $_POST['category2'] : '';
 
 // Get today's date
 $today = date('Ymd');
@@ -77,24 +77,24 @@ $args = array(
         'relation' => 'AND',
         $date_query,
         // Query for ACF select field
-        // array(
-        //     'relation' => 'OR',
-        //     array(
-        //         'key' => 'event_type',
-        //         'value' => 'exhibition', // Change to the value you are looking for
-        //         'compare' => 'LIKE',
-        //     ),
-        //     array(
-        //         'key' => 'event_type',
-        //         'value' => 'event', // Add more values as needed
-        //         'compare' => 'LIKE',
-        //     ),
-        // ),
         array(
-            'key' => 'event_type',
-            'value' => $category, // Change to the value you are looking for
-            'compare' => 'LIKE',
+            'relation' => 'OR',
+            array(
+                'key' => 'event_type',
+                'value' => $category1, // Change to the value you are looking for
+                'compare' => 'LIKE',
+            ),
+            array(
+                'key' => 'event_type',
+                'value' => $category2, // Add more values as needed
+                'compare' => 'LIKE',
+            ),
         ),
+        // array(
+        //     'key' => 'event_type',
+        //     'value' => $category1, // Change to the value you are looking for
+        //     'compare' => 'LIKE',
+        // ),
     ),
 );
 
