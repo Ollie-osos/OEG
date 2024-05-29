@@ -7,7 +7,7 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div id="filters">
-                    <form id="filterForm" action="" method="post">
+                    <!-- <form id="filterForm" action="" method="post"> -->
                         <div>
                             <h3>Select Date Range</h3>
                             <div class="button-grid" id="dateRangeButtons">
@@ -21,6 +21,7 @@ get_header(); ?>
                         <div>
                             <h3>Select Categories (Choose 1 or 2)</h3>
                             <div class="button-grid" id="categoryButtons">
+                                <button type="button" data-value="" id="clear">All</button>
                                 <button type="button" data-value="in-gallery">In-Gallery</button>
                                 <button type="button" data-value="beyond-gallery">Beyond-Gallery</button>
                                 <button type="button" data-value="exhibition">Exhibition</button>
@@ -32,8 +33,8 @@ get_header(); ?>
                             <input type="hidden" name="category2" id="categoryInput2">
                         </div>
 
-                        <button type="submit">Apply</button>
-                    </form>
+                        <button id="apply-filters" type="submit">Apply</button>
+                    <!-- </form> -->
 
                 </div>
             </div>
@@ -57,7 +58,6 @@ $(document).ready(function(){
             $('#dateRangeButtons button').removeClass('selected');
             $(this).addClass('selected');
             $('#dateRangeInput').val($(this).data('value'));
-            var dateFilter = $('#dateRangeInput').val();
         });
 
         // Handle category selection
@@ -75,27 +75,30 @@ $(document).ready(function(){
             $('#categoryInput1').val(selectedCategories[0] || '');
             $('#categoryInput2').val(selectedCategories[1] || '');
 
-            var category1 = $('#categoryInput1').val(selectedCategories[0]);
-            var category2 = $('#categoryInput2').val(selectedCategories[1]);
-
         });
 
         // Handle form submission
-        $('#filterForm').on('submit', function(e) {
-            if (!$('#dateRangeInput').val()) {
-                alert('Please select a date range.');
-                return false;
-            }
-            if ($('#categoryInput1').val() === '' && $('#categoryInput2').val() === '') {
-                alert('Please select at least 1 category.');
-                return false;
-            }
+        $('#apply-filters').click(function(){
+            // if (!$('#dateRangeInput').val()) {
+            //     alert('Please select a date range.');
+            //     return false;
+            // }
+            // if ($('#categoryInput1').val() === '' && $('#categoryInput2').val() === '') {
+            //     alert('Please select at least 1 category.');
+            //     return false;
+            // }
             // return true;
+
+            var category1 = $('#categoryInput1').val();
+            var category2 = $('#categoryInput2').val();
+            var dateFilter = $('#dateRangeInput').val();
+
+            // alert(category1 + category2 + dateFilter);
 
             $.ajax({
                 url: '../ajax/get_posts.php',
                 method: 'POST',
-                data: {category: category, dateFilter: dateFilter},
+                data: {category1: category1, category2: category2, dateFilter: dateFilter},
                 success: function(response){
                     $('#posts-list').html(response);
                 }
