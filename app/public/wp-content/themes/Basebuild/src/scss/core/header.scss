@@ -72,7 +72,7 @@
         -webkit-overflow-scrolling: touch;
         -webkit-box-align: center;
         -ms-flex-align: center;
-        align-items: center;
+        align-items: flex-end;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -392,8 +392,8 @@
         // }
 
         .nav-item {
-            /* Expand link area for desktop views so it is easier to click */
-            a {
+            
+            .top-link a {
                 padding: 0.5rem 1rem;
             }
 
@@ -428,6 +428,16 @@
             padding: 0 1rem; /* Add padding to the first child, usually the logo */
         }
 
+        .nav-logo{
+            padding: 0 !important;
+        }
+
+        .nav-opening{
+            padding-left: 40px;
+            @include screen-above('sm'){
+                padding-left: 60px;
+            }
+        }
         /* Hide dropdown menu on mobile */
         .header-nav {
             height: 0;

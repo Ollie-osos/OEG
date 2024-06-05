@@ -169,6 +169,12 @@ fieldset {
   .access_options .text {
     width: 100%;
     font-size: 20px; }
+  .ev_access .access_options .img {
+    display: inline;
+    padding-right: 10px;
+    width: 65px; }
+    .ev_access .access_options .img img {
+      height: 25px; }
 
 .accordion {
   width: 100%;
@@ -199,6 +205,29 @@ fieldset {
 
 gmp-map {
   height: 400px; }
+
+.button-grid button {
+  width: 100%; }
+
+.button-grid#categoryButtons {
+  margin-right: 0; }
+  .button-grid#categoryButtons button, .button-grid#categoryButtons h3 {
+    display: inline-block;
+    width: 100%; }
+    @media screen and (min-width: 768px) {
+      .button-grid#categoryButtons button, .button-grid#categoryButtons h3 {
+        width: 241px; } }
+    @media screen and (min-width: 1024px) {
+      .button-grid#categoryButtons button, .button-grid#categoryButtons h3 {
+        width: 300px; } }
+
+.page-sidebar h5 {
+  padding-bottom: 5px;
+  padding-top: 10px; }
+
+.social-share img {
+  cursor: pointer;
+  padding-right: 10px; }
 
 /*
     Group selectors that share common styling.
@@ -596,6 +625,14 @@ section {
     opacity: 0.5; }
     .btn:disabled:active, button:disabled:active, [type="submit"]:disabled:active, [type="reset"]:disabled:active, [type="button"]:disabled:active {
       pointer-events: none; }
+  .btn.red, button.red, [type="submit"].red, [type="reset"].red, [type="button"].red {
+    border-color: #D8004E; }
+    .btn.red:hover, button.red:hover, [type="submit"].red:hover, [type="reset"].red:hover, [type="button"].red:hover {
+      background-color: #D8004E; }
+  .btn.blue, button.blue, [type="submit"].blue, [type="reset"].blue, [type="button"].blue {
+    border-color: #0048FF; }
+    .btn.blue:hover, button.blue:hover, [type="submit"].blue:hover, [type="reset"].blue:hover, [type="button"].blue:hover {
+      background-color: #0048FF; }
   .btn.outline, button.outline, [type="submit"].outline, [type="reset"].outline, [type="button"].outline {
     --btn-color: transparent; }
     .btn.outline:hover, button.outline:hover, [type="submit"].outline:hover, [type="reset"].outline:hover, [type="button"].outline:hover {
@@ -2385,7 +2422,7 @@ input#searchsubmit {
     -webkit-overflow-scrolling: touch;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    align-items: flex-end;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2625,26 +2662,24 @@ input#searchsubmit {
       justify-content: center;
       margin-left: auto;
       margin-right: auto; }
-    .header .nav-item {
-      /* Expand link area for desktop views so it is easier to click */ }
-      .header .nav-item a {
-        padding: 0.5rem 1rem; }
-      .header .nav-item .dropdown-menu {
-        opacity: 0;
-        pointer-events: none;
-        /* Make cursor not respond to menu links when not displayed */ }
-      .header .nav-item .dropdown-menu.dropdown-animated {
-        -webkit-transform: translateY(-5px);
-        /* Used for transitional drop down effect */
-        transform: translateY(-5px); }
-      .header .nav-item .dropdown-menu.dropdown-shown,
-      .header .nav-item.toggle-hover:hover .dropdown-menu,
-      .header .nav-item .dropdown-menu.dropdown-animated.dropdown-shown {
-        opacity: 1;
-        -webkit-transform: none;
-        /* Used for transitional drop down effect */
-        transform: none;
-        pointer-events: auto; } }
+    .header .nav-item .top-link a {
+      padding: 0.5rem 1rem; }
+    .header .nav-item .dropdown-menu {
+      opacity: 0;
+      pointer-events: none;
+      /* Make cursor not respond to menu links when not displayed */ }
+    .header .nav-item .dropdown-menu.dropdown-animated {
+      -webkit-transform: translateY(-5px);
+      /* Used for transitional drop down effect */
+      transform: translateY(-5px); }
+    .header .nav-item .dropdown-menu.dropdown-shown,
+    .header .nav-item.toggle-hover:hover .dropdown-menu,
+    .header .nav-item .dropdown-menu.dropdown-animated.dropdown-shown {
+      opacity: 1;
+      -webkit-transform: none;
+      /* Used for transitional drop down effect */
+      transform: none;
+      pointer-events: auto; } }
 
 /* Add scrolling support in header */
 .header {
@@ -2653,6 +2688,13 @@ input#searchsubmit {
   .header .header-brand .nav-item:first-child {
     padding: 0 1rem;
     /* Add padding to the first child, usually the logo */ }
+  .header .nav-logo {
+    padding: 0 !important; }
+  .header .nav-opening {
+    padding-left: 40px; }
+    @media screen and (min-width: 768px) {
+      .header .nav-opening {
+        padding-left: 60px; } }
   .header .header-nav {
     height: 0;
     /* Show the dropdown */
@@ -2961,11 +3003,6 @@ input#searchsubmit {
 /* This works well with panel */
 section {
   display: block; }
-
-.content {
-  max-width: 60em;
-  margin: 0 auto 1.5em;
-  width: 80%; }
 
 .fullscreen {
   top: 0;
@@ -3486,6 +3523,18 @@ section {
 .align-baseline {
   align-self: baseline;
   margin-bottom: 5px; }
+
+.show-mobile {
+  display: block; }
+  @media screen and (min-width: 768px) {
+    .show-mobile {
+      display: none; } }
+
+.show-desktop {
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .show-desktop {
+      display: block; } }
 
 /*
     Group selectors that share common styling.

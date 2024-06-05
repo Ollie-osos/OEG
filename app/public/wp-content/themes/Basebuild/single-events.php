@@ -22,34 +22,37 @@ if( $access ):
         // Use a switch-case statement to perform different actions based on the value of $item
         switch ($item) {
             case "wheelchair":
-                $access_icons .= " <span class='access_icon icon_wheelchair'></span>";
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-ga.png" alt="access icon"></div>';
                 break;
             case "toilets":
-                $access_icons .= " <span class='access_icon icon_toilets'>&nbsp;</span>";
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-t.png" alt="access icon"></div>';
                 break;
             case "accessible-toilet":
-                $access_icons .= " <span class='access_icon icon_accessible-toilet'>&nbsp;</span>";
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-at.png" alt="access icon"></div>';
                 break;
             case "gender-neutral":
-                $access_icons .= " <span class='access_icon icon_gender-neutral'>&nbsp;</span>";
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-gn.png" alt="access icon"></div>';
                 break;
             case "quiet-hours":
-                $access_icons .= " <span class='access_icon icon_quiet-hours'>&nbsp;</span>";
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-qh.png" alt="access icon"></div>';
                 break;
             case "hearing-loop":
-                $access_icons .= " <span class='access_icon icon_hearing-loop'>&nbsp;</span>";
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-hl.png" alt="access icon"></div>';
                 break;
             case "baby-changing":
-                $access_icons .= " <span class='access_icon icon_baby-changing'>&nbsp;</span>";
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-bc.png" alt="access icon"></div>';
                 break;
             case "refreshments":
-                $access_icons .= " <span class='access_icon icon_refreshments'>&nbsp;</span>";
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-r.png" alt="access icon"></div>';
                 break;
             case "parking":
-                $access_icons .= " <span class='access_icon icon_parking'>&nbsp;</span>";
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-p.png" alt="access icon"></div>';
                 break;
             case "disabled-parking":
-                $access_icons .= " <span class='access_icon icon_disabled-parking'>&nbsp;</span>";
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-dp.png" alt="access icon"></div>';
+                break;
+            case "good-access":
+                $access_icons .=  '<div class="img"><img src="'. get_template_directory_uri().'/dist/img/access-ga.png" alt="access icon"></div>';
                 break;
         
             default:
@@ -64,36 +67,49 @@ endif;
     <section class="ev_hero">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-5 page-sidebar">
-                    <div class="mobile-hero">
+                <div class="col-sm-12 col-md-5 col-lg-4 page-sidebar">
+                    <div class="show-mobile">
                         <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Hero image">
                     </div>
-                    <div class="ev_title"> <h1><?php the_title(); ?></h1></div>
-                    <div class="ev_date"><?php echo $start_date .' - '. $end_date; ?></div>
+                    <div class="ev_title"><h1><?php the_title(); ?></h1></div>
+                    <div class="ev_date"><h3 class="red-text"><?php echo $start_date .' - '. $end_date; ?></h3></div>
                     <div class="ev_type">
-                        <p><?php  echo $implodeLabels; ?></p>
+                        <h3 class="blue-text"><?php  echo $implodeLabels; ?></h3>
+                        <br>
                     </div>
-                    <div class="ev_address">
-                        <h5>Address:</h5>
-                        <p><?php echo $address; ?></p>
-                    </div>
-                    <div class="ev_additional_date">
-                        <h5>Date:</h5>
-                        <p><?php echo $additional_date; ?></p>
-                    </div>
-                    <div class="ev_opening_times">
-                        <h5>Open:</h5>
-                        <p><?php echo $opening_times; ?></p>
-                    </div>
-                    <div class="ev_ticketing">
-                        <h5>Ticketing:</h5>
-                        <p><?php echo $ticketing; ?></p>
-                    </div>
-                    <div class="ev_access">
-                        <h5>Access</h5>
-                        <?php echo $access_icons; ?>
-                        <a href="/access">Further access information</a>
-                    </div>
+                    <?php if($address){ ?>
+                        <div class="ev_address">
+                            <h5>Address:</h5>
+                            <p><?php echo $address; ?></p>
+                        </div>
+                    <?php } ?>
+                    <?php if($additional_date){ ?>
+                        <div class="ev_additional_date">
+                            <h5>Date:</h5>
+                            <p><?php echo $additional_date; ?></p>
+                        </div>
+                    <?php } ?>
+                    <?php if($opening_times){ ?>
+                        <div class="ev_opening_times">
+                            <h5>Open:</h5>
+                            <p><?php echo $opening_times; ?></p>
+                        </div>
+                    <?php } ?>
+                    <?php if($ticketing){ ?>
+                        <div class="ev_ticketing">
+                            <h5>Ticketing:</h5>
+                            <a href="<?php echo $ticketing['url']; ?>"><?php echo $ticketing['title']; ?></a>
+                        </div>
+                    <?php } ?>
+                    <?php if($access_icons == '' ){ ?>
+                        <div class="ev_access">
+                            <h5>Access</h5>
+                            <div class="access_options">
+                                <?php echo $access_icons; ?>
+                            </div>
+                            <a href="/access">Further access information</a>
+                        </div>
+                    <?php } ?>
                     <div class="ev_access">
                         <h5>Share</h5>
                         <div class="social-share">
@@ -106,8 +122,8 @@ endif;
                     </div>
 
                 </div>
-                <div class="col-sm-12 col-md-8 col-lg-7 page-content">
-                    <div class="desktop-hero">
+                <div class="col-sm-12 col-md-7 col-lg-8 page-content">
+                    <div class="show-desktop">
                         <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Hero image">
                     </div>
                     <div class="ev_content">
@@ -117,9 +133,11 @@ endif;
             </div>
         </div>
     </section>
-    
+    <?php get_template_part( 'template-parts/divide'); ?>
     <?php get_template_part( 'template-parts/related-events'); ?>
+    <?php get_template_part( 'template-parts/divide'); ?>
     <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pv_' )); ?>
+    <?php get_template_part( 'template-parts/mailing-list'); ?>
 </div>
 
 <script>

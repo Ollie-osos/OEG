@@ -19,8 +19,10 @@ get_header(); ?>
     </section>
     <?php get_template_part( 'template-parts/carousel', null, array('type' => 'event_' )); ?>
     <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'en_' )); ?>
+    <?php get_template_part( 'template-parts/divide'); ?>
     <?php get_template_part( 'template-parts/carousel', null, array('type' => 'news_' )); ?>
     <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'ed_' )); ?>
+    <?php get_template_part( 'template-parts/divide'); ?>
     <?php get_template_part( 'template-parts/mailing-list'); ?>
 
 </div>

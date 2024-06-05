@@ -17,6 +17,16 @@
         width: 100%;
         font-size: 20px;
     }
+    .ev_access &{
+        .img{
+            display: inline;
+            padding-right: 10px;
+            width: 65px;
+            img{
+                height: 25px;
+            }
+        }
+    }
 }
 
 .accordion {
@@ -53,5 +63,34 @@ gmp-map {
     height: 400px; 
 }
 
+.button-grid{
+    button{
+        width: 100%;
+    }
+    &#categoryButtons{
+        margin-right: 0;
+        button, h3{
+            display: inline-block;
+            width: 100%;
+            @include screen-above('sm'){
+                width: 241px;
+            }
+            @include screen-above('md'){
+                width: 300px;
+            }
+        }
+    }
+}
 
 
+.page-sidebar{
+    h5{
+        padding-bottom: 5px;
+        padding-top: 10px;
+    }
+}
+
+.social-share img{
+    cursor: pointer;
+    padding-right: 10px;
+}
