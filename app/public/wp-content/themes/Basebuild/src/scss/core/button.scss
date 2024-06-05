@@ -49,6 +49,19 @@
             pointer-events: none;
         }
     }
+    &.red{
+        border-color: $red;
+        &:hover{
+            background-color: $red;
+        }
+    }
+
+    &.blue{
+        border-color: $blue;
+        &:hover{
+            background-color: $blue;
+        }
+    }
 
     &.outline {
         --btn-color: transparent;

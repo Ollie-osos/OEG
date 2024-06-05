@@ -17,7 +17,7 @@ if($type == 'en_'){
 }
 ?>
 
-<section class="additional-links border-bottom">
+<section class="additional-links">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6 u-flex-column u-flex u-justify-space-between">

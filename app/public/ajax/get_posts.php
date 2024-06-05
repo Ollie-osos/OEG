@@ -18,7 +18,6 @@ $next_week_end = date('Ymd', strtotime('+7 days'));
 $next_month_end = date('Ymd', strtotime('+30 days'));
 
 // Arguments for the custom query
-
 $date_query = array();
 if ($date_range == 'today') {
     $date_query = array(
@@ -77,24 +76,24 @@ $args = array(
         'relation' => 'AND',
         $date_query,
         // Query for ACF select field
-        array(
-            'relation' => 'OR',
-            array(
-                'key' => 'event_type',
-                'value' => $category1, // Change to the value you are looking for
-                'compare' => 'LIKE',
-            ),
-            array(
-                'key' => 'event_type',
-                'value' => $category2, // Add more values as needed
-                'compare' => 'LIKE',
-            ),
-        ),
         // array(
-        //     'key' => 'event_type',
-        //     'value' => $category1, // Change to the value you are looking for
-        //     'compare' => 'LIKE',
+        //     'relation' => 'OR',
+        //     array(
+        //         'key' => 'event_type',
+        //         'value' => $category1, // Change to the value you are looking for
+        //         'compare' => 'LIKE',
+        //     ),
+        //     array(
+        //         'key' => 'event_type',
+        //         'value' => $category2, // Add more values as needed
+        //         'compare' => 'LIKE',
+        //     ),
         // ),
+        array(
+            'key' => 'event_type',
+            'value' => $category1, // Change to the value you are looking for
+            'compare' => 'LIKE',
+        ),
     ),
 );
 
@@ -119,6 +118,9 @@ if ($posts_query->have_posts()) :
                 </div>
             </a>
         </div>
+        <!-- <script>
+            alert('hey');
+        </script> -->
         <?php
     endwhile;
     wp_reset_postdata(); // Restore global post data
