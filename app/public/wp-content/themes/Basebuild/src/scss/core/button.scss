@@ -27,7 +27,7 @@
     margin-bottom: 1rem;
     font-family: 'Trade Gothic', sans-serif; 
     /* Base States */
-    &:hover, &.selected {
+    &:hover {
         transition: all var(--animation-duration);
         background-color: black;
         color: white;
@@ -54,6 +54,10 @@
         &:hover{
             background-color: $red;
         }
+        &.selected {
+            background-color: $red;
+            color: white;
+        }
     }
 
     &.blue{
@@ -61,7 +65,23 @@
         &:hover{
             background-color: $blue;
         }
+        &.selected {
+            background-color: $blue;
+            color: white;
+        }
     }
+
+    &.green{
+        border-color: $green;
+        background-color: $green;
+        color: white;
+        &:hover{
+            background-color: black;
+            border-color: black;
+        }
+    }
+
+    
 
     &.outline {
         --btn-color: transparent;

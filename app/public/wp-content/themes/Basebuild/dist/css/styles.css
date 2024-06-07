@@ -612,7 +612,7 @@ section {
   /* STATES */
   /* GLYPHS */
   /* Alternatives to pad-left and pad-right */ }
-  .btn:hover, .btn.selected, button:hover, button.selected, [type="submit"]:hover, [type="submit"].selected, [type="reset"]:hover, [type="reset"].selected, [type="button"]:hover, [type="button"].selected {
+  .btn:hover, button:hover, [type="submit"]:hover, [type="reset"]:hover, [type="button"]:hover {
     transition: all var(--animation-duration);
     background-color: black;
     color: white; }
@@ -629,10 +629,23 @@ section {
     border-color: #D8004E; }
     .btn.red:hover, button.red:hover, [type="submit"].red:hover, [type="reset"].red:hover, [type="button"].red:hover {
       background-color: #D8004E; }
+    .btn.red.selected, button.red.selected, [type="submit"].red.selected, [type="reset"].red.selected, [type="button"].red.selected {
+      background-color: #D8004E;
+      color: white; }
   .btn.blue, button.blue, [type="submit"].blue, [type="reset"].blue, [type="button"].blue {
     border-color: #0048FF; }
     .btn.blue:hover, button.blue:hover, [type="submit"].blue:hover, [type="reset"].blue:hover, [type="button"].blue:hover {
       background-color: #0048FF; }
+    .btn.blue.selected, button.blue.selected, [type="submit"].blue.selected, [type="reset"].blue.selected, [type="button"].blue.selected {
+      background-color: #0048FF;
+      color: white; }
+  .btn.green, button.green, [type="submit"].green, [type="reset"].green, [type="button"].green {
+    border-color: #5cd5a1;
+    background-color: #5cd5a1;
+    color: white; }
+    .btn.green:hover, button.green:hover, [type="submit"].green:hover, [type="reset"].green:hover, [type="button"].green:hover {
+      background-color: black;
+      border-color: black; }
   .btn.outline, button.outline, [type="submit"].outline, [type="reset"].outline, [type="button"].outline {
     --btn-color: transparent; }
     .btn.outline:hover, button.outline:hover, [type="submit"].outline:hover, [type="reset"].outline:hover, [type="button"].outline:hover {
