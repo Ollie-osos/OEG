@@ -35,10 +35,11 @@ get_header(); ?>
                         <button class="blue" type="button" data-value="event">Event</button>
                         <button class="blue" type="button" data-value="vr">VR</button>
                         <button class="blue" type="button" data-value="online">Online</button>
+                        <button id="apply-filters" type="submit" class="green">Apply</button>
                     </div>
                     <input type="hidden" name="category1" id="categoryInput1">
                     <input type="hidden" name="category2" id="categoryInput2">
-                    <button id="apply-filters" type="submit">Apply</button>
+                    
                 </div>
             </div>
             <div class="row" id="posts-list"> <!-- Post data will be displayed here -->
