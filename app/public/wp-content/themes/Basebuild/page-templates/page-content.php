@@ -24,7 +24,7 @@ get_header(); ?>
                                 
                             </div>
                         <?php }else{ ?>
-                            <div class="image">
+                            <div class="hero_image">
                                 <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Hero image">
                             </div>
                         <?php } ?>
