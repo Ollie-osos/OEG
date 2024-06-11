@@ -53,13 +53,10 @@ $facebook_url = get_field('facebook', 'option');
 			</div>
 			<div class="col-md-3 col-sm-12">
 				<h4>Policies</h4>
-				<a href="/safe-space">Safe Space</a>
-				<a href="/sustainbility">Sustainbility</a>
-				<a href="/race-equality-commitment">Race Equality Commitment</a>
-				<a href="/equal-opportunities">Equal Opportunities</a>
-				<a href="/public-complaints-policy">Public Complaints Policy</a>
+				<?php foundationpress_footer_nav1(); ?>
 				<br>
 				<h4>Website Information</h4>
+				
 				<a href="/privacy-policy">Privacy Policy</a>
 				<a href="/terms-conditions">Terms & Conditions</a>
 				<a href="/cookie-policy">Cookie Policy</a>

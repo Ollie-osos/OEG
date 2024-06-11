@@ -223,7 +223,7 @@
             white-space: nowrap;
             font-size: 26px;
             margin-right: 55px;
-            color: grey;
+            color: black;
             &::after {
                 display: block;
                 height: 15px;   
@@ -233,7 +233,7 @@
                 right: 31px !important;
                 top: 33%;
                 position: absolute;
-                color: grey;
+                color: black;
                 @include screen-above('md'){
                     right: 6px;
                 }
@@ -430,6 +430,9 @@
 
         .nav-logo{
             padding: 0 !important;
+            img{
+                width: 160px;
+            }
         }
 
         .nav-opening{

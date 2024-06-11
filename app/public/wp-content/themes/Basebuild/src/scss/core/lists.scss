@@ -85,6 +85,7 @@ ul {
         cursor: pointer;
         transition: all var(--animation-duration);
         text-align: right;
+        font-family: 'Trade Gothic', sans-serif; 
     }
 
     .menu-item:hover > a {
@@ -225,5 +226,32 @@ ul {
         &:hover{
             color: $blue;
         }
+    }
+}
+
+
+ul#menu-policy-links { 
+    margin-left: 0;
+    padding-left: 0;
+    .menu-item a {
+        color: black;
+        display: block;
+        padding: 2px;
+        font-size: 19px;
+        cursor: pointer;
+        transition: all var(--animation-duration);
+        text-align: left;
+        font-family: 'Open Sans', sans-serif; 
+    }
+
+    .menu-item:hover > a {
+        background-color: transparent;
+        color: $blue;
+        transition: all var(--animation-duration);
+    }
+
+    .menu-item.selected > a {
+        color: $blue;
+        background-color: transparent;
     }
 }

@@ -33,7 +33,7 @@ get_header(); ?>
     </div>
 </section>
 
-<?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pv_' )); ?>
+<?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pv_', 'gallery' => false )); ?>
 <?php get_template_part( 'template-parts/divide'); ?>
 <?php get_template_part( 'template-parts/mailing-list'); ?>
 

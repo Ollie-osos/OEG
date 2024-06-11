@@ -118,9 +118,6 @@ if ($posts_query->have_posts()) :
                 </div>
             </a>
         </div>
-        <!-- <script>
-            alert('hey');
-        </script> -->
         <?php
     endwhile;
     wp_reset_postdata(); // Restore global post data

@@ -11,7 +11,8 @@
 get_header(); ?>
 
 <div class="page">
-<?php   get_template_part( 'template-parts/content', get_post_type() ); ?>
+<?php get_template_part( 'template-parts/title-section'); ?>
+</div>
     <section class="section">
         <div class="container">
             <div class="row">
@@ -21,7 +22,6 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <?php  get_template_part( 'template-parts/content', get_post_type() ); ?>
 </div>
 <?php get_footer();
 

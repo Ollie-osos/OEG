@@ -4,13 +4,19 @@ if ($args['type']) {
 	$type = $args['type'];
 } 
 
+if ($args['gallery']) {
+	$add_gallery = $args['gallery'];
+}else{
+    $add_gallery = false;
+}
+
 $title = get_field($type.'title', 'option');
 $text = get_field($type.'text', 'option');
 $links = get_field($type.'links', 'option');
 
-if($type == 'en_'){
+if($type == 'en_' && $add_gallery){
     $gallery = 'engagement_gallery';
-}elseif($type == 'ed_'){
+}elseif($type == 'ed_' && $add_gallery){
     $gallery = 'education_gallery';
 }else{
     $gallery = false;

@@ -417,8 +417,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  border-radius: 40px; }
+  height: 100%; }
 
 .double-column {
   column-count: 1; }
@@ -1512,7 +1511,10 @@ kbd {
     color: black;
     font-weight: 400;
     display: block;
-    font-size: 19px; }
+    font-size: 19px;
+    transition: all 0.3s linear; }
+    .footer a:hover {
+      color: #0048FF; }
   .footer h4 {
     margin-bottom: 0; }
     @media screen and (max-width: 767px) {
@@ -2557,7 +2559,7 @@ input#searchsubmit {
       white-space: nowrap;
       font-size: 26px;
       margin-right: 55px;
-      color: grey; }
+      color: black; }
       .nav-item .dropdown-menu > li > a::after {
         display: block;
         height: 15px;
@@ -2567,7 +2569,7 @@ input#searchsubmit {
         right: 31px !important;
         top: 33%;
         position: absolute;
-        color: grey; }
+        color: black; }
         @media screen and (min-width: 1024px) {
           .nav-item .dropdown-menu > li > a::after {
             right: 6px; } }
@@ -2703,6 +2705,8 @@ input#searchsubmit {
     /* Add padding to the first child, usually the logo */ }
   .header .nav-logo {
     padding: 0 !important; }
+    .header .nav-logo img {
+      width: 160px; }
   .header .nav-opening {
     padding-left: 40px; }
     @media screen and (min-width: 768px) {
@@ -3780,7 +3784,8 @@ ul {
     font-size: 37px;
     cursor: pointer;
     transition: all var(--animation-duration);
-    text-align: right; }
+    text-align: right;
+    font-family: 'Trade Gothic', sans-serif; }
   ul .menu-item:hover > a {
     background-color: transparent;
     color: #0048FF;
@@ -3882,6 +3887,26 @@ ul {
   font-size: 40px; }
   .social-container a:hover {
     color: #0048FF; }
+
+ul#menu-policy-links {
+  margin-left: 0;
+  padding-left: 0; }
+  ul#menu-policy-links .menu-item a {
+    color: black;
+    display: block;
+    padding: 2px;
+    font-size: 19px;
+    cursor: pointer;
+    transition: all var(--animation-duration);
+    text-align: left;
+    font-family: 'Open Sans', sans-serif; }
+  ul#menu-policy-links .menu-item:hover > a {
+    background-color: transparent;
+    color: #0048FF;
+    transition: all var(--animation-duration); }
+  ul#menu-policy-links .menu-item.selected > a {
+    color: #0048FF;
+    background-color: transparent; }
 
 /* MEDIA CSS */
 /* Handles images, videos, figures, etc */
