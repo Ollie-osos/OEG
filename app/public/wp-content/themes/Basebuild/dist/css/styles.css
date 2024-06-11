@@ -232,6 +232,9 @@ gmp-map {
   cursor: pointer;
   padding-right: 10px; }
 
+.ev {
+  max-width: 325px; }
+
 /*
     Group selectors that share common styling.
 */
@@ -3459,7 +3462,7 @@ html {
   scroll-behavior: smooth;
   display: grid;
   align-items: center;
-  height: 100%;
+  height: fit-content;
   grid: auto / auto-flow max-content;
   grid-auto-rows: 100%;
   grid-auto-columns: var(--swiffy-slider-item-width);
