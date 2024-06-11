@@ -37,7 +37,7 @@ if ( ! function_exists( 'foundationpress_footer_nav1' ) ) {
 			array(
 				'container'      => false,
 				'menu_class'     => 'no-bullets',
-				'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 				'theme_location' => 'footer-nav1',
 				'depth'          => 3,
 				'fallback_cb'    => false,
