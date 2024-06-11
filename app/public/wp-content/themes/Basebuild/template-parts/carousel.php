@@ -12,22 +12,22 @@ $carousel = get_field($type.'carousel');
 
             <?php if (have_rows($type.'carousel')) : ?>
                 <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-arrow slider-nav-outside-expand slider-nav-visible slider-indicators-round slider-indicators-outside"> <!-- slider-nav-autopause -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                <?php if($type == 'event_'){
-                                    echo "<h2>What's On</h2>";
-                                }else {
-                                    echo "<h2>NEWS & READING</h2>";
-                                }
-                                ?>
-                                </div>
-                                <div class="col-sm-12 col-md-6 u-flex u-justify-flex-end">
-                                    <button type="button" class="slider-nav"></button>
-                                    <button type="button" class="slider-nav slider-nav-next"></button>
-                                </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                            <?php if($type == 'event_'){
+                                echo "<h2>What's On</h2>";
+                            }else {
+                                echo "<h2>NEWS & READING</h2>";
+                            }
+                            ?>
+                            </div>
+                            <div class="col-sm-12 col-md-6 u-flex u-justify-flex-end">
+                                <button type="button" class="slider-nav"></button>
+                                <button type="button" class="slider-nav slider-nav-next"></button>
                             </div>
                         </div>
+                    </div>
                         
                     <ul class="slider-container">
                         <?php // loop through the rows of data

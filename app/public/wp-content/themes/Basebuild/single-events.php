@@ -2,7 +2,7 @@
 
 get_header(); 
 $end_date = DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y');
-$start_date = DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y');
+$start_date = DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M');
 $event_type = get_field('event_type');
 $access = get_field('access');
 $address = get_field('address');
@@ -71,47 +71,47 @@ endif;
                     <div class="show-mobile">
                         <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Hero image">
                     </div>
-                    <div class="ev_title"><h1><?php the_title(); ?></h1></div>
-                    <div class="ev_date"><h3 class="red-text"><?php echo $start_date .' - '. $end_date; ?></h3></div>
-                    <div class="ev_type">
+                    <div class="ev ev_title"><h1><?php the_title(); ?></h1></div>
+                    <div class="ev ev_date"><h3 class="red-text"><?php echo $start_date .' - '. $end_date; ?></h3></div>
+                    <div class="ev ev_type">
                         <h3 class="blue-text"><?php  echo $implodeLabels; ?></h3>
                         <br>
                     </div>
                     <?php if($address){ ?>
-                        <div class="ev_address">
-                            <h5>Address:</h5>
+                        <div class="ev ev_address">
+                            <h4>Address:</h4>
                             <p><?php echo $address; ?></p>
                         </div>
                     <?php } ?>
                     <?php if($additional_date){ ?>
-                        <div class="ev_additional_date">
-                            <h5>Date:</h5>
+                        <div class="ev ev_additional_date">
+                            <h4>Date:</h4>
                             <p><?php echo $additional_date; ?></p>
                         </div>
                     <?php } ?>
                     <?php if($opening_times){ ?>
-                        <div class="ev_opening_times">
-                            <h5>Open:</h5>
+                        <div class="ev ev_opening_times">
+                            <h4>Open:</h4>
                             <p><?php echo $opening_times; ?></p>
                         </div>
                     <?php } ?>
                     <?php if($ticketing){ ?>
-                        <div class="ev_ticketing">
-                            <h5>Ticketing:</h5>
+                        <div class="ev ev_ticketing">
+                            <h4>Ticketing:</h4>
                             <a href="<?php echo $ticketing['url']; ?>"><?php echo $ticketing['title']; ?></a>
                         </div>
                     <?php } ?>
                     <?php if($access_icons == '' ){ ?>
-                        <div class="ev_access">
-                            <h5>Access</h5>
+                        <div class="ev ev_access">
+                            <h4>Access</h4>
                             <div class="access_options">
                                 <?php echo $access_icons; ?>
                             </div>
                             <a href="/access">Further access information</a>
                         </div>
                     <?php } ?>
-                    <div class="ev_access">
-                        <h5>Share</h5>
+                    <div class="ev ev_access">
+                        <h4>Share</h4>
                         <div class="social-share">
                             <img onclick="shareOnWhatsApp()" src="<?php echo get_template_directory_uri();?>/dist/img/share-whatsapp.svg" alt="share icons"/>
                             <img onclick="shareOnFacebook()" src="<?php echo get_template_directory_uri();?>/dist/img/share-facebook.svg" alt="share icons"/>
@@ -133,7 +133,7 @@ endif;
             </div>
         </div>
     </section>
-    <?php get_template_part( 'template-parts/divide'); ?>
+    <?php get_template_part( 'template-parts/gallery'); ?>
     <?php get_template_part( 'template-parts/related-events'); ?>
     <?php get_template_part( 'template-parts/divide'); ?>
     <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pv_', 'gallery' => false )); ?>
