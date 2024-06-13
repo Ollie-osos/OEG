@@ -48,13 +48,12 @@ function create_post_type() {
 			'labels' => array(
 				'name' => __( 'SEP Projects' ),
 				'singular_name' => __( 'SEP Project' )
-				// this also includes SEF projects
 			),
 			'public' => true,
 			'show_in_nav_menus' => true,
 			'has_archive' => true,
 			'taxonomies' => array('category', 'post_tag'),
-			// 'supports' => array('title', 'thumbnail', 'author'),
+			'supports' => array('title', 'thumbnail', 'editor'),
 			// 'menu_icon' => 'dashicons-welcome-learn-more'
 		)
 	);
@@ -63,13 +62,12 @@ function create_post_type() {
 			'labels' => array(
 				'name' => __( 'Open Eye Hub' ),
 				'singular_name' => __( 'Open Eye Hub' )
-				// this also includes SEF projects
 			),
 			'public' => true,
 			'show_in_nav_menus' => true,
 			'has_archive' => true,
 			'taxonomies' => array('category', 'post_tag'),
-			// 'supports' => array('title', 'thumbnail', 'author'),
+			'supports' => array('title', 'thumbnail', 'editor'),
 			// 'menu_icon' => 'dashicons-welcome-learn-more'
 		)
 	);
@@ -78,13 +76,12 @@ function create_post_type() {
 			'labels' => array(
 				'name' => __( 'Shop' ),
 				'singular_name' => __( 'Shop' )
-				// this also includes SEF projects
 			),
 			'public' => true,
 			'show_in_nav_menus' => true,
 			'has_archive' => true,
 			'taxonomies' => array('category', 'post_tag'),
-			// 'supports' => array('title', 'thumbnail', 'author'),
+			'supports' => array('title', 'thumbnail', 'editor'),
 			// 'menu_icon' => 'dashicons-welcome-learn-more'
 		)
 	);

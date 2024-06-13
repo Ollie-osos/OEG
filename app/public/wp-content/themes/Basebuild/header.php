@@ -64,6 +64,12 @@ $facebook_url = get_field('facebook', 'option');
               <div class="nav-item nav-btn" id="header-btn"><a class="btn btn-blue"><div id="close-menu-text" style="display: none;">Close &nbsp;</div>MENU</a></div>
             </div>
             <div class="u-flex u-justify-flex-end pt-5 u-items-center">
+              <div class="social-container">
+                <?php if($youtube_url){ echo '<a aria-label="youtube link" target="_blank" href="'.$youtube_url.'"><span class="icon"><i class="fab fa-youtube"></i></span></a>'; } ?>
+                <?php if($facebook_url){ echo '<a aria-label="facebook link" target="_blank" href="'.$facebook_url.'"><span class="icon"><i class="fab fa-facebook"></i></span></a>'; } ?>
+                <?php if($twitter_url){ echo '<a aria-label="twitter link" target="_blank" href="'.$twitter_url.'"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span></a>'; } ?>
+                <?php if($instagram_url){ echo '<a aria-label="instagram link" target="_blank" href="'.$instagram_url.'"><span class="icon"><i class="fab fa-instagram"></i></span></a>'; } ?>
+              </div>
               <div id="accesibility">
                 <div id="aa-image">
                   <img class="toggle-aa hover-state" src="<?php echo get_template_directory_uri(); ?>/dist/img/accessibility.svg" alt="logo" style="width:26px;" />&nbsp;&nbsp;
@@ -97,12 +103,7 @@ $facebook_url = get_field('facebook', 'option');
         </div>
         <div class="header-nav header-bottom" id="header-menu">
           <?php foundationpress_main_nav(); ?>
-          <div class="social-container">
-            <?php if($facebook_url){ echo '<a aria-label="facebook link" target="_blank" href="'.$facebook_url.'"><span class="icon"><i class="fab fa-facebook"></i></span></a>'; } ?>
-            <?php if($twitter_url){ echo '<a aria-label="twitter link" target="_blank" href="'.$twitter_url.'"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span></a>'; } ?>
-            <?php if($instagram_url){ echo '<a aria-label="instagram link" target="_blank" href="'.$instagram_url.'"><span class="icon"><i class="fab fa-instagram"></i></span></a>'; } ?>
-            <?php if($youtube_url){ echo '<a aria-label="youtube link" target="_blank" href="'.$youtube_url.'"><span class="icon"><i class="fab fa-youtube"></i></span></a>'; } ?>
-          </div>
+          
         </div>
       </div>
     </div>

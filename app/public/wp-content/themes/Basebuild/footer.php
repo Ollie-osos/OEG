@@ -64,13 +64,11 @@ $facebook_url = get_field('facebook', 'option');
 			<div class="col-md-3 col-sm-12">
 				<h4>Social Links</h4>
 				<div class="social-container pt-2">
+					<?php if($youtube_url){ echo '<a aria-label="youtube link" target="_blank" href="'.$youtube_url.'"><span class="icon"><i class="fab fa-youtube"></i></span></a>'; } ?>
 					<?php if($facebook_url){ echo '<a aria-label="facebook link" target="_blank" href="'.$facebook_url.'"><span class="icon"><i class="fab fa-facebook"></i></span></a>'; } ?>
 					<?php if($twitter_url){ echo '<a aria-label="twitter link" target="_blank" href="'.$twitter_url.'"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span></a>'; } ?>
 					<?php if($instagram_url){ echo '<a aria-label="instagram link" target="_blank" href="'.$instagram_url.'"><span class="icon"><i class="fab fa-instagram"></i></span></a>'; } ?>
-					<?php if($youtube_url){ echo '<a aria-label="youtube link" target="_blank" href="'.$youtube_url.'"><span class="icon"><i class="fab fa-youtube"></i></span></a>'; } ?>
 				</div>
-				
-				
 			</div>
 		</div>
 		<div class="row baseline-content">
