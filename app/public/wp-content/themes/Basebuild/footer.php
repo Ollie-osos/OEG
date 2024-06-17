@@ -77,7 +77,7 @@ $facebook_url = get_field('facebook', 'option');
 				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/partner-arts-council.svg" alt="logo" />
 				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/partner-cool.svg" alt="logo" />
 				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/partner-liverpool.svg" alt="logo" />
-				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/partner-paul.svg" alt="logo" />
+				<!-- <img src="<?php //echo get_template_directory_uri(); ?>/dist/img/partner-paul.svg" alt="logo" /> -->
 				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/partner-artworks.svg" alt="logo" />
 			</div>
 		</div>

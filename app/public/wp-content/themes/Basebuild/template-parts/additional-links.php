@@ -6,12 +6,17 @@ if ($args['type']) {
 
 if ($args['gallery']) {
 	$add_gallery = $args['gallery'];
+    $title_class = 'col-sm-12 col-md-6 u-flex-column u-flex u-justify-space-between';
+    $text_class = 'col-md-6 col-sm-12';
+    $text = get_field($type.'text', 'option');
 }else{
     $add_gallery = false;
+    $title_class = 'col-sm-12 u-flex-column u-flex u-justify-space-between';
+    $text_class = 'double-column col-sm-12';
+    $text = '';
 }
 
 $title = get_field($type.'title', 'option');
-$text = get_field($type.'text', 'option');
 $links = get_field($type.'links', 'option');
 
 if($type == 'en_' && $add_gallery){
@@ -21,16 +26,18 @@ if($type == 'en_' && $add_gallery){
 }else{
     $gallery = false;
 }
+
+
 ?>
 
 <section class="additional-links">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-6 u-flex-column u-flex u-justify-space-between">
+            <div class="<?php echo $title_class; ?>">
                 <h2><?php echo $title; ?></h2>
-                <p><?php echo $text; ?></p>
+                <?php echo $text; ?>
             </div>
-            <div class="col-md-6 col-sm-12">
+            <div class="<?php echo $text_class; ?>">
                 <?php
                 if( have_rows($type.'links', 'option') ): ?>
                         <?php while( have_rows($type.'links', 'option') ) : the_row();
@@ -43,9 +50,7 @@ if($type == 'en_' && $add_gallery){
             </div>
         </div>
             
-        <?php 
-        
-        if( $gallery ): 
+        <?php if( $gallery ): 
             $images = get_field($gallery); ?>   
             <div class="row">
                 <?php foreach( $images as $image ): ?>

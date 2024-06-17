@@ -11,7 +11,7 @@
 get_header(); ?>
 
 <div class="page">
-<?php get_template_part( 'template-parts/title-section'); ?>
+<?php get_template_part( 'template-parts/title-section', null, array('archive' => 'none')); ?>
 </div>
     <section class="section">
         <div class="container">
