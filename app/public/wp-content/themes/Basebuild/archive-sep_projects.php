@@ -18,7 +18,7 @@
 get_header(); ?>
 
 <div class="page">
-	<?php get_template_part( 'template-parts/title-section'); ?>
+	<?php get_template_part( 'template-parts/title-section', null, array('archive' => 'sep_')); ?>
 	<?php if ( have_posts() ) : ?>
 		<section class="events">
 			<div class="container border-bottom">

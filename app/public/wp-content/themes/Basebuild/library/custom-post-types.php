@@ -19,19 +19,9 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title' 	=> "Courses What's on",
-        'menu_title'	=> "Courses What's on",
+        'page_title' 	=> "Archives Content",
+        'menu_title'	=> "Archives Content",
         'menu_slug'	    => 'theme-events',
-        'parent_slug'	=> 'archive',
-        'position'		=> false,
-        'redirect'		=> false,
-        'icon_url'		=> false
-    ));
-
-    acf_add_options_sub_page(array(
-        'page_title' 	=> 'Podcasts archive',
-        'menu_title'	=> 'Podcasts archive',
-        'menu_slug'	    => 'theme-Podcast',
         'parent_slug'	=> 'archive',
         'position'		=> false,
         'redirect'		=> false,

@@ -7,7 +7,7 @@
 get_header(); ?>
 
 <div class="page">
-    <?php get_template_part( 'template-parts/title-section'); ?>
+    <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'none')); ?>
     <section>
         <div class="container">
             <div class="row">
