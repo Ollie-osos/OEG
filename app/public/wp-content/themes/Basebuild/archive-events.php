@@ -3,17 +3,7 @@
 get_header(); ?>
 
 <div class="page">
-    <section class="section title-section border-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1>What's on</h1>
-                    <br>
-                    <p class="large">Explore our latest exhibitions, events and online projects.<br> In our gallery and beyond</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'wo_')); ?>
     <section class="section events">
         <div class="container">
             <div class="row">
