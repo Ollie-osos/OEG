@@ -13,19 +13,12 @@
  * @since wpbb 1.0.0
  */
 
-get_header(); ?>
+ get_header(); ?>
 
-<div class="page">
-<?php   get_template_part( 'template-parts/content', get_post_type() ); ?>
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <?php the_content(); ?>
-                </div>
-            </div>
-        </div>
-    </section>
-    <?php  get_template_part( 'template-parts/content', get_post_type() ); ?>
-</div>
-<?php get_footer();
+ <div class="page">
+     <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'sep_')); ?>
+     <?php get_template_part( 'template-parts/listings'); ?>
+     <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pr_', 'gallery' => false  )); ?>
+ </div>
+ 
+ <?php get_footer();
