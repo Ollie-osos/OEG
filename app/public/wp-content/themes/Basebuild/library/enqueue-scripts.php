@@ -61,11 +61,10 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_enqueue_script( 'core', get_stylesheet_directory_uri() . '/dist/js/scripts.js', array(), '1.0', true );
 
 		// load more custom ajax
-		wp_enqueue_script('load-more', get_template_directory_uri() . '/dist/js/load-more.js', array('jquery'), null, true);
 
-		wp_localize_script('load-more', 'load_more_params', array(
-			'ajaxurl' => admin_url('admin-ajax.php'),
-		));
+		// wp_localize_script('load-more', 'load_more_params', array(
+		// 	'ajaxurl' => admin_url('admin-ajax.php'),
+		// ));
 		
 
 		// // Events scripts

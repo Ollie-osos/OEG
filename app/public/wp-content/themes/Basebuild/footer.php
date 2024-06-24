@@ -74,11 +74,15 @@ $facebook_url = get_field('facebook', 'option');
 		<div class="row baseline-content">
 			<div class="col-sm-12 u-flex u-justify-space-between">
 				<p>NO.1204519<br><br>REGISTERED CHARITY<br>NO.1056743</p>
-				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/partner-arts-council.svg" alt="logo" />
-				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/partner-cool.svg" alt="logo" />
-				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/partner-liverpool.svg" alt="logo" />
-				<!-- <img src="<?php //echo get_template_directory_uri(); ?>/dist/img/partner-paul.svg" alt="logo" /> -->
-				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/partner-artworks.svg" alt="logo" />
+
+				<?php 
+				$images = get_field('footer_gallery', 'option');
+				if( $images ): ?>
+					<?php foreach( $images as $image ): ?>
+						<img src="<?php echo $image['sizes']['medium']; ?>" alt="partner logos" />
+					<?php endforeach; ?>
+				<?php endif; ?>
+				
 			</div>
 		</div>
 	</div>

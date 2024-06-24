@@ -98,16 +98,16 @@ endif;
                     <?php if($ticketing){ ?>
                         <div class="ev ev_ticketing">
                             <h4>Ticketing:</h4>
-                            <a href="<?php echo $ticketing['url']; ?>"><?php echo $ticketing['title']; ?></a>
+                            <p><a href="<?php echo $ticketing['url']; ?>"><?php echo $ticketing['title']; ?></a></p>
                         </div>
                     <?php } ?>
-                    <?php if($access_icons == '' ){ ?>
+                    <?php if($access_icons != '' ){ ?>
                         <div class="ev ev_access">
                             <h4>Access</h4>
                             <div class="access_options">
                                 <?php echo $access_icons; ?>
                             </div>
-                            <a href="/access">Further access information</a>
+                            <p><a href="/access">Further access information</a></p>
                         </div>
                     <?php } ?>
                     <div class="ev ev_access">

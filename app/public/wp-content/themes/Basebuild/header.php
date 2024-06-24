@@ -17,13 +17,14 @@ $current_day = strtolower(date('l')); // Get the lowercase name of the current d
 
 // Get the opening time for the current day from ACF
 $opening_time = get_field($current_day, 'option');
+$closed = get_field('closed', 'option');
 
-if ($opening_time) {
-  $open_today = $opening_time['time'];
+if ($opening_time && $closed == false) {
+  $open_today = '<h4>Open today:<br>'.$opening_time['time'];
   $entry_fee = $opening_time['entry'];
 } else {
-  $open_today = "Closed";
-  $entry_fee = "100$";
+  $open_today = "<h4 class='red-text'>Gallery<br>Closed";
+  $entry_fee = "";
 }
 
 $youtube_url = get_field('youtube', 'option');
@@ -53,7 +54,7 @@ $facebook_url = get_field('facebook', 'option');
       <div class="header-top">
         <div class="header-brand">
           <div class="nav-item no-hover nav-logo"><a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo-black.svg" alt="logo" /></a></div>
-          <div class="nav-item blue-text uppercase nav-opening"><h4>Open today:<br><?php echo $open_today; ?><br><?php echo $entry_fee; ?></h4></div>
+          <div class="nav-item blue-text uppercase nav-opening"><?php echo $open_today; ?><br><?php echo $entry_fee; ?> </h4></div>
           <div class="right-links pt-5">
             <div class="u-flex">
               <div class="nav-item top-links">
@@ -63,19 +64,19 @@ $facebook_url = get_field('facebook', 'option');
               </div>
               <div class="nav-item nav-btn" id="header-btn"><a class="btn btn-blue"><div id="close-menu-text" style="display: none;">Close &nbsp;</div>MENU</a></div>
             </div>
-            <div class="u-flex u-justify-flex-end pt-5 u-items-center">
+            <div class="u-flex u-justify-flex-end pt-5 u-items-center" id="feature-links">
               <div class="social-container">
-                <?php if($youtube_url){ echo '<a aria-label="youtube link" target="_blank" href="'.$youtube_url.'"><span class="icon"><i class="fab fa-youtube"></i></span></a>'; } ?>
-                <?php if($facebook_url){ echo '<a aria-label="facebook link" target="_blank" href="'.$facebook_url.'"><span class="icon"><i class="fab fa-facebook"></i></span></a>'; } ?>
-                <?php if($twitter_url){ echo '<a aria-label="twitter link" target="_blank" href="'.$twitter_url.'"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span></a>'; } ?>
-                <?php if($instagram_url){ echo '<a aria-label="instagram link" target="_blank" href="'.$instagram_url.'"><span class="icon"><i class="fab fa-instagram"></i></span></a>'; } ?>
+                <?php if($youtube_url){ echo '<a aria-label="youtube link" title="Youtube" target="_blank" href="'.$youtube_url.'"><span class="icon"><i class="fab fa-youtube"></i></span></a>'; } ?>
+                <?php if($facebook_url){ echo '<a aria-label="facebook link" title="Facebook" target="_blank" href="'.$facebook_url.'"><span class="icon"><i class="fab fa-facebook"></i></span></a>'; } ?>
+                <?php if($twitter_url){ echo '<a aria-label="twitter link" title="Twitter" target="_blank" href="'.$twitter_url.'"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span></a>'; } ?>
+                <?php if($instagram_url){ echo '<a aria-label="instagram link" title="Instagram" target="_blank" href="'.$instagram_url.'"><span class="icon"><i class="fab fa-instagram"></i></span></a>'; } ?>
               </div>
               <div id="accesibility">
                 <div id="aa-image">
-                  <img class="toggle-aa hover-state" src="<?php echo get_template_directory_uri(); ?>/dist/img/accessibility.svg" alt="logo" style="width:26px;" />&nbsp;&nbsp;
+                  <img title="Accessibility options" class="toggle-aa hover-state" src="<?php echo get_template_directory_uri(); ?>/dist/img/accessibility.svg" alt="logo" style="width:26px;" />&nbsp;&nbsp;
                 </div>
                 <div id="aa-content" style="display:none;">
-                  <div class="u-flex">
+                  <div class="u-flex u-items-center">
                     <div class="header-text">Text Size: &nbsp;</div>
                     <span class="hover-state" onclick="increaseFontSize()" style="font-size: 35px; font-weight: bold">+&nbsp;</span>
                     <span class="hover-state" onclick="decreaseFontSize()" style="font-size: 35px; font-weight: bold; top: -3px; position: relative;">- </span>
@@ -87,7 +88,7 @@ $facebook_url = get_field('facebook', 'option');
               </div>
               <div id="search-nav">
                 <div id="search-image">
-                  <img class="toggle-search hover-state" src="<?php echo get_template_directory_uri(); ?>/dist/img/search-icon.svg" alt="logo" style="width:26px;" />&nbsp;&nbsp;
+                  <img title="Search" class="toggle-search hover-state" src="<?php echo get_template_directory_uri(); ?>/dist/img/search-icon.svg" alt="logo" style="width:26px;" />&nbsp;&nbsp;
                 </div>
                 <div id="search-content" style="display:none;">
                   <div class="u-flex u-items-center">

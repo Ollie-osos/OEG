@@ -42,6 +42,9 @@
             &:hover{
                 color: black;
             }
+            @include screen-below('sm'){
+                font-size: 28px;
+            }
         }
     }
     p{

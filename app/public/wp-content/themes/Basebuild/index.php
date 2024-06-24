@@ -16,7 +16,7 @@
  get_header(); ?>
 
  <div class="page">
-     <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'sep_')); ?>
+     <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'new_')); ?>
      <?php get_template_part( 'template-parts/listings'); ?>
      <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pr_', 'gallery' => false  )); ?>
  </div>

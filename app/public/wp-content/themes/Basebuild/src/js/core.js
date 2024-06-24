@@ -34,12 +34,16 @@ $(function() {
         // Toggle visibility of the two content elements
         $('#aa-image').toggle();
         $('#aa-content').toggle();
+        $('.header .social-container').toggle();
+        $('#search-nav').toggle();
     });
 
     $('.toggle-search').click(function() {
         // Toggle visibility of the two content elements
         $('#search-image').toggle();
         $('#search-content').toggle();
+        $('.header .social-container').toggle();
+        $('#accesibility').toggle();
     });
 
 
