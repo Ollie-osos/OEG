@@ -10,7 +10,7 @@
 
 <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 	<div class="input-group u-flex u-items-center">
-		<input type="text" class="input-group-field" value="" name="s" id="s" aria-label="Search" placeholder="What are you looking for?">
+		<input type="text" class="input-group-field" value="" name="s" id="s" aria-label="Search" placeholder="Type here">
 		<div class="input-group-button">
 			<input type="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'foundationpress' ); ?>" class="button">
 		</div>

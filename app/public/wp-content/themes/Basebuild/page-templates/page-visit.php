@@ -38,6 +38,7 @@ get_header(); ?>
             </div>
         </div>
     </section>
+    <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pv_', 'gallery' => false  )); ?>
 </div>
 <script>
 $(document).ready(function() {

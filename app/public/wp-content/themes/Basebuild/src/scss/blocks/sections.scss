@@ -137,11 +137,14 @@ section {
         .background-image{
             height: 300px;
             background-repeat: no-repeat;
-            background-size: 100%;
+            background-size: cover;
             background-position: center;
             transition: all 0.2s linear;
-            &:hover{
-                background-size: 105%;
+            @include screen-above('md') {
+                background-size: 100%;
+                &:hover{
+                    background-size: 105%;
+                }
             }
         }
     }

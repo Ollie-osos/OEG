@@ -14,6 +14,16 @@
     margin-bottom: 1rem;
 }
 
+#header-btn {
+    margin-left: unset;
+    a{
+        font-size: 18px !important;
+    }
+}
+
+#feature-links{
+    height: 87px;
+}
 /* HEADER */
 .header {
     -webkit-box-flex: 1;

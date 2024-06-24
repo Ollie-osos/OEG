@@ -79,9 +79,12 @@ gmp-map {
             display: inline-block;
             width: 100%;
             @include screen-above('sm'){
-                width: 241px;
+                width: 178px;
             }
             @include screen-above('md'){
+                width: 241px;
+            }
+            @include screen-above('lg'){
                 width: 300px;
             }
         }
