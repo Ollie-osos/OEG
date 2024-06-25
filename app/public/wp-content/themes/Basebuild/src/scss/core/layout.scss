@@ -401,11 +401,19 @@ section {
     @include screen-above('sm'){
         display: none;
     }
+    &.flex{
+        display: flex;
+    }
 }
 
 .show-desktop{
     display: none;
     @include screen-above('sm'){
         display: block;
+    }
+    &.flex{
+        @include screen-above('sm'){
+            display: flex;
+        } 
     }
 }

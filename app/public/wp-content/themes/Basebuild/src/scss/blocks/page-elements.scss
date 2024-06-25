@@ -107,3 +107,111 @@ gmp-map {
 .ev{
     max-width: 325px;
 }
+
+
+.gallery-image{
+    cursor: pointer;
+}
+
+
+// modal stuff
+
+/* The Modal (background) */
+.modal-single {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 30;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    // background-color: rgb(3, 107, 102);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    /* Black w/ opacity */
+    &.show{
+        display: block;
+    }
+}
+
+/* Modal Content/Box */
+.modal-content {
+    margin: 100px auto auto;
+    padding: 0;
+    border: none;
+    width: 80%;
+    position: relative;
+    /* The Close Button */
+    .close {
+        color: white !important;
+        right: 0;
+        top: -72px;
+        z-index: 3;
+        position: absolute;
+        font-size: 85px;
+        @include screen-below(sm){
+            top: -90px;
+        }
+    }
+
+    .slider-nav::after {
+        content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z'></path></svg>");
+        background-color: #fff;
+    }
+
+    .slider-nav-chevron .slider-nav::after {
+        mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z'></path></svg>");
+    }
+
+    .close:hover,
+    .close:focus { 
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    } 
+    button.slider-nav {
+        background: transparent;
+        position: absolute !important;
+        top: 50%;
+        transform: translateY(-50%);
+        &::after, &::before{
+            color: white !important;
+        }
+    }
+    .swiffy-slider {
+        position: relative;
+        width: auto;
+        background: none;
+        button {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+    
+    .slider-container>* {
+        position: relative;
+        width: fit-content;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        margin: 0 auto;
+        padding: 10px;
+    }
+}
+
+.image-modal{
+    cursor: pointer;
+    max-height: calc(100vh - 200px);
+    max-width: 100%;
+}
