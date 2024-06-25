@@ -4,7 +4,7 @@ $count = 0;
 $images = get_field('gallery');
 
 if ($images) { ?>
-
+    <?php get_template_part( 'template-parts/modal'); ?>
     <section class="carousel">
         <div class="container border-bottom">
             <div class="row">
@@ -26,7 +26,7 @@ if ($images) { ?>
                         foreach( $images as $image ): ?>
                             <li>
                                 <div>
-                                    <div class="background-image" style="background-image: url('<?php echo esc_url($image['sizes']['medium']); ?>')"> &nbsp; </div>
+                                    <div class="background-image gallery-image" style="background-image: url('<?php echo esc_url($image['sizes']['medium']); ?>')"> &nbsp; </div>
                                 </div>
                             </li>
                         <?php endforeach; ?>
