@@ -3,13 +3,13 @@
 @import '../core/theme.scss';
 
 @mixin section-space() {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
-    // @include screen-above('md') {
-    //     padding-top: 70px;
-    //     padding-bottom: 70px;
-    // }
+    @include screen-above('sm') {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 
     // @include screen-above('lg') {
     //     padding-top: 40px;

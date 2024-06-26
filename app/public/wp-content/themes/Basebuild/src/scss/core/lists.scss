@@ -249,6 +249,9 @@ ul#menu-policy-links {
         transition: all var(--animation-duration);
         text-align: left;
         font-family: 'Open Sans', sans-serif; 
+        @include screen-below('sm'){
+            text-align: center;
+        }
     }
 
     .menu-item:hover > a {

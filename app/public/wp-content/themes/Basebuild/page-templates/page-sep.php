@@ -22,7 +22,7 @@ get_header(); ?>
                     <h2>Explore our socially engaged photography projects</h2>
                     <p>Bringing different voices, photographers and communities together</p>
                 </div>
-                <div class="col-sm-12 col-md-2 u-flex u-justify-flex-end u-items-flex-end">
+                <div class="col-sm-12 col-md-2 mailing-list-btn">
                     <a href="/sep_projects" class="btn btn-white">Explore</a>
                 </div>
             </div>

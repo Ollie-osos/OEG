@@ -94,7 +94,10 @@
         overflow-y: hidden;
         width: 100%;
         border-bottom: thin solid black;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
+        @include screen-above('sm'){
+            padding-bottom: 40px;
+        }
     }
 
     /* Static header at the top of the screen */
@@ -306,11 +309,11 @@
             transform: rotate(-45deg);
             pointer-events: none;
             margin-top: -0.435em;
-            right: 0;
+            right: 6px;
             bottom: 0;
             position: absolute;
-            @include screen-above('md'){
-                right: 6px;
+            @include screen-below('sm'){
+                bottom: 18px;
             }
         }
         &:hover{
@@ -445,14 +448,22 @@
         .nav-logo{
             padding: 0 !important;
             img{
-                width: 160px;
+                width: 110px;
+                @include screen-above('sm'){
+                    width: 160px;
+                }
             }
         }
 
         .nav-opening{
-            padding-left: 40px;
+            padding-left: 30px;
             @include screen-above('sm'){
                 padding-left: 60px;
+            }
+            @include screen-below('sm'){
+                h4{
+                    font-size: 20px;
+                }
             }
         }
         /* Hide dropdown menu on mobile */
@@ -626,7 +637,7 @@
     margin: auto;
     padding: 0 0 0 15px;
     overflow-y: unset;
-    height: calc(100vh - 100px);
+    height: auto;
     overflow-x: hidden;
     @include screen-above('sm'){
         justify-content: unset; 
@@ -635,6 +646,7 @@
         flex-direction: unset;
         overflow-x: unset;
         overflow-y: unset;
+        height: calc(100vh - 100px);
     }
     .nav-search{
         padding-top: 20px;
