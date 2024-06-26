@@ -397,23 +397,35 @@ section {
 }
 
 .show-mobile{
-    display: block;
+    display: block !important;
     @include screen-above('sm'){
-        display: none;
+        display: none !important;
     }
     &.flex{
         display: flex;
     }
+    &.u-flex{
+        display: flex;
+        @include screen-above('sm'){
+            display: none !important;
+        }
+    }
 }
 
 .show-desktop{
-    display: none;
+    display: none !important;
     @include screen-above('sm'){
-        display: block;
+        display: block !important;
     }
     &.flex{
         @include screen-above('sm'){
-            display: flex;
+            display: flex !important;
         } 
+    }
+    &.u-flex{
+        display: none !important;
+        @include screen-above('sm'){
+            display: flex !important;
+        }
     }
 }

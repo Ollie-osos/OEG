@@ -46,9 +46,23 @@ $(function() {
         $('#accesibility').toggle();
     });
 
+    $('.toggle-aa-m').click(function() {
+        // Toggle visibility of the two content elements
+        $('#aa-image-m').toggle();
+        $('#aa-content-m').toggle();
+        $('#search-nav-m').toggle();
+    });
+
+    $('.toggle-search-m').click(function() {
+        // Toggle visibility of the two content elements
+        $('#search-image-m').toggle();
+        $('#search-content-m').toggle();
+        $('#accesibility-m').toggle();
+    });
+
 
     // high contrast
-    $('#contrast-btn').click(function() {
+    $('.contrast-btn').click(function() {
         $('body').toggleClass('high-contrast');
 
         if ($('body').hasClass('high-contrast')) {

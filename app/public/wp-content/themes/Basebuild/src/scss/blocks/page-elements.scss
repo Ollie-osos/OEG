@@ -215,3 +215,18 @@ gmp-map {
     max-height: calc(100vh - 200px);
     max-width: 100%;
 }
+
+.al-text{
+    @include screen-below('sm'){
+        padding-top: 40px !important;
+    }
+}
+
+.mailing-list-btn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    @include screen-below('sm'){
+        justify-content: flex-start;
+    }
+}

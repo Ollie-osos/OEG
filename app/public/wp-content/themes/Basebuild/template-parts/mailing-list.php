@@ -5,7 +5,7 @@
                 <h2>Join our mailing list</h2>
                 <p>News, exhibitons, opportutnies and more.</p>
             </div>
-            <div class="col-sm-12 col-md-4 u-flex u-justify-flex-end u-items-flex-end">
+            <div class="col-sm-12 col-md-4 mailing-list-btn">
                 <a href="#" class="btn btn-white">Sign Up</a>
             </div>
         </div>

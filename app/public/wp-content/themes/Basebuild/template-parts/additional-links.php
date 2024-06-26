@@ -7,7 +7,7 @@ if ($args['type']) {
 if ($args['gallery']) {
 	$add_gallery = $args['gallery'];
     $title_class = 'col-sm-12 col-md-6 u-flex-column u-flex u-justify-space-between';
-    $text_class = 'col-md-6 col-sm-12';
+    $text_class = 'col-md-6 col-sm-12 al-text';
     $text = get_field($type.'text', 'option');
 }else{
     $add_gallery = false;
