@@ -1473,3 +1473,19 @@ Stack trace:
 [03-Sep-2024 11:46:17 UTC] PHP Warning:  Undefined array key "host" in /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/class-wp-http-ixr-client.php on line 27
 [03-Sep-2024 11:46:43 UTC] PHP Warning:  Undefined array key "scheme" in /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/class-wp-http-ixr-client.php on line 26
 [03-Sep-2024 11:46:43 UTC] PHP Warning:  Undefined array key "host" in /Users/michaelsmith/Local Sites/oeg/app/public/wp-includes/class-wp-http-ixr-client.php on line 27
+[03-Sep-2024 15:57:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function format() on bool in /Users/michaelsmith/Local Sites/oeg/app/public/ajax/get_posts.php:109
+Stack trace:
+#0 {main}
+  thrown in /Users/michaelsmith/Local Sites/oeg/app/public/ajax/get_posts.php on line 109
+[03-Sep-2024 15:57:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function format() on bool in /Users/michaelsmith/Local Sites/oeg/app/public/ajax/get_posts.php:109
+Stack trace:
+#0 {main}
+  thrown in /Users/michaelsmith/Local Sites/oeg/app/public/ajax/get_posts.php on line 109
+[03-Sep-2024 15:57:23 UTC] PHP Warning:  Attempt to read property "ID" on bool in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[03-Sep-2024 15:57:23 UTC] PHP Warning:  Attempt to read property "ID" on bool in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 317
+[03-Sep-2024 16:00:31 UTC] PHP Warning:  include(sections/cards): Failed to open stream: No such file or directory in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/builder.php on line 44
+[03-Sep-2024 16:00:31 UTC] PHP Warning:  include(): Failed opening 'sections/cards' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/builder.php on line 44
+[03-Sep-2024 16:03:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function format() on bool in /Users/michaelsmith/Local Sites/oeg/app/public/ajax/get_posts.php:109
+Stack trace:
+#0 {main}
+  thrown in /Users/michaelsmith/Local Sites/oeg/app/public/ajax/get_posts.php on line 109
