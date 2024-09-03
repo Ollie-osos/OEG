@@ -19,7 +19,6 @@
      <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'new_')); ?>
      <?php get_template_part( 'template-parts/listings'); ?>
      <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pr_', 'gallery' => false  )); ?>
-     <h1>say whatt?</h1>
  </div>
  
  <?php get_footer();
