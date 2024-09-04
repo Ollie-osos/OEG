@@ -61,6 +61,34 @@ function create_post_type() {
 			// 'menu_icon' => 'dashicons-welcome-learn-more'
 		)
 	);
+	register_post_type( 'opportunities',
+		array(
+			'labels' => array(
+				'name' => __( 'Opportunities + Solutions' ),
+				'singular_name' => __( 'Opportunities + Solutions' )
+			),
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'has_archive' => true,
+			'taxonomies' => array('category', 'post_tag'),
+			'supports' => array('title', 'thumbnail', 'editor'),
+			// 'menu_icon' => 'dashicons-welcome-learn-more'
+		)
+	);
+	register_post_type( 'resources',
+		array(
+			'labels' => array(
+				'name' => __( 'Resources' ),
+				'singular_name' => __( 'Resources' )
+			),
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'has_archive' => true,
+			'taxonomies' => array('category', 'post_tag'),
+			'supports' => array('title', 'thumbnail', 'editor'),
+			// 'menu_icon' => 'dashicons-welcome-learn-more'
+		)
+	);
 	register_post_type( 'shop',
 		array(
 			'labels' => array(

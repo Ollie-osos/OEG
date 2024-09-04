@@ -49,7 +49,7 @@ $facebook_url = get_field('facebook', 'option');
 				<a href="/venue-hire">Venue Hire</a>
 				<a href="/jobs">Jobs</a>
 				<a href="/awards">Awards</a>
-				<a href="/donate">Donate</a>
+				<a href="https://www.paypal.com/gb/fundraiser/charity/3396780" target="_blank">Donate</a>
 			</div>
 			<div class="col-md-3 col-sm-12">
 				<h4>Policies</h4>

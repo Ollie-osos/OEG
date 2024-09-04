@@ -4,7 +4,7 @@
 *
 */
 
-$double_column = get_field('double_column');
+$link_type = get_field('link_type');
 
 get_header(); ?>
 
@@ -17,8 +17,7 @@ get_header(); ?>
             </div>
         </div>
     </section>
+    <?php get_template_part( 'template-parts/additional-links', null, array('type' => $link_type, 'gallery' => false  )); ?>
     <?php get_template_part( 'template-parts/mailing-list'); ?>
 </div>
 <?php get_footer();
-
-

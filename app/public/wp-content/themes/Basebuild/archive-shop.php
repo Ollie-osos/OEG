@@ -20,7 +20,7 @@
  <div class="page">
 	 <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'shop_')); ?>
 	 <?php get_template_part( 'template-parts/listings'); ?>
-	 <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pr_', 'gallery' => false  )); ?>
+	 <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pv_', 'gallery' => false  )); ?>
  </div>
  
  <?php get_footer();
