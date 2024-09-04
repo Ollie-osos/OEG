@@ -61,7 +61,7 @@ $facebook_url = get_field('facebook', 'option');
               <div class="nav-item top-links">
                 <div class="top-link"><a class="btn btn-primary" href="/events">What's On</a></div>
                 <div class="top-link"><a class="btn btn-primary" href="/plan-your-visit">Plan your Visit</a></div>
-                <div class="top-link"><a class="btn btn-primary" href="/donate">Donate</a></div>
+                <div class="top-link"><a class="btn btn-primary" href="https://www.paypal.com/gb/fundraiser/charity/3396780" target="_blank">Donate</a></div>
               </div>
               <div class="nav-item nav-btn" id="header-btn"><a class="btn btn-blue">
                   <div id="close-menu-text" style="display: none;">Close &nbsp;</div>MENU
