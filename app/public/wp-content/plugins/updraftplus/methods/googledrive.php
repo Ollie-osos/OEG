@@ -26,6 +26,10 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 	public function __construct() {
 		$this->client_id = defined('UPDRAFTPLUS_GOOGLEDRIVE_CLIENT_ID') ? UPDRAFTPLUS_GOOGLEDRIVE_CLIENT_ID : '916618189494-u3ehb1fl7u3meb63nb2b4fqi0r9pcfe2.apps.googleusercontent.com';
 		$this->callback_url = defined('UPDRAFTPLUS_GOOGLEDRIVE_CALLBACK_URL') ? UPDRAFTPLUS_GOOGLEDRIVE_CALLBACK_URL : 'https://auth.updraftplus.com/auth/googledrive';
+
+		if (class_exists('UpdraftPlus_Addon_Google_Enhanced')) {
+			add_action('updraftplus_admin_enqueue_scripts', array($this, 'admin_footer_jstree'));
+		}
 	}
 
 	public function action_auth() {
@@ -41,6 +45,11 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 						'user_id' => $_GET['user_id'],
 						'access_token' => $_GET['access_token']
 					);
+					
+					if (isset($_GET['scope'])) {
+						$scope = $_GET['scope'];
+						$code['scope'] = explode(' ', $scope);
+					}
 				} else {
 					$code = array();
 				}
@@ -289,7 +298,21 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 		return empty($parent) ? $this->root_id() : $parent;
 	}
 
-	public function listfiles($match = 'backup_') {
+	/**
+	 * List files or folders on Google Drive.
+	 *
+	 * @param string $match      The file or folder name to search for (default: 'backup_').
+	 * @param bool   $list_files Whether to search for files (true) or folders (false) (default: true).
+	 *
+	 * @return array|WP_Error  An array of results containing information about matching files or folders,
+	 *                        or a WP_Error object if there are missing settings,
+	 *                        or an error occurs while accessing Google Drive.
+	 *                        Each result is represented as an associative array with the following keys:
+	 *                        - 'name' (string): The name of the file or folder.
+	 *                        - 'size' (int, optional): The size of the file in bytes (only for files).
+	 *                        - 'id' (string, optional): The unique identifier of the folder (only for folders).
+	 */
+	public function list_files_or_folders($match = 'backup_', $list_files = true) {
 
 		$opts = $this->get_options();
 
@@ -305,8 +328,13 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 		if (is_wp_error($storage) || false == $storage) return $storage;
 
 		try {
-			$parent_id = $this->get_parent_id($opts);
-			$sub_items = $this->get_subitems($parent_id, 'file');
+			if ($list_files) {
+				$parent_id = $this->get_parent_id($opts);
+				$sub_items = $this->get_subitems($parent_id, 'file');
+			} else {
+				$sub_items = $this->get_subitems($match, 'dir', '');
+			}
+
 		} catch (Exception $e) {
 			return new WP_Error(__('Google Drive list files: failed to access parent folder', 'updraftplus').":  ".$e->getMessage().' (line: '.$e->getLine().', file: '.$e->getFile().')');
 		}
@@ -317,8 +345,12 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 			$title = "(unknown)";
 			try {
 				$title = $item->getTitle();
-				if (0 === strpos($title, $match)) {
-					$results[] = array('name' => $title, 'size' => $item->getFileSize());
+				if ($list_files) {
+					if (0 === strpos($title, $match)) {
+						$results[] = array('name' => $title, 'size' => $item->getFileSize());
+					}
+				} else {
+					$results[] = array('name' => $title, 'id' => $item->getId());
 				}
 			} catch (Exception $e) {
 				$this->log("list: exception: ".$e->getMessage().' (line: '.$e->getLine().', file: '.$e->getFile().')');
@@ -327,6 +359,26 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 		}
 
 		return $results;
+	}
+
+	/**
+	 * List folders in Google Drive.
+	 *
+	 * @param string $search - The folder to search for (default: 'root').
+	 * @return array $results - An array of folder information.
+	 */
+	public function list_folders($search = 'root') {
+		return $this->list_files_or_folders($search, false);
+	}
+
+	/**
+	 * List files in Google Drive.
+	 *
+	 * @param string $search - The files to search for (default: 'backup_').
+	 * @return array $results - An array of file information.
+	 */
+	public function listfiles($search = 'backup_') {
+		return $this->list_files_or_folders($search);
 	}
 
 	/**
@@ -414,7 +466,8 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 
 		if ($use_master) {
 			$client_id = $this->client_id;
-			$token = 'token'.$prefixed_instance_id.$this->redirect_uri();
+			$token = 'token'.$prefixed_instance_id;
+			$token .= $this->redirect_uri();
 		} else {
 			$client_id = $opts['clientid'];
 			$token = 'token'.$prefixed_instance_id;
@@ -427,8 +480,12 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 			'scope' => apply_filters('updraft_googledrive_scope', 'https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/userinfo.profile'),
 			'state' => $token,
 			'access_type' => 'offline',
-			'approval_prompt' => 'force'
+			// 'approval_prompt' => 'force', // legacy and has been deprected. It can lead to conflicts when specified along with "prompt" param
+			'include_granted_scopes' => 'true',
+			'enable_granular_consent' => 'true',
+			'prompt' => 'select_account consent', // new option param as the replacement to 'approval_prompt'
 		);
+		$params = apply_filters('updraft_googledrive_auth_params', $params);
 		if (headers_sent()) {
 			$this->log(sprintf(__('The %s authentication could not go ahead, because something else on your site is breaking it.', 'updraftplus'), 'Google Drive').' '.__('Try disabling your other plugins and switching to a default theme.', 'updraftplus').' ('.__('Specifically, you are looking for the component that sends output (most likely PHP warnings/errors) before the page begins.', 'updraftplus').' '.__('Turning off any debugging settings may also help).', 'updraftplus').')', 'error');
 		} else {
@@ -452,6 +509,7 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 			$opts = $this->get_options();
 			$opts['user_id'] = base64_decode($code['user_id']);
 			$opts['tmp_access_token'] = base64_decode($code['access_token']);
+			if (isset($opts['auth_in_progress'])) $opts['scope'] = $code['scope'];
 			// Unset this value if it is set as this is a fresh auth we will set this value in the next step
 			if (isset($opts['expires_in'])) unset($opts['expires_in']);
 			// remove our flag so we know this authentication is complete
@@ -537,7 +595,7 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 				}
 			}
 		} else {
-			header('Location: '.UpdraftPlus_Options::admin_page_url().'?page=updraftplus&error='.urlencode(__('Authorization failed', 'updraftplus')));
+			header('Location: '.UpdraftPlus_Options::admin_page_url().'?page=updraftplus&error='.urlencode(sprintf(__('%s authorization failed', 'updraftplus'), 'Google Drive')));
 		}
 	}
 
@@ -795,11 +853,14 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 					$body = array('result' => 'error', 'error' => $result->get_error_code(), 'error_description' => $result->get_error_message());
 				
 				} else {
-				
-					$body_json = wp_remote_retrieve_body($result);
-
-					$body = json_decode($body_json, true);
+					$response_code = wp_remote_retrieve_response_code($result);
 					
+					if ($response_code < 200 || $response_code >= 300) {
+						$body = array('result' => 'error', 'error' => $response_code, 'error_description' => sprintf(__("%s for %s", 'updraftplus'), wp_remote_retrieve_response_message($result), $this->callback_url));
+					} else {
+						$body_json = wp_remote_retrieve_body($result);
+						$body = json_decode($body_json, true);
+					}
 				}
 				
 				if (!empty($body['result']) && 'error' == $body['result']) {
@@ -1030,6 +1091,7 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 		$storage = $this->get_storage();
 
 		$q = '"'.$parent_id.'" in parents and trashed = false';
+
 		if ('dir' == $type) {
 			$q .= ' and mimeType = "application/vnd.google-apps.folder"';
 		} elseif ('file' == $type) {
@@ -1379,7 +1441,7 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 					$put_flag = FILE_APPEND;
 					$headers = array('Range' => 'bytes='.$existing_size.'-'.$end);
 				} else {
-					$put_flag = null;
+					$put_flag = 0;
 					$headers = ($end < $size) ? array('Range' => 'bytes=0-'.$end) : array();
 				}
 
