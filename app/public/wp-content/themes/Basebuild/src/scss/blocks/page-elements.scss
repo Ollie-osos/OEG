@@ -3,7 +3,7 @@
 @import '../core/theme.scss';
 
 .access_options{
-    padding-bottom: 10px !important;
+    margin-top: 1rem;
     align-self: center;
     .img{
         // align-self: center;
@@ -23,7 +23,10 @@
             padding-right: 10px;
             width: 65px;
             img{
-                height: 25px;
+                height: 22px; 
+                @include screen-below('sm'){
+                    height: 20px;
+                }
             }
         }
     }
@@ -106,6 +109,14 @@ gmp-map {
 
 .ev{
     max-width: 325px;
+    p{
+        @include screen-below('sm'){
+
+        }
+    }
+    .social-share{
+        margin: 1rem 0;
+    }
 }
 
 

@@ -125,11 +125,17 @@ section {
         .container{
             border-bottom: thin solid black;
             padding-bottom: 40px;
+            @include screen-below('sm'){ 
+                padding-bottom: 0;
+            }
         }
     }
     &.mailing-list{
         .container{
             padding: 20px 40px;
+            @include screen-below('sm'){ 
+                padding: 20px 0;
+            }
         }
     }
 
@@ -140,8 +146,10 @@ section {
             background-size: cover;
             background-position: center;
             transition: all 0.2s linear;
+            margin-bottom: 10px;
             @include screen-above('md') {
                 background-size: 100%;
+                margin-bottom: 0;
                 &:hover{
                     background-size: 105%;
                 }

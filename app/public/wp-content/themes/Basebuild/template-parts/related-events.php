@@ -1,10 +1,12 @@
-<section class="related-events events">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12"><h2><?php echo get_field('related_events_title'); ?></h2></div>
-
-            <?php if (have_rows('related_events')) : ?>
-                
+<?php if (have_rows('related_events')) : ?>
+    <!-- <section class="border-bottom show-mobile no-space">
+        <div class="container">&nbsp;</div>
+    </section> -->
+    <section class="related-events events">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12"><h2><?php echo get_field('related_events_title'); ?></h2></div>
+                    
                 <?php // loop through the rows of data
                 while (have_rows('related_events')) : the_row();
                     $post = get_sub_field('related_event');
@@ -28,10 +30,8 @@
                         </div>
                         <?php wp_reset_postdata(); ?>
                     <?php endif; ?>
-                <?php endwhile; ?>
-                
-
-            <?php endif; ?>
+                <?php endwhile; ?> 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>
