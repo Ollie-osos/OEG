@@ -4,7 +4,7 @@ get_header(); ?>
 
 <div class="page">
     <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'wo_')); ?>
-    <section class="section events">
+    <section class="section events border-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-3">

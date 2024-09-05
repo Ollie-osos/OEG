@@ -46,7 +46,7 @@ $facebook_url = get_field('facebook', 'option');
 				<a href="tel:<?php echo $phone; ?>"><?php echo $phone_display; ?></a>
 				<a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
 				<br>
-				<a href="/venue-hire">Venue Hire</a>
+				<a href="/engagement-get-involved/venue-hire/">Venue Hire</a>
 				<a href="/jobs">Jobs</a>
 				<a href="/awards">Awards</a>
 				<a href="https://www.paypal.com/gb/fundraiser/charity/3396780" target="_blank">Donate</a>
