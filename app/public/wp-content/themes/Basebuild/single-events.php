@@ -77,50 +77,57 @@ endif;
                         <h3 class="blue-text"><?php  echo $implodeLabels; ?></h3>
                         <br>
                     </div>
-                    <?php if($address){ ?>
-                        <div class="ev ev_address">
-                            <h4>Address:</h4>
-                            <p><?php echo $address; ?></p>
-                        </div>
-                    <?php } ?>
-                    <?php if($additional_date){ ?>
-                        <div class="ev ev_additional_date">
-                            <h4>Date:</h4>
-                            <p><?php echo $additional_date; ?></p>
-                        </div>
-                    <?php } ?>
-                    <?php if($opening_times){ ?>
-                        <div class="ev ev_opening_times">
-                            <h4>Open:</h4>
-                            <p><?php echo $opening_times; ?></p>
-                        </div>
-                    <?php } ?>
-                    <?php if($ticketing){ ?>
-                        <div class="ev ev_ticketing">
-                            <h4>Ticketing:</h4>
-                            <p><a href="<?php echo $ticketing['url']; ?>"><?php echo $ticketing['title']; ?></a></p>
-                        </div>
-                    <?php } ?>
-                    <?php if($access_icons != '' ){ ?>
-                        <div class="ev ev_access">
-                            <h4>Access</h4>
-                            <div class="access_options">
-                                <?php echo $access_icons; ?>
-                            </div>
-                            <p><a href="/access">Further access information</a></p>
-                        </div>
-                    <?php } ?>
-                    <div class="ev ev_access">
-                        <h4>Share</h4>
-                        <div class="social-share">
-                            <img onclick="shareOnWhatsApp()" src="<?php echo get_template_directory_uri();?>/dist/img/share-whatsapp.svg" alt="share icons"/>
-                            <img onclick="shareOnFacebook()" src="<?php echo get_template_directory_uri();?>/dist/img/share-facebook.svg" alt="share icons"/>
-                            <img onclick="shareOnTwitter()" src="<?php echo get_template_directory_uri();?>/dist/img/share-twitter.svg" alt="share icons"/>
-                            <img onclick="shareByEmail()" src="<?php echo get_template_directory_uri();?>/dist/img/share-email.svg" alt="share icons"/>
-                        </div>
-                        
-                    </div>
 
+                    <section class="border-bottom show-mobile no-space">
+                        <div class="container">&nbsp;</div>
+                    </section>
+
+                    <div class="show-desktop event-info">
+
+                        <?php if($address){ ?>
+                            <div class="ev ev_address">
+                                <h4>Address:</h4>
+                                <p><?php echo $address; ?></p>
+                            </div>
+                        <?php } ?>
+                        <?php if($additional_date){ ?>
+                            <div class="ev ev_additional_date">
+                                <h4>Date:</h4>
+                                <p><?php echo $additional_date; ?></p>
+                            </div>
+                        <?php } ?>
+                        <?php if($opening_times){ ?>
+                            <div class="ev ev_opening_times">
+                                <h4>Open:</h4>
+                                <p><?php echo $opening_times; ?></p>
+                            </div>
+                        <?php } ?>
+                        <?php if($ticketing){ ?>
+                            <div class="ev ev_ticketing">
+                                <h4>Ticketing:</h4>
+                                <p><a href="<?php echo $ticketing['url']; ?>"><?php echo $ticketing['title']; ?></a></p>
+                            </div>
+                        <?php } ?>
+                        <?php if($access_icons != '' ){ ?>
+                            <div class="ev ev_access">
+                                <h4>Access</h4>
+                                <div class="access_options">
+                                    <?php echo $access_icons; ?>
+                                </div>
+                                <p class="small"><a href="/access">Further access information</a></p>
+                            </div>
+                        <?php } ?>
+                        <div class="ev ev_access">
+                            <h4>Share</h4>
+                            <div class="social-share">
+                                <img onclick="shareOnWhatsApp()" src="<?php echo get_template_directory_uri();?>/dist/img/share-whatsapp.svg" alt="share icons"/>
+                                <img onclick="shareOnFacebook()" src="<?php echo get_template_directory_uri();?>/dist/img/share-facebook.svg" alt="share icons"/>
+                                <img onclick="shareOnTwitter()" src="<?php echo get_template_directory_uri();?>/dist/img/share-twitter.svg" alt="share icons"/>
+                                <img onclick="shareByEmail()" src="<?php echo get_template_directory_uri();?>/dist/img/share-email.svg" alt="share icons"/>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm-12 col-md-7 col-lg-8 page-content">
                     <div class="show-desktop">
@@ -128,6 +135,55 @@ endif;
                     </div>
                     <div class="ev_content">
                         <?php the_content(); ?>
+                    </div>
+                    <section class="border-bottom show-mobile">
+                        <div class="container">&nbsp;</div>
+                    </section>
+                    <div class="show-mobile event-info">
+                        <?php if($address){ ?>
+                            <div class="ev ev_address">
+                                <h4>Address:</h4>
+                                <p><?php echo $address; ?></p>
+                            </div>
+                        <?php } ?>
+                        <?php if($additional_date){ ?>
+                            <div class="ev ev_additional_date">
+                                <h4>Date:</h4>
+                                <p><?php echo $additional_date; ?></p>
+                            </div>
+                        <?php } ?>
+                        <?php if($opening_times){ ?>
+                            <div class="ev ev_opening_times">
+                                <h4>Open:</h4>
+                                <p><?php echo $opening_times; ?></p>
+                            </div>
+                        <?php } ?>
+                        <?php if($ticketing){ ?>
+                            <div class="ev ev_ticketing">
+                                <h4>Ticketing:</h4>
+                                <p><a href="<?php echo $ticketing['url']; ?>"><?php echo $ticketing['title']; ?></a></p>
+                            </div>
+                        <?php } ?>
+                        <?php if($access_icons != '' ){ ?>
+                            <div class="ev ev_access">
+                                <h4>Access</h4>
+                                <div class="access_options">
+                                    <?php echo $access_icons; ?>
+                                </div>
+                                <p class="small"><a href="/access">Further access information</a></p>
+                            </div>
+                        <?php } ?>
+                        <div class="ev ev_access">
+                            <h4>Share</h4>
+                            <div class="social-share">
+                                <img onclick="shareOnWhatsApp()" src="<?php echo get_template_directory_uri();?>/dist/img/share-whatsapp.svg" alt="share icons"/>
+                                <img onclick="shareOnFacebook()" src="<?php echo get_template_directory_uri();?>/dist/img/share-facebook.svg" alt="share icons"/>
+                                <img onclick="shareOnTwitter()" src="<?php echo get_template_directory_uri();?>/dist/img/share-twitter.svg" alt="share icons"/>
+                                <img onclick="shareByEmail()" src="<?php echo get_template_directory_uri();?>/dist/img/share-email.svg" alt="share icons"/>
+                            </div>
+                            
+                        </div>
+
                     </div>
                 </div>
             </div>
