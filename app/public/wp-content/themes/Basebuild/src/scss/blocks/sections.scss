@@ -148,10 +148,10 @@ section {
             transition: all 0.2s linear;
             margin-bottom: 10px;
             @include screen-above('md') {
-                background-size: 100%;
+                background-size: 130%;
                 margin-bottom: 0;
                 &:hover{
-                    background-size: 105%;
+                    background-size: 135%;
                 }
             }
         }

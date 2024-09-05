@@ -67,6 +67,7 @@
     scrollbar-width: none;
     scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, var(--swiffy-slider-track-opacity));
     background-clip: padding-box;
+    overflow: hidden;
 }
 
 .slider-container>* {

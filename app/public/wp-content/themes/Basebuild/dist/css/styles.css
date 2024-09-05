@@ -318,7 +318,8 @@ gmp-map {
     align-items: center;
     background-color: white;
     margin: 0 auto;
-    padding: 10px; }
+    padding: 10px;
+    overflow: hidden; }
 
 .image-modal {
   cursor: pointer;
@@ -494,10 +495,10 @@ section {
     margin-bottom: 10px; }
     @media screen and (min-width: 1024px) {
       section.additional-links .background-image, section.carousel .background-image, section.events .background-image {
-        background-size: 100%;
+        background-size: 130%;
         margin-bottom: 0; }
         section.additional-links .background-image:hover, section.carousel .background-image:hover, section.events .background-image:hover {
-          background-size: 105%; } }
+          background-size: 135%; } }
   section.background-image {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -7881,7 +7882,8 @@ html {
   padding: 0;
   scrollbar-width: none;
   scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, var(--swiffy-slider-track-opacity));
-  background-clip: padding-box; }
+  background-clip: padding-box;
+  overflow: hidden; }
 
 .slider-container > * {
   /*The slides*/

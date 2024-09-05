@@ -16,7 +16,7 @@ get_header(); ?>
     <section class="sidebar">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-4 sidebar">
+                <div class="col-sm-12 col-md-4 sidebar pb-2">
                     <h3>Open Eye Gallery</h3>
                     <p><?php echo $address; ?><br></p>
                     <p>Open 10 – 5, Tue–Sun</p>
