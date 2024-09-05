@@ -1536,3 +1536,8 @@ Stack trace:
 [05-Sep-2024 15:30:27 UTC] PHP Warning:  Attempt to read property "ID" on bool in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 329
 [05-Sep-2024 15:30:37 UTC] PHP Warning:  Attempt to read property "ID" on bool in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 329
 [05-Sep-2024 15:30:37 UTC] PHP Warning:  Attempt to read property "ID" on bool in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/plugins/duplicate-page/duplicatepage.php on line 329
+[05-Sep-2024 16:56:30 UTC] PHP Warning:  Undefined variable $type in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/additional-links.php on line 19
+[05-Sep-2024 16:56:30 UTC] PHP Warning:  Undefined variable $type in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/additional-links.php on line 20
+[05-Sep-2024 16:56:30 UTC] PHP Warning:  Undefined variable $type in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/additional-links.php on line 22
+[05-Sep-2024 16:56:30 UTC] PHP Warning:  Undefined variable $type in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/additional-links.php on line 24
+[05-Sep-2024 16:56:30 UTC] PHP Warning:  Undefined variable $type in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/additional-links.php on line 42
