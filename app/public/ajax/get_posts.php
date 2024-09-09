@@ -8,6 +8,36 @@ $date_range = isset($_POST['dateFilter']) ? $_POST['dateFilter'] : '';
 $category1 = isset($_POST['category1']) ? $_POST['category1'] : '';
 $category2 = isset($_POST['category2']) ? $_POST['category2'] : '';
 
+$cat_query = array();
+
+if ($category1 != '' && $category2 == '') {
+    // echo "cat1 less go";
+    $cat_query = array(
+        'key' => 'event_type',
+        'value' => $category1, // Change to the value you are looking for
+        'compare' => 'LIKE',
+    );
+} elseif($category2 == '' && $category1 == '') {
+    // echo "blank cats less go";
+    $cat_query = '';
+} else {
+    // echo "all cats less go";
+    $cat_query = array(
+        'relation' => 'AND',
+        array(
+            'key' => 'event_type',
+            'value' => $category1, // Change to the value you are looking for
+            'compare' => 'LIKE',
+        ),
+        array(
+            'key' => 'event_type',
+            'value' => $category2, // Add more values as needed
+            'compare' => 'LIKE',
+        ),
+    );
+}
+
+
 // Get today's date
 $today = date('Ymd');
 
@@ -89,25 +119,7 @@ $args = array(
     'meta_query' => array(
         'relation' => 'AND',
         $date_query,
-        // Query for ACF select field
-        // array(
-        //     'relation' => 'OR',
-        //     array(
-        //         'key' => 'event_type',
-        //         'value' => $category1, // Change to the value you are looking for
-        //         'compare' => 'LIKE',
-        //     ),
-        //     array(
-        //         'key' => 'event_type',
-        //         'value' => $category2, // Add more values as needed
-        //         'compare' => 'LIKE',
-        //     ),
-        // ),
-        array(
-            'key' => 'event_type',
-            'value' => $category1, // Change to the value you are looking for
-            'compare' => 'LIKE',
-        ),
+        $cat_query,
     ),
 );
 
