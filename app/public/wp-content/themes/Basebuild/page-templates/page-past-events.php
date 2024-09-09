@@ -1,5 +1,10 @@
 <?php
 
+/**
+* Template Name: Past Events
+*
+*/
+
 get_header(); ?>
 
 <div class="page">
@@ -7,15 +12,7 @@ get_header(); ?>
     <section class="section events border-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-3">
-                    <div class="button-grid" id="dateRangeButtons">
-                        <button class="red" type="button" data-value="today">Today</button>
-                        <button class="red" type="button" data-value="week">This Week</button>
-                        <button class="red" type="button" data-value="month">This Month</button>
-                    </div>
-                    <input type="hidden" name="date_range" id="dateRangeInput">
-                </div>
-                <div class="col-sm-12 col-md-9">
+                <div class="col-sm-12">
                     <div class="button-grid" id="categoryButtons">
                         <h3>Filter Events:</h3>
                         <button class="blue" type="button" data-value="" id="clear">All/Clear</button>
@@ -46,14 +43,11 @@ $(document).ready(function(){
 
     var category1 = $('#categoryInput1').val();
     var category2 = $('#categoryInput2').val();
-    var dateFilter = $('#dateRangeInput').val();
-
-    // alert('c1 = ' + category1 + ' cat2=' + category2 + ' date=' + dateFilter);
 
     $.ajax({
-        url: '../ajax/get_posts.php',
+        url: '../ajax/get_past_posts.php',
         method: 'POST',
-        data: {category1: category1, category2: category2, dateFilter: dateFilter},
+        data: {category1: category1, category2: category2},
         success: function(response){
             $('#posts-list').html(response);
         }
@@ -93,7 +87,7 @@ $(document).ready(function(){
         $.ajax({
             url: '../ajax/get_posts.php',
             method: 'POST',
-            data: {category1: category1, category2: category2, dateFilter: dateFilter},
+            data: {category1: category1, category2: category2},
             success: function(response){
                 $('#posts-list').html(response);
             }
@@ -105,14 +99,13 @@ $(document).ready(function(){
     $('#apply-filters').click(function(){
         var category1 = $('#categoryInput1').val();
         var category2 = $('#categoryInput2').val();
-        var dateFilter = $('#dateRangeInput').val();
 
         // alert('c1 = ' + category1 + ' cat2=' + category2 + ' date=' + dateFilter);
 
         $.ajax({
-            url: '../ajax/get_posts.php',
+            url: '../ajax/get_past_posts.php',
             method: 'POST',
-            data: {category1: category1, category2: category2, dateFilter: dateFilter},
+            data: {category1: category1, category2: category2},
             success: function(response){
                 $('#posts-list').html(response);
             }

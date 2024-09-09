@@ -7,13 +7,21 @@ require_once( '../wp-load.php' );
 $category1 = isset($_POST['category1']) ? $_POST['category1'] : '';
 $category2 = isset($_POST['category2']) ? $_POST['category2'] : '';
 
-$today = date('Ymd');
+$cat_query = array();
 
-// Arguments for the custom query
-$args = array(
-    'post_type' => 'events', // Change to your post type
-    'posts_per_page' => -1,
-    'meta_query' => array(
+if ($category1 != '' && $category2 == '') {
+    // echo "cat1 less go";
+    $cat_query = array(
+        'key' => 'event_type',
+        'value' => $category1, // Change to the value you are looking for
+        'compare' => 'LIKE',
+    );
+} elseif($category2 == '' && $category1 == '') {
+    // echo "blank cats less go";
+    $cat_query = '';
+} else {
+    // echo "all cats less go";
+    $cat_query = array(
         'relation' => 'AND',
         array(
             'key' => 'event_type',
@@ -21,14 +29,39 @@ $args = array(
             'compare' => 'LIKE',
         ),
         array(
-        'relation' => 'AND',
-            array(
-                'key' => 'end_date',
-                'value' => $today,
-                'compare' => '>=',
-                'type' => 'DATE',
-            ),
+            'key' => 'event_type',
+            'value' => $category2, // Add more values as needed
+            'compare' => 'LIKE',
         ),
+    );
+}
+
+
+// Get today's date
+$today = date('Ymd');
+
+// Arguments for the custom query
+$date_query = array(
+    'relation' => 'AND',
+    array(
+        'key' => 'end_date',
+        'value' => $today,
+        'compare' => '<',
+        'type' => 'DATE',
+    ),
+);
+
+// Arguments for the custom query
+$args = array(
+    'post_type' => 'events', // Change to your post type
+    'posts_per_page' => -1,
+    'orderby' => 'meta_value',
+    'meta_key' => 'start_date',
+    'order' => 'ASC',
+    'meta_query' => array(
+        'relation' => 'AND',
+        $date_query,
+        $cat_query,
     ),
 );
 
@@ -41,8 +74,8 @@ if ($posts_query->have_posts()) :
         
         $labels = array_column(get_field('event_type'), 'label');
         $implodeLabels = implode(', ', $labels); 
-        $end_date = DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y'); 
-        $start_date = DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y'); 
+        $end_date = (get_field('end_date') != '') ? DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y') : ''; 
+        $start_date = (get_field('start_date') != '') ? DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y') : ''; 
         ?>
         <div class="post col-sm-12 col-md-6">
             <a href="<?php the_permalink(); ?>">
