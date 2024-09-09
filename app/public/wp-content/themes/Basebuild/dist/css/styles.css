@@ -222,13 +222,14 @@ gmp-map {
     width: 100%; }
     @media screen and (min-width: 768px) {
       .button-grid#categoryButtons button, .button-grid#categoryButtons h3 {
-        width: 178px; } }
+        width: 170px;
+        font-size: 20px; } }
     @media screen and (min-width: 1024px) {
       .button-grid#categoryButtons button, .button-grid#categoryButtons h3 {
-        width: 241px; } }
+        width: 234px; } }
     @media screen and (min-width: 1280px) {
       .button-grid#categoryButtons button, .button-grid#categoryButtons h3 {
-        width: 300px; } }
+        width: 292px; } }
 
 .page-sidebar h5 {
   padding-bottom: 5px;

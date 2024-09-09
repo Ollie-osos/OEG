@@ -1541,3 +1541,20 @@ Stack trace:
 [05-Sep-2024 16:56:30 UTC] PHP Warning:  Undefined variable $type in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/additional-links.php on line 22
 [05-Sep-2024 16:56:30 UTC] PHP Warning:  Undefined variable $type in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/additional-links.php on line 24
 [05-Sep-2024 16:56:30 UTC] PHP Warning:  Undefined variable $type in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/additional-links.php on line 42
+[06-Sep-2024 15:24:51 UTC] Flywheel::DatabaseConnection
+[06-Sep-2024 15:24:53 UTC] Flywheel::DatabaseConnection
+[06-Sep-2024 15:24:53 UTC] Flywheel::DatabaseConnection
+[06-Sep-2024 15:25:38 UTC] Flywheel::DatabaseConnection
+[06-Sep-2024 15:25:40 UTC] Flywheel::DatabaseConnection
+[06-Sep-2024 15:25:40 UTC] Flywheel::DatabaseConnection
+[09-Sep-2024 08:17:14 UTC] Flywheel::DatabaseConnection
+[09-Sep-2024 08:17:16 UTC] Flywheel::DatabaseConnection
+[09-Sep-2024 08:17:16 UTC] Flywheel::DatabaseConnection
+[09-Sep-2024 10:50:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function format() on bool in /Users/michaelsmith/Local Sites/oeg/app/public/ajax/get_posts.php:109
+Stack trace:
+#0 {main}
+  thrown in /Users/michaelsmith/Local Sites/oeg/app/public/ajax/get_posts.php on line 109
+[09-Sep-2024 10:53:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function format() on bool in /Users/michaelsmith/Local Sites/oeg/app/public/ajax/get_posts.php:109
+Stack trace:
+#0 {main}
+  thrown in /Users/michaelsmith/Local Sites/oeg/app/public/ajax/get_posts.php on line 109

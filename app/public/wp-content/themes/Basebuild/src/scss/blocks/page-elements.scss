@@ -82,13 +82,14 @@ gmp-map {
             display: inline-block;
             width: 100%;
             @include screen-above('sm'){
-                width: 178px;
+                width: 170px;
+                font-size: 20px;
             }
             @include screen-above('md'){
-                width: 241px;
+                width: 234px;
             }
             @include screen-above('lg'){
-                width: 300px;
+                width: 292px;
             }
         }
     }
