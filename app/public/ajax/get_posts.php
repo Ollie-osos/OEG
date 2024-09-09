@@ -67,11 +67,25 @@ if ($date_range == 'today') {
             'type' => 'DATE',
         ),
     );
+} else {
+    $date_query = array(
+        'relation' => 'AND',
+        array(
+            'key' => 'end_date',
+            'value' => $today,
+            'compare' => '>=',
+            'type' => 'DATE',
+        ),
+    );
 }
 
 // Arguments for the custom query
 $args = array(
     'post_type' => 'events', // Change to your post type
+    'posts_per_page' => -1,
+    'orderby' => 'meta_value',
+    'meta_key' => 'start_date',
+    'order' => 'ASC',
     'meta_query' => array(
         'relation' => 'AND',
         $date_query,
@@ -106,8 +120,8 @@ if ($posts_query->have_posts()) :
         
         $labels = array_column(get_field('event_type'), 'label');
         $implodeLabels = implode(', ', $labels); 
-        $end_date = DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y'); 
-        $start_date = DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y'); 
+        $end_date = (get_field('end_date') != '') ? DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y') : ''; 
+        $start_date = (get_field('start_date') != '') ? DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y') : ''; 
         ?>
         <div class="post col-sm-12 col-md-6">
             <a href="<?php the_permalink(); ?>">

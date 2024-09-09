@@ -52,7 +52,7 @@ $(document).ready(function(){
         var category2 = $('#categoryInput2').val();
         var dateFilter = $('#dateRangeInput').val();
 
-        // alert(category1 + category2 + dateFilter);
+        // alert('c1 = ' + category1 + ' cat2=' + category2 + ' date=' + dateFilter);
 
         $.ajax({
             url: '../ajax/get_posts.php',
@@ -112,7 +112,7 @@ $(document).ready(function(){
             var category2 = $('#categoryInput2').val();
             var dateFilter = $('#dateRangeInput').val();
 
-            // alert(category1 + category2 + dateFilter);
+            alert(category1 + category2 + dateFilter);
 
             $.ajax({
                 url: '../ajax/get_posts.php',
