@@ -7,18 +7,11 @@ require_once( '../wp-load.php' );
 $category1 = isset($_POST['category1']) ? $_POST['category1'] : '';
 $category2 = isset($_POST['category2']) ? $_POST['category2'] : '';
 
-
-
+$today = date('Ymd');
 
 // Arguments for the custom query
 $args = array(
     'post_type' => 'events', // Change to your post type
-    'date_query' => array(
-        array(
-            'column' => 'post_date_gmt',
-            'before' => '1 year ago',
-        ),
-    ),
     'posts_per_page' => -1,
     'meta_query' => array(
         'relation' => 'AND',
@@ -26,6 +19,15 @@ $args = array(
             'key' => 'event_type',
             'value' => $category1, // Change to the value you are looking for
             'compare' => 'LIKE',
+        ),
+        array(
+        'relation' => 'AND',
+            array(
+                'key' => 'end_date',
+                'value' => $today,
+                'compare' => '>=',
+                'type' => 'DATE',
+            ),
         ),
     ),
 );
