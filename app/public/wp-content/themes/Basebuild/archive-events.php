@@ -93,6 +93,15 @@ $(document).ready(function(){
             $('#dateRangeInput').val('');
             $('#categoryInput1').val('');
             $('#categoryInput2').val('');
+
+            $.ajax({
+                url: '../ajax/get_posts.php',
+                method: 'POST',
+                data: {category1: category1, category2: category2, dateFilter: dateFilter},
+                success: function(response){
+                    $('#posts-list').html(response);
+                }
+            });
         });
 
 
@@ -112,7 +121,7 @@ $(document).ready(function(){
             var category2 = $('#categoryInput2').val();
             var dateFilter = $('#dateRangeInput').val();
 
-            alert(category1 + category2 + dateFilter);
+            alert('c1 = ' + category1 + ' cat2=' + category2 + ' date=' + dateFilter);
 
             $.ajax({
                 url: '../ajax/get_posts.php',
