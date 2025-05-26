@@ -49,3 +49,13 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+.DS_Store
+app/.DS_Store
+app/public/.DS_Store
+app/public/wp-content/.DS_Store
+app/public/wp-content/plugins/.DS_Store
+app/public/wp-content/themes/.DS_Store
+app/public/wp-content/themes/Basebuild/.DS_Store
+app/public/wp-content/themes/Basebuild/src/.DS_Store
+app/public/wp-content/themes/Basebuild/src/node_modules/.DS_Store
+logs/.DS_Store
