@@ -432,6 +432,13 @@ gmp-map {
   padding: 10px 20px;
   cursor: pointer;
 }
+
+span.caption {
+  position: relative;
+  top: -10px;
+  font-size: 14px;
+  font-style: italic;
+}
 /*
     Group selectors that share common styling.
 */
@@ -3628,10 +3635,10 @@ input#searchsubmit {
 .high-contrast .header, .high-contrast .timeline_events .timeline_alt_row .text {
   background-color: #fdf3d5 !important;
 }
-.high-contrast #over p, .high-contrast .off-white-text, .high-contrast .off-white-text p, .high-contrast ul.dropdown-menu .menu-item a {
+.high-contrast #over p, .high-contrast .off-white-text, .high-contrast .off-white-text p {
   color: #fdf3d5 !important;
 }
-.high-contrast p, .high-contrast article, .high-contrast blockquote, .high-contrast .label p, .high-contrast ul .menu-item a, .high-contrast .footer ul .menu-item a, .high-contrast .footer ul a, .high-contrast .featured-news a, .high-contrast .how-to h3, .high-contrast .dark-green-text, .high-contrast .dark-green-text p, .high-contrast .accordion dt a, .high-contrast .timeline_events .text, .high-contrast .post-ratings span, .high-contrast .single-like span {
+.high-contrast p, .high-contrast article, .high-contrast blockquote, .high-contrast .label p, .high-contrast ul .menu-item a, .high-contrast .footer ul .menu-item a, .high-contrast .footer ul a, .high-contrast .featured-news a, .high-contrast .how-to h3, .high-contrast .dark-green-text, .high-contrast .dark-green-text p, .high-contrast .accordion dt a, .high-contrast .timeline_events .text, .high-contrast .post-ratings span, .high-contrast .single-like span, .high-contrast ul.dropdown-menu .menu-item a {
   color: #101820 !important;
 }
 .high-contrast .bg-off-white, .high-contrast .section.off-white, .high-contrast .bg-white, .high-contrast .section.white, .high-contrast .footer, .high-contrast .bg-pattern {

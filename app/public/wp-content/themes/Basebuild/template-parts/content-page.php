@@ -27,6 +27,7 @@ if ($link) {
                     <?php } else { ?>
                         <div class="hero_image">
                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Hero image">
+                            <?php if(get_the_post_thumbnail_caption()){ ?> <span class='caption'> <?php echo get_the_post_thumbnail_caption(); ?> </span> <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
