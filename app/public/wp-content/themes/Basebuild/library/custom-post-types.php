@@ -106,10 +106,11 @@ function create_post_type() {
 	register_post_type( 'events',
 		array(
 			'labels' => array(
-				'name' => __( 'Events' ),
+				'name' => __( "What's on" ),
 				'singular_name' => __( 'Event' )
 			),
 			'public' => true,
+			'rewrite' => array('slug' => 'whatson'),
 			'show_in_nav_menus' => true,
 			'has_archive' => true,
 			'taxonomies' => array('category', 'post_tag'),

@@ -59,7 +59,7 @@ $facebook_url = get_field('facebook', 'option');
           <div class="right-links pt-5">
             <div class="u-flex">
               <div class="nav-item top-links">
-                <div class="top-link"><a class="btn btn-primary" href="/events">What's On</a></div>
+                <div class="top-link"><a class="btn btn-primary" href="/whatson">What's On</a></div>
                 <div class="top-link"><a class="btn btn-primary" href="/plan-your-visit">Plan your Visit</a></div>
                 <div class="top-link"><a class="btn btn-primary" href="https://www.paypal.com/gb/fundraiser/charity/3396780" target="_blank">Donate</a></div>
               </div>
@@ -179,7 +179,7 @@ $facebook_url = get_field('facebook', 'option');
       var currentFontSize = parseInt($('p').css('font-size'));
       var currentLineHeight = parseInt($('p').css('line-height'));
       $('p').css('font-size', (currentFontSize + 4) + "px");
-      $('p').css('line-height', (currentLineHeight + 8) + "px");
+      $('p').css('line-height', (currentLineHeight + 4) + "px");
       sessionStorage.setItem('fontSize', currentFontSize);
       sessionStorage.setItem('lineHeight', currentLineHeight);
 

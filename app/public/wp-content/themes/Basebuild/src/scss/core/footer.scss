@@ -3,12 +3,14 @@
 /* FOOTER */
 .footer {
     background-color: #E0E0E0;
-    padding: 6rem 0;
     text-align: center;
-    margin-top: 5rem;
+    padding: 4rem 0;
+    margin-top: 2rem;
     width: 100%;
-    @include screen-above(sm){
+    @include screen-above('sm'){
         text-align: left;
+        padding: 6rem 0;
+        margin-top: 5rem;
     }
     &.footer--fixed {
         bottom: 0;

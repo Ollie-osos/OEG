@@ -8,16 +8,16 @@
 get_header(); ?>
 
 <div class="page">
-    <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'wo_')); ?>
+    <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'pe_')); ?>
     <section class="section events border-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="button-grid" id="categoryButtons">
-                        <h3>Filter Events:</h3>
-                        <button class="blue" type="button" data-value="" id="clear">All/Clear</button>
-                        <button class="blue" type="button" data-value="in-gallery">In-Gallery</button>
-                        <button class="blue" type="button" data-value="beyond-gallery">Beyond-Gallery</button>
+                        <h3>Filter Events + Exhibitions:</h3>
+                        <button class="blue" type="button" data-value="" id="clear">Clear All</button>
+                        <button class="blue" type="button" data-value="in-gallery">In Gallery</button>
+                        <button class="blue" type="button" data-value="beyond-gallery">Beyond the Gallery</button>
                         <button class="blue" type="button" data-value="exhibition">Exhibition</button>
                         <button class="blue" type="button" data-value="event">Event</button>
                         <button class="blue" type="button" data-value="vr">VR</button>
@@ -50,6 +50,31 @@ $(document).ready(function(){
         data: {category1: category1, category2: category2},
         success: function(response){
             $('#posts-list').html(response);
+            const itemsPerPage = 4; // Number of items to show per click
+            const items = document.querySelectorAll("#posts-list .post-item");
+            let currentlyVisible = 0;
+
+            // Function to show the next set of items
+            function showNextItems() {
+                const nextItems = currentlyVisible + itemsPerPage;
+
+                for (let i = currentlyVisible; i < nextItems && i < items.length; i++) {
+                    items[i].style.display = "block"; // Make the items visible
+                }
+
+                currentlyVisible = nextItems;
+
+                // Hide the button if no more items to show
+                if (currentlyVisible >= items.length) {
+                    document.getElementById("load-more").style.display = "none";
+                }
+            }
+
+            // Initially show the first set of items
+            showNextItems();
+
+            // Add event listener for "Load More" button
+            document.getElementById("load-more").addEventListener("click", showNextItems);
         }
     });
 
@@ -90,6 +115,31 @@ $(document).ready(function(){
             data: {category1: category1, category2: category2},
             success: function(response){
                 $('#posts-list').html(response);
+                const itemsPerPage = 4; // Number of items to show per click
+                const items = document.querySelectorAll("#posts-list .post-item");
+                let currentlyVisible = 0;
+
+                // Function to show the next set of items
+                function showNextItems() {
+                    const nextItems = currentlyVisible + itemsPerPage;
+
+                    for (let i = currentlyVisible; i < nextItems && i < items.length; i++) {
+                        items[i].style.display = "block"; // Make the items visible
+                    }
+
+                    currentlyVisible = nextItems;
+
+                    // Hide the button if no more items to show
+                    if (currentlyVisible >= items.length) {
+                        document.getElementById("load-more").style.display = "none";
+                    }
+                }
+
+                // Initially show the first set of items
+                showNextItems();
+
+                // Add event listener for "Load More" button
+                document.getElementById("load-more").addEventListener("click", showNextItems);
             }
         });
     });

@@ -24,10 +24,10 @@ get_header(); ?>
 				</div>
 				<?php if (have_posts()) : ?>
 					<div class="col-sm-12">
-						<ul class="u-text-center">
+						<ul class="u-text-center no-bullets">
 							<?php while (have_posts()) : the_post(); ?>
-								<li">
-									<h5><a class="underline" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h5>
+								<li>
+									<h3><a class="underline" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
 								</li>
 							<?php endwhile; ?>
 						</ul>
@@ -40,19 +40,21 @@ get_header(); ?>
 				<?php endif; ?>
 
 				<?php
-				if (function_exists('foundationpress_pagination')) :
-					foundationpress_pagination();
-				elseif (is_paged()) :
+				// if (function_exists('foundationpress_pagination')) :
+				// 	foundationpress_pagination();
+				// elseif (is_paged()) :
 				?>
-					<nav id="post-nav">
-						<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'foundationpress')); ?></div>
-						<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'foundationpress')); ?></div>
-					</nav>
-				<?php endif; ?>
+					
+				<?php // endif; ?>
+			</div>
+			<div class="row" id="post-nav">
+				<div class="col-sm-6"><h3 class="black-text post-next"><?php previous_posts_link(__('&larr; Previous Page', 'foundationpress')); ?></h3></div>
+				<div class="col-sm-6 u-text-right"><h3 class="black-text post-previous"><?php next_posts_link(__('Next Page &rarr;', 'foundationpress')); ?></h3></div>
 			</div>
 		</div>
 	</section>
 </div>
+
 
 
 <?php get_footer(); ?>

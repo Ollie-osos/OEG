@@ -21,6 +21,15 @@
     --swiffy-slider-animation-duration: .75s;
     --swiffy-slider-animation-delay: 0s;
     --swiffy-slider-animation-timing: ease-in-out;
+    h2, h2:first-child{
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: -19px;
+    }
+    // @include screen-below('sm'){
+    //     margin: 0 15px;
+        
+    // }
 } 
 
 .swiffy-slider,
@@ -171,11 +180,14 @@
 }
 
 .swiffy-slider.slider-indicators-outside .slider-nav {
-    margin-bottom: var(--swiffy-slider-indicator-outside-size);
+    margin-bottom: 0; //var(--swiffy-slider-indicator-outside-size);
+    @include screen-below('sm'){
+        margin-bottom: 0;   
+    }
 }
 
 .swiffy-slider.slider-indicators-outside {
-    padding-bottom: var(--swiffy-slider-indicator-outside-size);
+    // padding-bottom: var(--swiffy-slider-indicator-outside-size);
 }
 
 .swiffy-slider.slider-indicators-outside.slider-indicators,

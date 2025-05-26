@@ -92,6 +92,13 @@ gmp-map {
                 width: 292px;
             }
         }
+        h3{
+            @include screen-below('sm'){
+                text-align: center;
+                padding-top: 20px;
+                padding-bottom: 30px;
+            }
+        }
     }
 }
 
@@ -198,7 +205,7 @@ gmp-map {
             color: white !important;
         }
     }
-    .swiffy-slider {
+    .swiffy-slider { 
         position: relative;
         width: auto;
         background: none;
@@ -242,4 +249,33 @@ gmp-map {
     @include screen-below('sm'){
         justify-content: flex-start;
     }
+}
+
+span.hover-state.close.toggle-search-m {
+    @include screen-below('sm'){
+        top: 18px;
+        position: relative;
+    }
+}
+
+
+.mobile-reverse-row{
+    @include screen-below('sm'){
+        flex-direction: column-reverse;
+    }
+}
+
+.post-item{
+    display: none;
+}
+
+#load-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+span.caption{
+    
 }

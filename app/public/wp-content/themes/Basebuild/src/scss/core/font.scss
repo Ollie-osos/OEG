@@ -40,12 +40,18 @@ h6 {
 	clear: both;
 	font-family: $font-alt;
     text-transform: uppercase;
+    font-weight: 400;
 }
 
 h1, .h1 {
 	font-size: 45px;
 	line-height: $line-height;
 	font-weight: 700;
+    @include screen-above('md') {
+        font-size: 45px;
+        line-height: $line-height;
+        font-weight: 700;
+    }
 	@include screen-above('lg') {
         font-size: 60px;
 		line-height: $line-height;
@@ -57,11 +63,21 @@ h2, .h2 {
 	font-size: 30px;
 	line-height: $line-height;
 	font-weight: 700;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	&:first-child{
 		margin-top: 0;
-		margin-bottom: 42px;
+		margin-bottom: 32px;
 	}
+    @include screen-above('md') {
+        font-size: 30px;
+        line-height: $line-height;
+        font-weight: 700;
+        margin-bottom: 40px;
+        &:first-child{
+            margin-top: 0;
+            margin-bottom: 42px;
+        }
+    }
 	@include screen-above('lg') {
         font-size: 37px;
 		line-height: $line-height;
@@ -238,6 +254,9 @@ mark,
 
 .black-text {
     color: black !important;
+    a{
+        color: black !important;
+    }
 }
 
 .uppercase{

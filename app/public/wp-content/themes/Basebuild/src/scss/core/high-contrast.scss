@@ -1,5 +1,5 @@
 @import '../../helpers/_size.scss';
-$yellow: #fff;
+$yellow: #fdf3d5; //#FFFFDC;
 $black: #101820;
 
 .high-contrast{
@@ -12,21 +12,21 @@ $black: #101820;
     .header, .timeline_events .timeline_alt_row .text{
         background-color: $yellow !important;
     }
-    #over p, .off-white-text, .off-white-text p, ul.dropdown-menu .menu-item a{
+    #over p, .off-white-text, .off-white-text p{
         color: $yellow !important;
     }
-    p, article, blockquote, .label p, ul .menu-item a, .footer ul .menu-item a, .footer ul a, .featured-news a, .how-to h3, .dark-green-text, .dark-green-text p, .accordion dt a, .timeline_events .text, .post-ratings span, .single-like span {
+    p, article, blockquote, .label p, ul .menu-item a, .footer ul .menu-item a, .footer ul a, .featured-news a, .how-to h3, .dark-green-text, .dark-green-text p, .accordion dt a, .timeline_events .text, .post-ratings span, .single-like span, ul.dropdown-menu .menu-item a {
         color: $black !important;
     }
     .bg-off-white, .section.off-white, .bg-white, .section.white, .footer, .bg-pattern{
         background-color: $yellow !important;
         color: $black !important;
     }
-    .bg-dark-green, .section.dark-green, #over .label, .header .dropdown-background, #back-top {
+    .bg-blue, .section.blue, #over .label, .header .dropdown-background, #back-top {
         background-color: $black !important;
         color: $yellow !important;
     }
-    .btn, button, [type="submit"], [type="reset"], [type="button"]{
+    .btn, [type="submit"], [type="reset"]{
         background-color: $black !important;
         color: $yellow !important;
         &:hover{
@@ -44,7 +44,9 @@ $black: #101820;
         -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
         filter: grayscale(100%);
     }
-
+    .footer .social-container a{
+        color: $black !important;
+    }
     #over{
         .btn, button, [type="submit"], [type="reset"], [type="button"]{
             background-color: $yellow !important;
@@ -56,11 +58,22 @@ $black: #101820;
         }
     }
 
+    .blue-text, .red-text{
+        color: black !important;
+    }
+
+    .white-text {
+        color: $yellow !important;
+        p {
+            color: $yellow !important;
+        }
+    }
+
     div.background-image, section.background-image {
         -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
         filter: grayscale(100%);
-        background-image: unset !important;
-        background-color: $black !important;
+        // background-image: unset !important;
+        // background-color: $black !important;
         .btn, button, [type="submit"], [type="reset"], [type="button"]{
             background-color: $yellow !important;
             color: $black !important;
