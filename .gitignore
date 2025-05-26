@@ -38,6 +38,11 @@ wp-config.php
 # htaccess
 /.htaccess
 
+
+# DB
+app/sql
+
+
 # All plugins
 #
 # Note: If you wish to whitelist plugins,
