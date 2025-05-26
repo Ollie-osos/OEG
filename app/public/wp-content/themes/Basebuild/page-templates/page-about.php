@@ -13,6 +13,11 @@ get_header(); ?>
     <section>
         <div class="container">
             <div class="row">
+                <div class="col-sm-12 pb-3">
+                    <div class="hero_image">
+                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Hero image">
+                    </div>
+                </div>
                 <div class="col-sm-12 double-column"><?php the_content(); ?> </div>
             </div>
         </div>

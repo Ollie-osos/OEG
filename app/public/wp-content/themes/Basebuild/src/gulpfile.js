@@ -1,10 +1,9 @@
 const gulp = require('gulp');
 const prop = require('./package.json');
 const minify = require('gulp-clean-css');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const pug = require('gulp-pug');
 const uglify = require('gulp-uglify');
-const image = require('gulp-image');
 const $ = require('gulp-load-plugins')();
 const concat = require('gulp-concat');
 const head =
@@ -22,14 +21,6 @@ gulp.task('compile', () => {
         .pipe($.header(head))
         .pipe($.size())
         .pipe(gulp.dest('../dist/css/'));
-});
-
-// MINIMISE AND COMPRESS SYSTEM IMAGES
-
-gulp.task('image', async function() {
-    gulp.src('img/**/*')
-      .pipe(image())
-      .pipe(gulp.dest('../dist/img/'));
 });
 
 //  LOOKS FOR ERRORS IN JS ---------
@@ -164,8 +155,7 @@ gulp.task('watch', function() {
     gulp.watch('./scss/**/*.scss', gulp.series('compile'));
     gulp.watch('./js/**/*.js', gulp.series('scripts'));
     gulp.watch('./html/**/*.pug', gulp.series('html'));
-    gulp.watch('./img/*', gulp.series('image'));
 });
 
 
-gulp.task('default', gulp.parallel('minify', 'scripts', 'html', 'image'));
+gulp.task('default', gulp.parallel('minify', 'scripts', 'html'));

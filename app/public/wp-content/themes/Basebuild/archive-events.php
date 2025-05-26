@@ -17,10 +17,10 @@ get_header(); ?>
                 </div>
                 <div class="col-sm-12 col-md-9">
                     <div class="button-grid" id="categoryButtons">
-                        <h3>Filter Events:</h3>
-                        <button class="blue" type="button" data-value="" id="clear">All/Clear</button>
-                        <button class="blue" type="button" data-value="in-gallery">In-Gallery</button>
-                        <button class="blue" type="button" data-value="beyond-gallery">Beyond-Gallery</button>
+                        <h3>Filter Events + Exhibitions:</h3>
+                        <button class="blue" type="button" data-value="" id="clear">Clear All</button>
+                        <button class="blue" type="button" data-value="in-gallery">In Gallery</button>
+                        <button class="blue" type="button" data-value="beyond-gallery">Beyond the Gallery</button>
                         <button class="blue" type="button" data-value="exhibition">Exhibition</button>
                         <button class="blue" type="button" data-value="event">Event</button>
                         <button class="blue" type="button" data-value="vr">VR</button>
@@ -33,8 +33,9 @@ get_header(); ?>
                 </div>
             </div>
             <div class="row" id="posts-list"> <!-- Post data will be displayed here -->
-                    
+                
             </div>
+            <button id="load-more">Load More</button>
         </div>
     </section>
     <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pv_', 'gallery' => false  )); ?>
@@ -56,8 +57,38 @@ $(document).ready(function(){
         data: {category1: category1, category2: category2, dateFilter: dateFilter},
         success: function(response){
             $('#posts-list').html(response);
+            const itemsPerPage = 4; // Number of items to show per click
+            const items = document.querySelectorAll("#posts-list .post-item");
+            let currentlyVisible = 0;
+
+            // Function to show the next set of items
+            function showNextItems() {
+                const nextItems = currentlyVisible + itemsPerPage;
+
+                for (let i = currentlyVisible; i < nextItems && i < items.length; i++) {
+                    items[i].style.display = "block"; // Make the items visible
+                }
+
+                currentlyVisible = nextItems;
+
+                // Hide the button if no more items to show
+                if (currentlyVisible >= items.length) {
+                    document.getElementById("load-more").style.display = "none";
+                }
+            }
+
+            // Initially show the first set of items
+            showNextItems();
+
+            // Add event listener for "Load More" button
+            document.getElementById("load-more").addEventListener("click", showNextItems);
+
         }
     });
+
+    
+
+
 
     
     // Handle date range selection
@@ -96,6 +127,31 @@ $(document).ready(function(){
             data: {category1: category1, category2: category2, dateFilter: dateFilter},
             success: function(response){
                 $('#posts-list').html(response);
+                const itemsPerPage = 4; // Number of items to show per click
+                const items = document.querySelectorAll("#posts-list .post-item");
+                let currentlyVisible = 0;
+
+                // Function to show the next set of items
+                function showNextItems() {
+                    const nextItems = currentlyVisible + itemsPerPage;
+
+                    for (let i = currentlyVisible; i < nextItems && i < items.length; i++) {
+                        items[i].style.display = "block"; // Make the items visible
+                    }
+
+                    currentlyVisible = nextItems;
+
+                    // Hide the button if no more items to show
+                    if (currentlyVisible >= items.length) {
+                        document.getElementById("load-more").style.display = "none";
+                    }
+                }
+
+                // Initially show the first set of items
+                showNextItems();
+
+                // Add event listener for "Load More" button
+                document.getElementById("load-more").addEventListener("click", showNextItems);
             }
         });
     });

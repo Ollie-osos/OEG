@@ -1,8 +1,9 @@
 <?php
 
 get_header(); 
-$end_date = DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y');
-$start_date = DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M');
+$end_date = (get_field('end_date') != '') ? DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y') : ''; 
+$start_date = (get_field('start_date') != '') ? DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y') : ''; 
+$display_date = (get_field('start_date') == get_field('end_date')) ? $start_date : $start_date .' - '. $end_date;
 $event_type = get_field('event_type');
 $access = get_field('access');
 $address = get_field('address');
@@ -15,7 +16,7 @@ $labels = array_column($event_type, 'label');
 $implodeLabels = implode(', ', $labels);
 
 
-if( $access ): 
+if( $access ){
    // Loop through each item using a foreach loop
    $access_icons = '';
     foreach ($access as $item) {
@@ -60,7 +61,10 @@ if( $access ):
                 break;
         }
     }
-endif; 
+} else {
+    $access_icons = '';
+}
+
 ?>
 
 <div class="page">
@@ -72,7 +76,7 @@ endif;
                         <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Hero image">
                     </div>
                     <div class="ev ev_title"><h1><?php the_title(); ?></h1></div>
-                    <div class="ev ev_date"><h3 class="red-text"><?php echo $start_date .' - '. $end_date; ?></h3></div>
+                    <div class="ev ev_date"><h3 class="red-text"><?php echo $display_date; ?></h3></div>
                     <div class="ev ev_type">
                         <h3 class="blue-text"><?php  echo $implodeLabels; ?></h3>
                         <br>
@@ -131,7 +135,9 @@ endif;
                 </div>
                 <div class="col-sm-12 col-md-7 col-lg-8 page-content">
                     <div class="show-desktop">
-                        <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Hero image">
+                        <?php if(get_the_post_thumbnail_url()){ ?>
+                        <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Event image">
+                        <?php } ?>
                     </div>
                     <div class="ev_content">
                         <?php the_content(); ?>

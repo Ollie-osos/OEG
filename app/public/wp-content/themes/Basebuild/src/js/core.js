@@ -60,6 +60,22 @@ $(function() {
         $('#accesibility-m').toggle();
     });
 
+    // image icon colour change
+
+    $("#search-image").mouseenter(function(){       
+        $("#search-image img").attr('src','/wp-content/themes/Basebuild/dist/img/search-icon-blue.svg');      
+    });     
+    $("#search-image").mouseleave(function(){       
+        $("#search-image img").attr('src','/wp-content/themes/Basebuild/dist/img/search-icon.svg');      
+    }); 
+
+    $("#aa-image").mouseenter(function(){       
+        $("#aa-image img").attr('src','/wp-content/themes/Basebuild/dist/img/accessibility-blue.svg');      
+    });     
+    $("#aa-image").mouseleave(function(){       
+        $("#aa-image img").attr('src','/wp-content/themes/Basebuild/dist/img/accessibility.svg');      
+    }); 
+
 
     // high contrast
     $('.contrast-btn').click(function() {

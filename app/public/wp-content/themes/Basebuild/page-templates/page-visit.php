@@ -19,7 +19,7 @@ get_header(); ?>
                 <div class="col-sm-12 col-md-4 sidebar pb-2">
                     <h3>Open Eye Gallery</h3>
                     <p><?php echo $address; ?><br></p>
-                    <p>Open 10 – 5, Tue–Sun</p>
+                    <p>Open 10 – 5, Tue – Sun</p>
                     <a href="tel:<?php echo $phone; ?>"><?php echo $phone_display; ?></a>
                     <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
                 </div>
@@ -38,7 +38,7 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <?php get_template_part( 'template-parts/additional-links', null, array('type' => 'pv_', 'gallery' => false  )); ?>
+    <?php // get_template_part( 'template-parts/additional-links', null, array('type' => 'pv_', 'gallery' => false  )); ?>
 </div>
 <script>
 $(document).ready(function() {

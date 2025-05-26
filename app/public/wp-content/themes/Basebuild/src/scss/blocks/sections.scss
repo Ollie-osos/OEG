@@ -3,13 +3,13 @@
 @import '../core/theme.scss';
 
 @mixin section-space() {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-    @include screen-above('sm') {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
+    // @include screen-above('sm') {
+    //     padding-top: 40px;
+    //     padding-bottom: 40px;
+    // }
 
     // @include screen-above('lg') {
     //     padding-top: 40px;
@@ -124,7 +124,8 @@ section {
     &.border-bottom{
         .container{
             border-bottom: thin solid black;
-            padding-bottom: 40px;
+            // padding-bottom: 40px;
+            padding-bottom: 0;
             @include screen-below('sm'){ 
                 padding-bottom: 0;
             }
@@ -139,7 +140,7 @@ section {
         }
     }
 
-    &.additional-links, &.carousel, &.events{
+    &.additional-links, &.carousel, &.events, &.cards{
         .background-image{
             height: 300px;
             background-repeat: no-repeat;
@@ -203,7 +204,8 @@ section {
 
     .container.border-bottom{
         border-bottom: thin solid black;
-        padding-bottom: 40px;
+        // padding-bottom: 40px;
+        padding-bottom: 0;
     }
 
 

@@ -86,6 +86,10 @@ ul {
         transition: all var(--animation-duration);
         text-align: right;
         font-family: 'Trade Gothic', sans-serif; 
+        font-weight: 400;
+        @include screen-below('sm'){
+            font-size: 30px;
+        }
     }
 
     .menu-item:hover > a {

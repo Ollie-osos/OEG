@@ -14,8 +14,9 @@ if ($link) {
 
 <section class="content-page">
     <div class="container">
-        <div class="row">
-            <?php if ($layout == 'hero') { ?>
+        
+        <?php if ($layout == 'hero') { ?>
+            <div class="row">
                 <div class="col-sm-12 pb-3">
                     <?php if (get_field('hero_video')) { ?>
                         <div class="videoWrapper">
@@ -30,7 +31,9 @@ if ($link) {
                     <?php } ?>
                 </div>
                 <div class="col-sm-12 double-column"><?php the_content(); ?><br><?php echo $cta; ?></div>
-            <?php } elseif ($layout == 'gallery') { ?>
+            <div class="row">
+        <?php } elseif ($layout == 'gallery') { ?>
+            <div class="row mobile-reverse-row">
                 <div class="col-sm-12 col-md-6">
                     <?php if ($gallery) { ?>
                         <?php foreach ($gallery as $image) : ?>
@@ -40,14 +43,17 @@ if ($link) {
                     <?php } ?>
                 </div>
                 <div class="col-sm-12 col-md-6"><?php the_content(); ?><br><?php echo $cta; ?></div>
-            <?php } else { ?>
+            </div>
+        <?php } else { ?>
+            <div class="row mobile-reverse-row">
                 <div class="col-sm-12 col-md-6">
                     <div class="image">
                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Hero image">
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6"><?php the_content(); ?><br><?php echo $cta; ?></div>
-            <?php } ?>
-        </div>
+            </div>
+        <?php } ?>
+        
     </div>
 </section>

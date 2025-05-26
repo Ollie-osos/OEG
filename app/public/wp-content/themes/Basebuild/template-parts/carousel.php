@@ -16,9 +16,9 @@ $carousel = get_field($type.'carousel');
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
                             <?php if($type == 'event_'){
-                                echo "<h2>What's On</h2>";
+                                echo "<h2><a class='black-text' href='/whatson'>What's On</a></h2>";
                             }else {
-                                echo "<h2>NEWS & READING</h2>";
+                                echo "<h2><a class='black-text' href='/news'>NEWS & READING</a></h2>";
                             }
                             ?>
                             </div>
@@ -38,7 +38,9 @@ $carousel = get_field($type.'carousel');
                                 if($type == 'event_'){
                                     $labels = array_column(get_field('event_type'), 'label');
                                     $implodeLabels = implode(', ', $labels); 
-                                    $end_date = DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y'); 
+                                    $end_date = (get_field('end_date') != '') ? DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y') : ''; 
+                                    $start_date = (get_field('start_date') != '') ? DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y') : ''; 
+                                    $display_date = (get_field('start_date') == get_field('end_date')) ? $start_date : $start_date .' - '. $end_date;
                                 }
                                 ?>
                                 <li>
@@ -49,7 +51,7 @@ $carousel = get_field($type.'carousel');
                                                 
                                                     <h3 class="black-text"><?php the_title(); ?></h3>
                                                     <?php  if($type == 'event_'){
-                                                        echo '<h3 class="red-text">'.$end_date.'</h3><h3 class="blue-text">'.$implodeLabels.'</h3>';
+                                                        echo '<h3 class="red-text">'.$display_date.'</h3><h3 class="blue-text">'.$implodeLabels.'</h3>';
                                                     } ?>
                                                 
                                             </div>

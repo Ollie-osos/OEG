@@ -26,6 +26,8 @@
     user-select: none;
     margin-bottom: 1rem;
     font-family: 'Trade Gothic', sans-serif; 
+    font-weight: 400;
+    display: -webkit-inline-box;
     /* Base States */
     &:hover {
         transition: all var(--animation-duration);
@@ -411,6 +413,7 @@
     border: 1px solid black;
     color: black;
     transition: all var(--animation-duration);
+    display: -webkit-inline-box;
 
     &:hover {
         background-color: black;
