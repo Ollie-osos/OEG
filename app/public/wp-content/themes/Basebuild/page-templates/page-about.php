@@ -16,6 +16,7 @@ get_header(); ?>
                 <div class="col-sm-12 pb-3">
                     <div class="hero_image">
                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Hero image">
+                        <?php if(get_the_post_thumbnail_caption()){ ?> <span class='caption'> <?php echo get_the_post_thumbnail_caption(); ?> </span> <?php } ?>
                     </div>
                 </div>
                 <div class="col-sm-12 double-column"><?php the_content(); ?> </div>
