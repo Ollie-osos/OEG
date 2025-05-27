@@ -1615,3 +1615,4 @@ Stack trace:
 [27-May-2025 12:01:24 UTC] Flywheel::DatabaseConnection
 [27-May-2025 12:01:27 UTC] Flywheel::DatabaseConnection
 [27-May-2025 12:01:27 UTC] Flywheel::DatabaseConnection
+[27-May-2025 12:57:54 UTC] PHP Warning:  Undefined array key "archive" in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/title-section.php on line 3

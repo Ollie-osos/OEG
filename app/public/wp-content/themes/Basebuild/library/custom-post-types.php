@@ -89,20 +89,20 @@ function create_post_type() {
 			// 'menu_icon' => 'dashicons-welcome-learn-more'
 		)
 	);
-	register_post_type( 'shop',
-		array(
-			'labels' => array(
-				'name' => __( 'Shop' ),
-				'singular_name' => __( 'Shop' )
-			),
-			'public' => true,
-			'show_in_nav_menus' => true,
-			'has_archive' => true,
-			'taxonomies' => array('category', 'post_tag'),
-			'supports' => array('title', 'thumbnail', 'editor'),
-			// 'menu_icon' => 'dashicons-welcome-learn-more'
-		)
-	);
+	// register_post_type( 'shop',
+	// 	array(
+	// 		'labels' => array(
+	// 			'name' => __( 'Shop' ),
+	// 			'singular_name' => __( 'Shop' )
+	// 		),
+	// 		'public' => true,
+	// 		'show_in_nav_menus' => true,
+	// 		'has_archive' => true,
+	// 		'taxonomies' => array('category', 'post_tag'),
+	// 		'supports' => array('title', 'thumbnail', 'editor'),
+	// 		// 'menu_icon' => 'dashicons-welcome-learn-more'
+	// 	)
+	// );
 	register_post_type( 'events',
 		array(
 			'labels' => array(
