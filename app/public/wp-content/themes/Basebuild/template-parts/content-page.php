@@ -39,6 +39,7 @@ if ($link) {
                     <?php if ($gallery) { ?>
                         <?php foreach ($gallery as $image) : ?>
                             <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            <?php if($image['caption']){ ?> <span class='caption'> <?php echo $image['caption']; ?> </span> <?php } ?>
                             <br>
                         <?php endforeach; ?>
                     <?php } ?>
@@ -50,6 +51,7 @@ if ($link) {
                 <div class="col-sm-12 col-md-6">
                     <div class="image">
                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Hero image">
+                        <?php if(get_the_post_thumbnail_caption()){ ?> <span class='caption'> <?php echo get_the_post_thumbnail_caption(); ?> </span> <?php } ?>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6"><?php the_content(); ?><br><?php echo $cta; ?></div>

@@ -74,6 +74,7 @@ if( $access ){
                 <div class="col-sm-12 col-md-5 col-lg-4 page-sidebar">
                     <div class="show-mobile">
                         <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Hero image">
+                        <?php if(get_the_post_thumbnail_caption()){ ?> <span class='caption'> <?php echo get_the_post_thumbnail_caption(); ?> </span> <?php } ?>
                     </div>
                     <div class="ev ev_title"><h1><?php the_title(); ?></h1></div>
                     <div class="ev ev_date"><h3 class="red-text"><?php echo $display_date; ?></h3></div>
@@ -138,6 +139,7 @@ if( $access ){
                         <?php if(get_the_post_thumbnail_url()){ ?>
                         <img src="<?php echo get_the_post_thumbnail_url();?>" alt="Event image">
                         <?php } ?>
+                        <?php if(get_the_post_thumbnail_caption()){ ?> <span class='caption'> <?php echo get_the_post_thumbnail_caption(); ?> </span> <?php } ?>
                     </div>
                     <div class="ev_content">
                         <?php the_content(); ?>
