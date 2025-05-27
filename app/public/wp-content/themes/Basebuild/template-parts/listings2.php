@@ -14,7 +14,7 @@ if ( $the_query->have_posts() ) : ?>
                             <div class="background-image" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')"> </div>
                             <div class="text pt-2"> 
                                 <h3 class="black-text"><?php the_title(); ?></h3>
-                                <?php echo '<h3 class="black-text">'. get_field('subtitle').'</h3>'; ?>
+                                <?php // echo '<h3 class="black-text">'. get_field('subtitle').'</h3>'; ?>
                             </div>
                         </a>
                     </div>
