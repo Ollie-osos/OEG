@@ -3,6 +3,7 @@
 * Template Name: Access
 *
 */
+$subtitle = get_field('subtitle');
 get_header(); ?>
 
 <div class="page">
@@ -19,6 +20,8 @@ get_header(); ?>
     <section class="section border-bottom">
         <div class="container">
             <div class="row">
+                
+                <?php if($subtitle){ ?><div class="col-12"><p class="large"><?php echo $subtitle; ?></p><br></div> <?php } ?>
                 <?php if (have_rows('access_options')) : 
                     while (have_rows('access_options')) : the_row(); 
                         $access_icon = get_sub_field('access_icon'); 

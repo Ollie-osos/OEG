@@ -434,10 +434,9 @@ gmp-map {
 }
 
 span.caption {
-  position: relative;
-  top: -10px;
   font-size: 14px;
   font-style: italic;
+  display: block;
 }
 /*
     Group selectors that share common styling.

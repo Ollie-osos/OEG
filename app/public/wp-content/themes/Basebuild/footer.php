@@ -68,6 +68,7 @@ $facebook_url = get_field('facebook', 'option');
 					<?php if($facebook_url){ echo '<a aria-label="facebook link" target="_blank" href="'.$facebook_url.'"><span class="icon"><i class="fab fa-facebook"></i></span></a>'; } ?>
 					<?php if($twitter_url){ echo '<a aria-label="twitter link" target="_blank" href="'.$twitter_url.'"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span></a>'; } ?>
 					<?php if($instagram_url){ echo '<a aria-label="instagram link" target="_blank" href="'.$instagram_url.'"><span class="icon"><i class="fab fa-instagram"></i></span></a>'; } ?>
+					<?php if($tiktok_url){ echo '<a aria-label="tiktok link" target="_blank" href="'.$tiktok_url.'"><span class="icon"><i class="fa-brands fa-tiktok"></i></span></a>'; } ?>
 				</div>
 			</div>
 		</div>

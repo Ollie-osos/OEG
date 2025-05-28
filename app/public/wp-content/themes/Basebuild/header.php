@@ -169,30 +169,43 @@ $facebook_url = get_field('facebook', 'option');
   </header>
 
 
-  <script>
-    $(function() {
-      var fontSize = $('p').css('font-size');
-      console.log(parseInt(fontSize));
+<script>
+  $(function() {
+    var fontSize = $('p').css('font-size');
+    console.log(parseInt(fontSize));
+  });
+
+  function increaseFontSize() {
+    var currentFontSize = parseInt($('p').css('font-size'));
+    var currentLineHeight = parseInt($('p').css('line-height'));
+    $('p').css('font-size', (currentFontSize + 4) + "px");
+    $('p').css('line-height', (currentLineHeight + 4) + "px");
+    sessionStorage.setItem('fontSize', currentFontSize);
+    sessionStorage.setItem('lineHeight', currentLineHeight);
+
+    var myVariable = sessionStorage.getItem('lineHeight');
+    console.log('Session variable:', myVariable);
+  }
+
+  function decreaseFontSize() {
+    var currentFontSize = parseInt($('p').css('font-size'));
+    var currentLineHeight = parseInt($('p').css('line-height'));
+    $('p').css('font-size', (currentFontSize - 4) + "px");
+    $('p').css('line-height', (currentLineHeight - 4) + "px");
+    sessionStorage.setItem('fontSize', currentFontSize);
+    sessionStorage.setItem('lineHeight', currentLineHeight);
+  }
+</script>
+
+<script>
+  // open all external links in new tab
+  document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll('a[href^="http"]');
+    links.forEach(link => {
+      if (!link.href.includes(window.location.hostname)) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      }
     });
-
-    function increaseFontSize() {
-      var currentFontSize = parseInt($('p').css('font-size'));
-      var currentLineHeight = parseInt($('p').css('line-height'));
-      $('p').css('font-size', (currentFontSize + 4) + "px");
-      $('p').css('line-height', (currentLineHeight + 4) + "px");
-      sessionStorage.setItem('fontSize', currentFontSize);
-      sessionStorage.setItem('lineHeight', currentLineHeight);
-
-      var myVariable = sessionStorage.getItem('lineHeight');
-      console.log('Session variable:', myVariable);
-    }
-
-    function decreaseFontSize() {
-      var currentFontSize = parseInt($('p').css('font-size'));
-      var currentLineHeight = parseInt($('p').css('line-height'));
-      $('p').css('font-size', (currentFontSize - 4) + "px");
-      $('p').css('line-height', (currentLineHeight - 4) + "px");
-      sessionStorage.setItem('fontSize', currentFontSize);
-      sessionStorage.setItem('lineHeight', currentLineHeight);
-    }
-  </script>
+  });
+</script>
