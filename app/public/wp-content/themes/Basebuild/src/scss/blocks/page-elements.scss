@@ -277,8 +277,9 @@ span.hover-state.close.toggle-search-m {
 }
 
 span.caption{
-    position: relative;
-    top: -10px;
+    // position: relative;
+    // top: -10px;
     font-size: 14px;
     font-style: italic;
+    display: block;
 }
