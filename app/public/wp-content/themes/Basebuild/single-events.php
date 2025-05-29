@@ -141,7 +141,7 @@ if( $access ){
                         <?php } ?>
                         <?php if(get_the_post_thumbnail_caption()){ ?> <span class='caption'> <?php echo get_the_post_thumbnail_caption(); ?> </span> <?php } ?>
                     </div>
-                    <div class="ev_content">
+                    <div class="ev_content pt-2">
                         <?php the_content(); ?>
                     </div>
                     <section class="border-bottom show-mobile">
