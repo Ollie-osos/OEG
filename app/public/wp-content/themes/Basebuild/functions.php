@@ -182,4 +182,19 @@ add_action('wp_ajax_load_more', 'load_more_ajax_handler');
 add_action('wp_ajax_nopriv_load_more', 'load_more_ajax_handler');
 
 // add_action('wp_footer', 'disable_parent_menu_link');
+
+
+// fix linebreaks in tinymce
+function fix_classic_editor_linebreaks($init) {
+    $init['forced_root_block'] = 'p'; // Force <p> tags
+    $init['force_p_newlines'] = true;
+    $init['force_br_newlines'] = false;
+    $init['convert_newlines_to_brs'] = false;
+    $init['remove_linebreaks'] = false;
+    $init['apply_source_formatting'] = true;
+
+    return $init;
+}
+add_filter('tiny_mce_before_init', 'fix_classic_editor_linebreaks'); 
+
 ?>
