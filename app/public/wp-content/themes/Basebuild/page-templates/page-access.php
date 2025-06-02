@@ -7,7 +7,7 @@ $subtitle = get_field('subtitle');
 get_header(); ?>
 
 <div class="page">
-    <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'none')); ?>
+    <?php get_template_part( 'template-parts/title-section', null, array('archive' => 'no-sub')); ?>
     <section class="section border-bottom">
         <div class="container">
             <div class="row">

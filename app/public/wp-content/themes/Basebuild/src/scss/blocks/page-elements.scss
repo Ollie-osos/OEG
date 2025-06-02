@@ -76,20 +76,20 @@ gmp-map {
     button{
         width: 100%;
     }
-    &#categoryButtons{
+    &.categoryButtons{
         margin-right: 0;
         button, h3{
             display: inline-block;
             width: 100%;
             @include screen-above('sm'){
-                width: 170px;
+                width: 165px;
                 font-size: 20px;
             }
             @include screen-above('md'){
-                width: 234px;
+                width: 229px;
             }
             @include screen-above('lg'){
-                width: 292px;
+                width: 287px;
             }
         }
         h3{
