@@ -8,6 +8,7 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-3">
+                    <h3>When:</h3><br>
                     <div class="button-grid" id="dateRangeButtons">
                         <button class="red" type="button" data-value="today">Today</button>
                         <button class="red" type="button" data-value="week">This Week</button>
@@ -15,20 +16,27 @@ get_header(); ?>
                     </div>
                     <input type="hidden" name="date_range" id="dateRangeInput">
                 </div>
-                <div class="col-sm-12 col-md-9">
-                    <div class="button-grid" id="categoryButtons">
-                        <h3>Filter Events + Exhibitions:</h3>
-                        <button class="blue" type="button" data-value="" id="clear">Clear All</button>
-                        <button class="blue" type="button" data-value="in-gallery">In Gallery</button>
-                        <button class="blue" type="button" data-value="beyond-gallery">Beyond the Gallery</button>
+                <div class="col-sm-12 col-md-3">
+                    <h3>Where:</h3><br>
+                    <div class="button-grid" id="locationButtons">
+                        <button class="green solid" type="button" data-value="in-gallery">In Gallery</button>
+                        <button class="green solid" type="button" data-value="beyond-gallery">Beyond the Gallery</button>
+                    </div>
+                    <input type="hidden" name="location" id="locationInput">
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <h3>What:</h3><br>
+                    <div class="button-grid categoryButtons" id="categoryButtons">
                         <button class="blue" type="button" data-value="exhibition">Exhibition</button>
                         <button class="blue" type="button" data-value="event">Event</button>
                         <button class="blue" type="button" data-value="vr">VR</button>
                         <button class="blue" type="button" data-value="online">Online</button>
-                        <button id="apply-filters" type="submit" class="green">Apply</button>
+                    </div>
+                    <div class="button-grid categoryButtons">
+                        <button class="black" type="button" data-value="" id="clear">Clear All</button>
+                        <button id="apply-filters" type="submit" class="black">Apply</button>
                     </div>
                     <input type="hidden" name="category1" id="categoryInput1">
-                    <input type="hidden" name="category2" id="categoryInput2">
                     
                 </div>
             </div>
@@ -46,7 +54,7 @@ get_header(); ?>
 $(document).ready(function(){
 
     var category1 = $('#categoryInput1').val();
-    var category2 = $('#categoryInput2').val();
+    var location = $('#locationInput').val();
     var dateFilter = $('#dateRangeInput').val();
 
     // alert('c1 = ' + category1 + ' cat2=' + category2 + ' date=' + dateFilter);
@@ -54,7 +62,7 @@ $(document).ready(function(){
     $.ajax({
         url: '../ajax/get_posts.php',
         method: 'POST',
-        data: {category1: category1, category2: category2, dateFilter: dateFilter},
+        data: {category1: category1, dateFilter: dateFilter, location: location},
         success: function(response){
             $('#posts-list').html(response);
             const itemsPerPage = 4; // Number of items to show per click
@@ -87,10 +95,6 @@ $(document).ready(function(){
     });
 
     
-
-
-
-    
     // Handle date range selection
     $('#dateRangeButtons button').on('click', function() {
         $('#dateRangeButtons button').removeClass('selected');
@@ -100,31 +104,29 @@ $(document).ready(function(){
 
     // Handle category selection
     $('#categoryButtons button').on('click', function() {
-        if (!$(this).hasClass('selected') && $('.selected-category').length < 2) {
-            $(this).addClass('selected selected-category');
-        } else if ($(this).hasClass('selected')) {
-            $(this).removeClass('selected selected-category');
-        }
-        
-        var selectedCategories = $('.selected-category').map(function() {
-            return $(this).data('value');
-        }).get();
-        
-        $('#categoryInput1').val(selectedCategories[0] || '');
-        $('#categoryInput2').val(selectedCategories[1] || '');
+        $('#categoryButtons button').removeClass('selected');
+        $(this).addClass('selected');
+        $('#categoryInput1').val($(this).data('value'));
+    });
 
+    // Handle location selection
+    $('#locationButtons button').on('click', function() {
+        $('#locationButtons button').removeClass('selected');
+        $(this).addClass('selected');
+        $('#locationInput').val($(this).data('value'));
     });
 
     $('#clear').on('click', function() {
         $('button').removeClass('selected selected-category');
+        $('button').removeClass('selected selected-location');
         $('#dateRangeInput').val('');
         $('#categoryInput1').val('');
-        $('#categoryInput2').val('');
+        $('#locationInput').val('');
 
         $.ajax({
             url: '../ajax/get_posts.php',
             method: 'POST',
-            data: {category1: category1, category2: category2, dateFilter: dateFilter},
+            data: {category1: category1, dateFilter: dateFilter, location: location},
             success: function(response){
                 $('#posts-list').html(response);
                 const itemsPerPage = 4; // Number of items to show per click
@@ -160,15 +162,15 @@ $(document).ready(function(){
     // Handle form submission
     $('#apply-filters').click(function(){
         var category1 = $('#categoryInput1').val();
-        var category2 = $('#categoryInput2').val();
         var dateFilter = $('#dateRangeInput').val();
+        var location = $('#locationInput').val();
 
-        // alert('c1 = ' + category1 + ' cat2=' + category2 + ' date=' + dateFilter);
+        // alert('c1 = ' + category1 + ' location=' + location + ' date=' + dateFilter);
 
         $.ajax({
             url: '../ajax/get_posts.php',
             method: 'POST',
-            data: {category1: category1, category2: category2, dateFilter: dateFilter},
+            data: {category1: category1, dateFilter: dateFilter, location: location},
             success: function(response){
                 $('#posts-list').html(response);
             }

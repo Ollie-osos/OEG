@@ -6,20 +6,24 @@ require_once( '../wp-load.php' );
 
 $date_range = isset($_POST['dateFilter']) ? $_POST['dateFilter'] : '';
 $category1 = isset($_POST['category1']) ? $_POST['category1'] : '';
-$category2 = isset($_POST['category2']) ? $_POST['category2'] : '';
+$location = isset($_POST['location']) ? $_POST['location'] : '';
 
 $cat_query = array();
 
-if ($category1 != '' && $category2 == '') {
+if ($category1 != '' && $location == '') {
     // echo "cat1 less go";
     $cat_query = array(
         'key' => 'event_type',
         'value' => $category1, // Change to the value you are looking for
         'compare' => 'LIKE',
     );
-} elseif($category2 == '' && $category1 == '') {
+} elseif ($location != '' && $category1 == '') {
     // echo "blank cats less go";
-    $cat_query = '';
+    $cat_query = array(
+        'key' => 'event_location',
+        'value' => $location, // Change to the value you are looking for
+        'compare' => 'LIKE',
+    );
 } else {
     // echo "all cats less go";
     $cat_query = array(
@@ -30,8 +34,8 @@ if ($category1 != '' && $category2 == '') {
             'compare' => 'LIKE',
         ),
         array(
-            'key' => 'event_type',
-            'value' => $category2, // Add more values as needed
+            'key' => 'event_location',
+            'value' => $location, // Add more values as needed
             'compare' => 'LIKE',
         ),
     );
@@ -132,6 +136,7 @@ if ($posts_query->have_posts()) :
         
         $labels = array_column(get_field('event_type'), 'label');
         $implodeLabels = implode(', ', $labels); 
+        $locationLabel = get_field('event_location')['label'];
         $end_date = (get_field('end_date') != '') ? DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y') : ''; 
         $start_date = (get_field('start_date') != '') ? DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y') : ''; 
         ?>
@@ -140,7 +145,7 @@ if ($posts_query->have_posts()) :
                 <div class="background-image" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')"> </div>
                 <div class="text pt-2"> 
                     <h3 class="black-text"><?php the_title(); ?></h3>
-                    <?php echo '<h3 class="red-text">'.$start_date.' - '.$end_date.'</h3><h3 class="blue-text">'.$implodeLabels.'</h3>'; ?>
+                    <?php echo '<h3 class="red-text">'.$start_date.' - '.$end_date.'</h3><h3 class="green-text">'.$locationLabel.'</h3><h3 class="blue-text">'.$implodeLabels.'</h3>'; ?>
                 </div>
             </a>
         </div>

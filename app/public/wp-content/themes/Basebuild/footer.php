@@ -30,6 +30,7 @@ $youtube_url = get_field('youtube', 'option');
 $instagram_url = get_field('instagram', 'option');
 $twitter_url = get_field('twitter', 'option');
 $facebook_url = get_field('facebook', 'option');
+$tiktok_url = get_field('tiktok', 'option');
 
 ?>
 

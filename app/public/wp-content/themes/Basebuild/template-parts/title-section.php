@@ -1,12 +1,18 @@
 <?php 
 
-if ($args['archive'] && $args['archive'] != 'none' ) {
+if ($args['archive'] == 'no-sub'){
+    $title = get_the_title();
+    $subtitle = get_field('subtitle');
+    $archive = $args['archive'];
+}elseif ($args['archive'] && $args['archive'] != 'none' ) {
 	$archive = $args['archive'];
     $title = get_field($archive.'title', 'option');
     $subtitle = get_field($archive.'subtitle', 'option');
-}else{
+}
+else{
     $title = get_the_title();
     $subtitle = get_field('subtitle');
+    $archive = '';
 }
 ?>
 <section class="section title-section border-bottom">
@@ -14,7 +20,7 @@ if ($args['archive'] && $args['archive'] != 'none' ) {
         <div class="row">
             <div class="col-sm-12">
                 <h1><?php echo $title; ?></h1>
-                <?php if($subtitle){ ?><br><p class="large"><?php echo $subtitle; ?></p> <?php } ?>
+                <?php if($archive != 'no-sub' && $subtitle){ ?><br><p class="large"><?php echo $subtitle; ?></p> <?php } ?>
             </div>
         </div>
     </div>
