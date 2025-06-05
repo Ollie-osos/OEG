@@ -136,7 +136,7 @@ if ($posts_query->have_posts()) :
         
         $labels = array_column(get_field('event_type'), 'label');
         $implodeLabels = implode(', ', $labels); 
-        $locationLabel = get_field('event_location')['label'];
+        $locationLabel = (get_field('event_location')['label'] != '') ? get_field('event_location')['label'] : '';
         $end_date = (get_field('end_date') != '') ? DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y') : ''; 
         $start_date = (get_field('start_date') != '') ? DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y') : ''; 
         ?>

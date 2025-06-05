@@ -38,6 +38,7 @@ $carousel = get_field($type.'carousel');
                                 if($type == 'event_'){
                                     $labels = array_column(get_field('event_type'), 'label');
                                     $implodeLabels = implode(', ', $labels); 
+                                    $locationLabel = (get_field('event_location')['label'] != '') ? get_field('event_location')['label'] : '';
                                     $end_date = (get_field('end_date') != '') ? DateTime::createFromFormat('Ymd', get_field('end_date'))->format('d M Y') : ''; 
                                     $start_date = (get_field('start_date') != '') ? DateTime::createFromFormat('Ymd', get_field('start_date'))->format('d M Y') : ''; 
                                     $display_date = (get_field('start_date') == get_field('end_date')) ? $start_date : $start_date .' - '. $end_date;
@@ -51,7 +52,7 @@ $carousel = get_field($type.'carousel');
                                                 
                                                     <h3 class="black-text"><?php the_title(); ?></h3>
                                                     <?php  if($type == 'event_'){
-                                                        echo '<h3 class="red-text">'.$display_date.'</h3><h3 class="blue-text">'.$implodeLabels.'</h3>';
+                                                        echo '<h3 class="red-text">'.$display_date.'</h3><h3 class="green-text">'.$locationLabel.'</h3><h3 class="blue-text">'.$implodeLabels.'</h3>';
                                                     } ?>
                                                 
                                             </div>
