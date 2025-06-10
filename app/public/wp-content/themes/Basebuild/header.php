@@ -31,6 +31,7 @@ $youtube_url = get_field('youtube', 'option');
 $instagram_url = get_field('instagram', 'option');
 $twitter_url = get_field('twitter', 'option');
 $facebook_url = get_field('facebook', 'option');
+$tiktok_url = get_field('tiktok', 'option');
 
 ?>
 <!doctype html>
@@ -80,6 +81,9 @@ $facebook_url = get_field('facebook', 'option');
                 } ?>
                 <?php if ($instagram_url) {
                   echo '<a aria-label="instagram link" title="Instagram" target="_blank" href="' . $instagram_url . '"><span class="icon"><i class="fab fa-instagram"></i></span></a>';
+                } ?>
+                <?php if($tiktok_url){ 
+                  echo '<a aria-label="tiktok link" target="_blank" href="'.$tiktok_url.'"><span class="icon"><i class="fa-brands fa-tiktok"></i></span></a>';
                 } ?>
               </div>
               <div id="accesibility">
@@ -157,6 +161,9 @@ $facebook_url = get_field('facebook', 'option');
               } ?>
               <?php if ($instagram_url) {
                 echo '<a aria-label="instagram link" title="Instagram" target="_blank" href="' . $instagram_url . '"><span class="icon"><i class="fab fa-instagram"></i></span></a>';
+              } ?>
+              <?php if($tiktok_url){ 
+                echo '<a aria-label="tiktok link" target="_blank" href="'.$tiktok_url.'"><span class="icon"><i class="fa-brands fa-tiktok"></i></span></a>';
               } ?>
             </div>
           </div>

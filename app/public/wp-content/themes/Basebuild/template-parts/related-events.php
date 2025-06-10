@@ -20,10 +20,8 @@
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="background-image" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')"> </div>
                                     <div class="text pt-2">
-                                        
-                                            <h3 class="black-text"><?php the_title(); ?></h3>
-                                            <?php echo '<h3 class="red-text">'.$end_date.'</h3><h3 class="blue-text">'.$implodeLabels.'</h3>'; ?>
-                                        
+                                        <h3 class="black-text"><?php the_title(); ?></h3>
+                                        <?php echo '<h3 class="red-text">'.$end_date.'</h3><h3 class="blue-text">'.$implodeLabels.'</h3>'; ?>
                                     </div>
                                 </a>
                             </div>
