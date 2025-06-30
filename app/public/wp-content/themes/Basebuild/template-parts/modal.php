@@ -1,4 +1,17 @@
-<?php $photos = get_field('gallery'); ?>
+<?php
+
+if ($args['type']) {
+    $type = $args['type'];
+    if ($type == 'builder'){
+        $photos = get_sub_field('images');
+    } else {
+        $photos = get_field('gallery');
+    }
+} else {
+    $photos = get_field('gallery');
+}
+
+?>
 
 <div id="single-modal" class="modal-single">
     <div class="modal-content">

@@ -10,7 +10,7 @@ if( have_rows('page_builder') ):
             include 'sections/main-hero.php';
     
         elseif( get_row_layout() == 'fullscreen_carousel' ): 
-            include 'sections/fullscreen-carousel.php';
+            include 'sections/gallery-builder.php';
 
         elseif( get_row_layout() == 'cards_section' ): 
             include 'sections/cards.php';

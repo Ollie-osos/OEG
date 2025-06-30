@@ -4,7 +4,7 @@ $count = 0;
 $images = get_field('gallery');
 
 if ($images) { ?>
-    <?php get_template_part( 'template-parts/modal'); ?>
+    <?php get_template_part( 'template-parts/modal', null, array('type' => 'normal')); ?>
     <section class="carousel">
         <div class="container border-bottom">
             <div class="row">
