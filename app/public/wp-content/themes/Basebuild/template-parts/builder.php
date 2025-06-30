@@ -21,6 +21,9 @@ if( have_rows('page_builder') ):
         elseif( get_row_layout() == 'hero_video' ): 
             include 'sections/hero-video.php';
 
+        elseif( get_row_layout() == 'pdf_viewer' ): 
+            include 'sections/pdf-viewer.php';
+
         endif;
 
     // End loop.

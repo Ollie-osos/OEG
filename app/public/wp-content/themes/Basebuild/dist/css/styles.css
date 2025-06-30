@@ -431,6 +431,13 @@ span.caption {
   font-style: italic;
   display: block;
 }
+
+.pdf-container canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
 /*
     Group selectors that share common styling.
 */
