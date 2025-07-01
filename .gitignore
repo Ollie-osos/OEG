@@ -34,13 +34,16 @@ wp-config.php
 
 # Log files
 *.log
+#
+
 
 # htaccess
 /.htaccess
 
 
 # DB
-app/sql
+/app/sql/local.sql
+app/sql/local.sql 
 
 
 # All plugins
