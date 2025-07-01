@@ -43,6 +43,7 @@ wp-config.php
 
 # DB
 app/sql/local.sql 
+app/sql/local.sql.tmp
 
 
 # All plugins
