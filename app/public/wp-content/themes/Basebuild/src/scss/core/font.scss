@@ -25,7 +25,7 @@ $font-weights: (
     'light': 300,
     'normal': 400,
     'semibold': 600,
-    'bold': 700,
+    'bold': 400,
 );
 $font-transformations: uppercase, lowercase, capitalize;
 
@@ -46,23 +46,23 @@ h6 {
 h1, .h1 {
 	font-size: 45px;
 	line-height: $line-height;
-	font-weight: 700;
+	font-weight: 400;
     @include screen-above('md') {
         font-size: 45px;
         line-height: $line-height;
-        font-weight: 700;
+        font-weight: 400;
     }
 	@include screen-above('lg') {
         font-size: 60px;
 		line-height: $line-height;
-		margin-bottom: 40px;
+		margin-bottom: 40px; 
     }
 }
 
 h2, .h2 {
 	font-size: 30px;
 	line-height: $line-height;
-	font-weight: 700;
+	font-weight: 400;
 	margin-bottom: 30px;
 	&:first-child{
 		margin-top: 0;
@@ -71,7 +71,7 @@ h2, .h2 {
     @include screen-above('md') {
         font-size: 30px;
         line-height: $line-height;
-        font-weight: 700;
+        font-weight: 400;
         margin-bottom: 40px;
         &:first-child{
             margin-top: 0;

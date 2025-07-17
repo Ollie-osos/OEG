@@ -18,7 +18,7 @@ if ($pdf) {
                         <button class="pdf-prev">⟨ Prev</button>
                         <span>Page <span class="pdf-page-display">1</span> of <span class="pdf-page-total">…</span></span>
                         <button class="pdf-next">Next ⟩</button>
-                        <input type="number" class="pdf-goto" min="1" placeholder="Go to" style="width: 50px;">
+                        <input type="number" class="pdf-goto" min="1" placeholder="Go to" style="width: 80px;">
                         <button class="pdf-go">Go</button>
                     </div>
                 </div>

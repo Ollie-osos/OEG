@@ -1546,13 +1546,13 @@ h6 {
 h1, .h1 {
   font-size: 45px;
   line-height: normal;
-  font-weight: 700;
+  font-weight: 400;
 }
 @media screen and (min-width: 1024px) {
   h1, .h1 {
     font-size: 45px;
     line-height: normal;
-    font-weight: 700;
+    font-weight: 400;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -1566,7 +1566,7 @@ h1, .h1 {
 h2, .h2 {
   font-size: 30px;
   line-height: normal;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 30px;
 }
 h2:first-child, .h2:first-child {
@@ -1577,7 +1577,7 @@ h2:first-child, .h2:first-child {
   h2, .h2 {
     font-size: 30px;
     line-height: normal;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 40px;
   }
   h2:first-child, .h2:first-child {
@@ -1789,7 +1789,7 @@ mark,
 }
 
 .font-bold {
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* Text Transformations */
@@ -3705,7 +3705,7 @@ input#searchsubmit {
   background-color: #101820 !important;
   color: #fdf3d5 !important;
 }
-.high-contrast .blue-text, .high-contrast .red-text {
+.high-contrast .blue-text, .high-contrast .red-text, .high-contrast .green-text {
   color: black !important;
 }
 .high-contrast .white-text {
@@ -4629,7 +4629,6 @@ section {
 /* LINKS */
 a {
   color: #0048FF;
-  font-weight: 600;
   padding: 2px;
   text-decoration: none;
   transition: all 0.3s;
