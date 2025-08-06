@@ -57,7 +57,7 @@ $args = array(
     'posts_per_page' => -1,
     'orderby' => 'meta_value',
     'meta_key' => 'start_date',
-    'order' => 'ASC',
+    'order' => 'DESC',
     'meta_query' => array(
         'relation' => 'AND',
         $date_query,

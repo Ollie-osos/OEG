@@ -2994,3 +2994,14 @@ Stack trace:
 [30-Jun-2025 14:10:38 UTC] PHP Warning:  Undefined variable $pdf_url in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/sections/pdf-viewer.php on line 22
 [30-Jun-2025 14:10:53 UTC] PHP Warning:  Undefined variable $pdf_url in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/sections/pdf-viewer.php on line 22
 [30-Jun-2025 14:12:46 UTC] PHP Warning:  Undefined variable $pdf_url in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/sections/pdf-viewer.php on line 28
+[01-Aug-2025 11:51:45 UTC] Flywheel::DatabaseConnection
+[01-Aug-2025 11:51:45 UTC] Flywheel::DatabaseConnection
+[01-Aug-2025 11:51:45 UTC] Flywheel::DatabaseConnection
+[01-Aug-2025 12:08:33 UTC] PHP Warning:  Trying to access array offset on value of type null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 41
+[01-Aug-2025 12:08:33 UTC] PHP Warning:  Trying to access array offset on value of type null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 41
+[01-Aug-2025 12:08:33 UTC] PHP Warning:  Trying to access array offset on value of type null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 41
+[01-Aug-2025 12:08:33 UTC] PHP Warning:  Trying to access array offset on value of type null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 41
+[01-Aug-2025 12:29:58 UTC] PHP Warning:  Trying to access array offset on value of type null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 41
+[01-Aug-2025 12:29:58 UTC] PHP Warning:  Trying to access array offset on value of type null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 41
+[01-Aug-2025 12:29:58 UTC] PHP Warning:  Trying to access array offset on value of type null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 41
+[01-Aug-2025 12:29:58 UTC] PHP Warning:  Trying to access array offset on value of type null in /Users/michaelsmith/Local Sites/oeg/app/public/wp-content/themes/Basebuild/template-parts/carousel.php on line 41
